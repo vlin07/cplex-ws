@@ -4,7 +4,7 @@
      make sure that svnant.jar, svnClientAdapter.jar, svnjavahl.jar are in ant_home/lib
      For windows:  "set SVN=C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe"         
      ================================================================= -->
-<project name="NCL-WS" default="build" basedir=".">
+<project name="NCL-WS" default="buildEar" basedir=".">
 	<description>NCL Assisted Search WebService app</description>
 
 	
@@ -29,29 +29,21 @@
 		<!-- get build properties from file -->
 	    <property file="build.properties" />
 
-		<!-- get svn properties from file -->
-	    <property file="svn.properties" />
-
 		<!-- get deploy properties from file -->
 	    <property file="deploy.properties" />
 
-		<!-- temp dir.checkout	-->
-		<property name="dir.checkout"     value="." />
+<!-- temp dir.checkout	-->
+<property name="dir.checkout"     value="c://NCL-WS" />
 
 		<!-- set static property values -->
 		<property name="warfile"        value="NCL-WS.war" />
+		<property name="earfile"        value="NCLEar.ear" />
 
-<!-- when SVN ready 
-			<property name="dir.webcontent" value="${dir.checkout}/WebContent" />
-			<property name="dir.src"        value="${dir.checkout}/src" />
-			<property name="dir.build"      value="${dir.checkout}/build" />
--->			
 			
 		<property name="dir.webcontent" value="./WebContent" />
 		<property name="dir.src"        value="./src" />
 		<property name="dir.build"      value="./build" />
-		<property name="dir.dist"       value="dist" />
-		<property name="dir.deploy"     value="${apache.tomcat}/webapps" />
+		<property name="dir.dist"       value="./dist" />
 		
 		
 
@@ -61,48 +53,27 @@
 				<include name="ant.jar" />
 				<!-- <include name="ant-contrib-1.0b3.jar" /> -->
 			</fileset>
-			<fileset dir="${dir.svnant}/lib" >
-				<include name="svnant.jar" />
-				<include name="svnClientAdapter.jar" />
-				<include name="svnjavahl.jar" />
-			</fileset>
-			<fileset dir="${apache.tomcat}/lib" >
-				<include name="**/*.jar" />
+			<fileset dir="Z:\USER-DATA\NCL\jars" >
+				<include name="*.jar" />
 			</fileset>
 		</path>
 
 		<!-- log property values -->
 		<echo message="Start logging property values..." />
 		<echo message="warfile                =[${warfile}]" />
+		<echo message="earfile                =[${earfile}]" />
 		<echo message="dir.webcontent         =[${dir.webcontent}]" />
 		<echo message="dir.src                =[${dir.src}]" />
 		<echo message="dir.build              =[${dir.build}]" />
-		<echo message="dir.dist               =[${dir.dist}]" />
 		<echo message="dir.checkout           =[${dir.checkout}]" />
-		<echo message="apache.tomcat          =[${apache.tomcat}]" />
 		<echo message="ant.home               =[${ant.home}]" />
-		<echo message="project.svn.url        =[${project.svn.url}]" />
-		<echo message="svnant.repository.user =[${svnant.repository.user}]" />
+		<echo message="ant.project.name       =[${ant.project.name}]" />
 		<echo message="dir.tmp                =[${dir.tmp}]" />
 		<echo message="isUnix                 =[${isUnix}]" />
 		<echo message="isWin                  =[${isWin}]" />
 		<echo message="End logging property values..." />
 	</target>
 
-	
-    <!-- ================================================================= -->
-    <!-- checkout - check out code from SVN              
-    (depends="init, clean"                  -->
-    <!-- ================================================================= -->
-	<target name="checkout" depends="init, clean" description="checkout code from SVN">
-		 <typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="project.classpath" />
-
-		    <svn svnkit="false" javahl="false" 
-		    	username="${svnant.repository.user}" 
-		    	password="${svnant.repository.passwd}">
-		      <checkout url="${project.svn.url}" revision="HEAD" destPath="${dir.checkout}" />
-		    </svn>
-	</target>
 	
 	
     <!-- ================================================================= -->
@@ -121,14 +92,12 @@
 	</target>
 	
 	
-    <!-- ================================================================= -->
+   <!-- ================================================================= -->
     <!-- build - Build war - http://ant.apache.org/manual/Tasks/war.html   -->
     <!-- ================================================================= -->
-	<target name="build" depends="compile" description="build war">
+	<target name="buildWar" depends="compile" description="build war">
 		<war destfile="${dir.dist}/${warfile}" webxml="${dir.webcontent}/WEB-INF/web.xml">
-			<fileset dir="${dir.webcontent}" />
-			<!-- for additional jars - ojdbc6.jar and oplall.jar -->
-			<lib dir="${dir.webcontent}/WEB-INF/lib" />
+			<fileset dir="${dir.webcontent}" excludes="WEB-INF/classes/com/**" />
 			<classes dir="${dir.build}/classes"/>
 		</war>
 		
@@ -141,12 +110,25 @@
 	</target>
 
 	
+
+    <!-- ================================================================= -->
+    <!-- buildEar - Build war - http://ant.apache.org/manual/Tasks/ear.html   -->
+    <!-- ================================================================= -->
+	<target name="buildEar" depends="buildWar" description="build ear" >
+		<ear destfile="${dir.dist}/${earfile}" appxml="${dir.webcontent}/META-INF/application.xml">
+			<fileset dir="${dir.dist}" includes="NCL-WS.war"/>
+		</ear>
+	</target>
+	
+	
     <!-- ================================================================= -->
     <!-- clean - Cleans build files and directories                        -->
     <!-- ================================================================= -->
 	<target name="clean" depends="init" description="cleans build files and directories">
 		<echo message="Delete dist, build, and checkout directories" />
 		<delete dir="${dir.dist}" />
+		<delete dir="${dir.build}" />
+
 <!--		<delete dir="${dir.checkout}" />  -->
 		
 		<!-- make directories -->
@@ -155,59 +137,5 @@
 	</target>
 
 	
-    <!-- ================================================================= -->
-    <!-- deploy - Deploy to tomcat                                         -->
-    <!-- ================================================================= -->
-	<target name="deploy" depends="build" description="deploy war to tomcat" if="isUnix">
-		<!-- stop tomcat -->
-		<antcall target="tomcat-stop" />
-		
-		<!-- remove old war from tomcat -->
-		<delete file="${dir.deploy}/${warfile}" />
-		
-		<!-- remove old war folder from tomcat -->
-		<delete includeemptydirs="true" failonerror="false">
-			<fileset dir="${dir.deploy}/${ant.project.name}" />
-		</delete>
-		
-		<!-- copy new war to tomcat -->
-		<copy file="${dir.dist}/${warfile}" tofile="${dir.deploy}/${warfile}" />
-		
-		<!-- start tomcat -->
-		<antcall target="tomcat-start" />
-	</target>
-
 	
-	<!-- ================================================================= -->
-    <!-- tomcat-start - Start tomcat                                       -->
-    <!-- ================================================================= -->
-        <target name="tomcat-start" depends="init" description="start tomcat">
-            <echo>---------------------------------------</echo>
-            <echo>- target - tomcat-start</echo>
-            <echo>-</echo>
-            <echo>- starting tomcat</echo>
-            <echo>---------------------------------------</echo>
-
-			<exec executable="${apache.tomcat}/bin/startup.sh" os="unix">
-			</exec>
-			<exec executable="${apache.tomcat}/bin/startup.bat" os="windows">
-			</exec>
-        </target>
-
-
-    <!-- ================================================================= -->
-    <!-- tomcat-stop - Stop tomcat                                         -->
-    <!-- ================================================================= -->
-        <target name="tomcat-stop" depends="init" description="stop tomcat">
-            <echo>---------------------------------------</echo>
-            <echo>- target - tomcat-stop</echo>
-            <echo>-</echo>
-            <echo>- stopping tomcat</echo>
-            <echo>---------------------------------------</echo>
-
-			<exec executable="${apache.tomcat}/bin/shutdown.sh" os="unix">
-			</exec>
-			<exec executable="${apache.tomcat}/bin/shutdown.bat" os="windows">
-			</exec>
-        </target>
 </project>
