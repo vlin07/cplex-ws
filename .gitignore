@@ -2,3 +2,6 @@ NCLEar
 svn.properties
 *.svn
 *.class
+NCL-WS/*.zip
+NCL-WS/dist/*
+NCL-WS/NCL-WS

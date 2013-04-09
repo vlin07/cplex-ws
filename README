@@ -1,0 +1,8 @@
+Build instructions
+
+1. Establish a working Java 1.6 development environment
+2. Create folders to hold the two jar files in lib (used below)
+3. Export 2 environment variables:
+        export OJDBC_HOME="$HOME/lib/java/oracle/ojdbc6"
+        export OPLALL_HOME="$HOME/lib/java/ibm/cplex"
+4. run `ant` from the NCL-WS directory.

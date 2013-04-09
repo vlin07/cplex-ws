@@ -5,137 +5,128 @@
      For windows:  "set SVN=C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe"         
      ================================================================= -->
 <project name="NCL-WS" default="buildEar" basedir=".">
-	<description>NCL Assisted Search WebService app</description>
+  <description>NCL Assisted Search WebService app</description>
+  <!-- ================================================================= -->
+  <!-- init - Initialize                                                 -->
+  <!-- ================================================================= -->
+  <target name="init" description="initialize">
+    <!-- set the ant timestamp -->
+    <tstamp/>
 
-	
-    <!-- ================================================================= -->
-    <!-- init - Initialize                                                 -->
-    <!-- ================================================================= -->
-	<target name="init" description="initialize">
-		<!-- set the ant timestamp -->
-	    <tstamp/>
+    <!-- determine if linux server or developer based windows -->
+    <condition property="isUnix">
+      <os family="unix" />
+    </condition>
+    <condition property="isWin">
+      <os family="windows" />
+    </condition>
 
-		<!-- determine if linux server or developer based windows -->
-		<condition property="isUnix">
-			<os family="unix" />
-		</condition>
-		<condition property="isWin">
-			<os family="windows" />
-		</condition>
+    <!-- Gets access to system environment, set env.* properties       -->
+    <property environment="env" />
 
-	    <!-- Gets access to system environment, set env.* properties       -->
-	    <property environment="env" />
+    <!-- get build properties from file -->
+    <property file="build.properties" />
 
-		<!-- get build properties from file -->
-	    <property file="build.properties" />
+    <!-- get deploy properties from file -->
+    <property file="deploy.properties" />
 
-		<!-- get deploy properties from file -->
-	    <property file="deploy.properties" />
+    <!-- temp dir.checkout	-->
+    <property name="dir.checkout"     value="${user.dir}" />
 
-<!-- temp dir.checkout	-->
-<property name="dir.checkout"     value="c://NCL-WS" />
+    <!-- set static property values -->
+    <property name="warfile"        value="NCL-WS.war" />
+    <property name="earfile"        value="NCLEar.ear" />
 
-		<!-- set static property values -->
-		<property name="warfile"        value="NCL-WS.war" />
-		<property name="earfile"        value="NCLEar.ear" />
-
-			
-		<property name="dir.webcontent" value="./WebContent" />
-		<property name="dir.src"        value="./src" />
-		<property name="dir.build"      value="./build" />
-		<property name="dir.dist"       value="./dist" />
+    <property name="dir.webcontent" value="./WebContent" />
+    <property name="dir.src"        value="./src" />
+    <property name="dir.build"      value="./build" />
+    <property name="dir.dist"       value="./dist" />
 		
+    <!-- set classpath -->
+    <path id="project.classpath" >
+      <fileset dir="${ant.home}/lib" >
+	<include name="ant.jar" />
+	<!-- <include name="ant-contrib-1.0b3.jar" /> -->
+      </fileset>
+      <fileset dir="${env.OJDBC_HOME}" >
+	<include name="*.jar" />
+      </fileset>
+      <fileset dir="${env.OPLALL_HOME}" >
+	<include name="*.jar" />
+      </fileset>
+    </path>
+
+    <!-- log property values -->
+    <echo message="Start logging property values..." />
+    <echo message="OJDBC_HOME             =[${env.OJDBC_HOME}]"/>
+    <echo message="OPLALL_HOME            =[${env.OPLALL_HOME}]"/>
+    <echo message="warfile                =[${warfile}]" />
+    <echo message="earfile                =[${earfile}]" />
+    <echo message="dir.webcontent         =[${dir.webcontent}]" />
+    <echo message="dir.src                =[${dir.src}]" />
+    <echo message="dir.build              =[${dir.build}]" />
+    <echo message="dir.checkout           =[${dir.checkout}]" />
+    <echo message="ant.home               =[${ant.home}]" />
+    <echo message="ant.project.name       =[${ant.project.name}]" />
+    <echo message="dir.tmp                =[${dir.tmp}]" />
+    <echo message="isUnix                 =[${isUnix}]" />
+    <echo message="isWin                  =[${isWin}]" />
+    <echo message="End logging property values..." />
+  </target>
+
+  <!-- ================================================================= -->
+  <!-- compile - compile Java
+       depends="checkout" -->
+  <!-- ================================================================= -->
+  <target name="compile" depends="init, clean" description="compiles Java code">
+    <javac destdir="${dir.build}/classes" debug="false" srcdir="${dir.src}">
+      <classpath refid="project.classpath"/>
+    </javac>
 		
+    <!-- copy properties -->
+    <!-- example (non-at this time)
+	 <copy file="${dir.src}/queries.properties" tofile="${dir.build}/classes/queries.properties" />
+    -->
+  </target>
+	
+  <!-- ================================================================= -->
+  <!-- build - Build war - http://ant.apache.org/manual/Tasks/war.html   -->
+  <!-- ================================================================= -->
+  <target name="buildWar" depends="compile" description="build war">
+    <war destfile="${dir.dist}/${warfile}" webxml="${dir.webcontent}/WEB-INF/web.xml">
+      <fileset dir="${dir.webcontent}" excludes="WEB-INF/classes/com/**" />
+      <classes dir="${dir.build}/classes"/>
+    </war>
 
-		<!-- set classpath -->
-		<path id="project.classpath" >
-			<fileset dir="${ant.home}/lib" >
-				<include name="ant.jar" />
-				<!-- <include name="ant-contrib-1.0b3.jar" /> -->
-			</fileset>
-			<fileset dir="Z:\USER-DATA\NCL\jars" >
-				<include name="*.jar" />
-			</fileset>
-		</path>
+    <!-- backup successful build -->
+    <copy todir="${dir.checkout}/dist">
+      <fileset dir="${dir.dist}" />
+    </copy>
+    <zip destfile="${ant.project.name}-${DSTAMP}-${TSTAMP}.zip" basedir="${dir.checkout}"
+	 description="Zip ${ant.project.name} before cleanup" />
+  </target>
 
-		<!-- log property values -->
-		<echo message="Start logging property values..." />
-		<echo message="warfile                =[${warfile}]" />
-		<echo message="earfile                =[${earfile}]" />
-		<echo message="dir.webcontent         =[${dir.webcontent}]" />
-		<echo message="dir.src                =[${dir.src}]" />
-		<echo message="dir.build              =[${dir.build}]" />
-		<echo message="dir.checkout           =[${dir.checkout}]" />
-		<echo message="ant.home               =[${ant.home}]" />
-		<echo message="ant.project.name       =[${ant.project.name}]" />
-		<echo message="dir.tmp                =[${dir.tmp}]" />
-		<echo message="isUnix                 =[${isUnix}]" />
-		<echo message="isWin                  =[${isWin}]" />
-		<echo message="End logging property values..." />
-	</target>
+  <!-- ================================================================= -->
+  <!-- buildEar - Build war - http://ant.apache.org/manual/Tasks/ear.html   -->
+  <!-- ================================================================= -->
+  <target name="buildEar" depends="buildWar" description="build ear" >
+    <ear destfile="${dir.dist}/${earfile}" appxml="${dir.webcontent}/META-INF/application.xml">
+      <fileset dir="${dir.dist}" includes="NCL-WS.war"/>
+    </ear>
+  </target>
+	
+  <!-- ================================================================= -->
+  <!-- clean - Cleans build files and directories                        -->
+  <!-- ================================================================= -->
+  <target name="clean" depends="init" description="cleans build files and directories">
+    <echo message="Delete dist, build, and checkout directories" />
+    <delete dir="${dir.dist}" />
+    <delete dir="${dir.build}" />
 
-	
-	
-    <!-- ================================================================= -->
-    <!-- compile - compile Java                                          
-    depends="checkout" -->
-    <!-- ================================================================= -->
-	<target name="compile" depends="init, clean" description="compiles Java code">
-		<javac destdir="${dir.build}/classes" debug="false" srcdir="${dir.src}">
-			<classpath refid="project.classpath"/>
-		</javac>
-		
-		<!-- copy properties -->
-			<!-- example (non-at this time)	
-				<copy file="${dir.src}/queries.properties" tofile="${dir.build}/classes/queries.properties" />
-			-->
-	</target>
-	
-	
-   <!-- ================================================================= -->
-    <!-- build - Build war - http://ant.apache.org/manual/Tasks/war.html   -->
-    <!-- ================================================================= -->
-	<target name="buildWar" depends="compile" description="build war">
-		<war destfile="${dir.dist}/${warfile}" webxml="${dir.webcontent}/WEB-INF/web.xml">
-			<fileset dir="${dir.webcontent}" excludes="WEB-INF/classes/com/**" />
-			<classes dir="${dir.build}/classes"/>
-		</war>
-		
-		<!-- backup successful build -->
-		<copy todir="${dir.checkout}/dist">
-			<fileset dir="${dir.dist}" />
-		</copy>
-		<zip destfile="${ant.project.name}-${DSTAMP}-${TSTAMP}.zip" basedir="${dir.checkout}" 
-			description="Zip ${ant.project.name} before cleanup" />
-	</target>
+    <!--		<delete dir="${dir.checkout}" />  -->
 
-	
-
-    <!-- ================================================================= -->
-    <!-- buildEar - Build war - http://ant.apache.org/manual/Tasks/ear.html   -->
-    <!-- ================================================================= -->
-	<target name="buildEar" depends="buildWar" description="build ear" >
-		<ear destfile="${dir.dist}/${earfile}" appxml="${dir.webcontent}/META-INF/application.xml">
-			<fileset dir="${dir.dist}" includes="NCL-WS.war"/>
-		</ear>
-	</target>
-	
-	
-    <!-- ================================================================= -->
-    <!-- clean - Cleans build files and directories                        -->
-    <!-- ================================================================= -->
-	<target name="clean" depends="init" description="cleans build files and directories">
-		<echo message="Delete dist, build, and checkout directories" />
-		<delete dir="${dir.dist}" />
-		<delete dir="${dir.build}" />
-
-<!--		<delete dir="${dir.checkout}" />  -->
-		
-		<!-- make directories -->
-		<mkdir dir="${dir.build}/classes" />
-		<mkdir dir="${dir.dist}" />
-	</target>
-
-	
-	
+    <!-- make directories -->
+    <mkdir dir="${dir.build}/classes" />
+    <mkdir dir="${dir.dist}" />
+  </target>
 </project>
