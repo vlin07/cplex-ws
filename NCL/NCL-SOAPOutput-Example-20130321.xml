@@ -1,0 +1,64 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Body>
+<ns2:GetAssistedSearchRecommendationResponse xmlns:ns2="http://services.ncl.com/schema">
+<cruisePackageRecommendation>
+  <sailID>sailid</sailID> 
+  <packageID>pkgid</packageID> 
+  <dateID>2013-03-20 00:00:00</dateID> 
+  <itineraryID>PEARL7MIANPIOCJCZMMIA</itineraryID> 
+  <destination>CARIBBEAN</destination> 
+  <roomType>IA</roomType> 
+  <meta>BALCONY</meta> 
+  <interestPrefContrib>0.0</interestPrefContrib> 
+  <accomodationPrefContrib>0.0</accomodationPrefContrib> 
+  <roomViolationValue>0.0</roomViolationValue> 
+  <thingsToDoViolationValue>0.2</thingsToDoViolationValue> 
+  <priceViolationValue>0.0</priceViolationValue> 
+  <dateViolationValue>0.0</dateViolationValue> 
+  <durationViolationValue>0.0</durationViolationValue> 
+  <destinationViolationValue>0.5</destinationViolationValue> 
+  <portViolationValue>0.0</portViolationValue> 
+  <drupalWeightContrib>1.9</drupalWeightContrib> 
+  <isRecommended>1</isRecommended> 
+  <pricePerGuest>459.0</pricePerGuest> 
+  </cruisePackageRecommendation>
+<cruisePackageRecommendation>
+  <sailID>sailid</sailID> 
+  <packageID>pkgid</packageID> 
+  <dateID>2013-03-30 00:00:00</dateID> 
+  <itineraryID>SPIRIT9BCNFNCSCTACEAGPBCN</itineraryID> 
+  <destination>EUROPE</destination> 
+  <roomType>I1</roomType> 
+  <meta>INTERIOR</meta> 
+  <interestPrefContrib>0.0</interestPrefContrib> 
+  <accomodationPrefContrib>0.0</accomodationPrefContrib> 
+  <roomViolationValue>0.2</roomViolationValue> 
+  <thingsToDoViolationValue>0.30000000000000004</thingsToDoViolationValue> 
+  <priceViolationValue>0.0</priceViolationValue> 
+  <dateViolationValue>0.0</dateViolationValue> 
+  <durationViolationValue>0.0</durationViolationValue> 
+  <destinationViolationValue>0.5</destinationViolationValue> 
+  <portViolationValue>0.0</portViolationValue> 
+  <drupalWeightContrib>0.7</drupalWeightContrib> 
+  <isRecommended>1</isRecommended> 
+  <pricePerGuest>199.0</pricePerGuest> 
+  </cruisePackageRecommendation>
+<constraintViolation>
+  <packageLimitViolation>0.0</packageLimitViolation> 
+  <thingsToDoLimitViolation>0.0</thingsToDoLimitViolation> 
+  <destinationViolation>0.0</destinationViolation> 
+  <roomTypeLimitViolation>0.0</roomTypeLimitViolation> 
+  <itineraryUniquenessViolation>1.0</itineraryUniquenessViolation> 
+  </constraintViolation>
+  <!--  START MOCKUP BLOCK - NO ACTUAL DATA AVAIL -->
+			<thingsToDoRecommendation>
+				<thingsToDoID>ttID99</thingsToDoID>
+				<interestID>int999</interestID>
+				<interestPrefContrib>1.0</interestPrefContrib>
+				<drupalWeightContrib>99.0</drupalWeightContrib>
+				<isRecommended>false</isRecommended>
+			</thingsToDoRecommendation>  
+  <!--  END MOCKUP BLOCK - NO ACTUAL DATA AVAIL -->
+  </ns2:GetAssistedSearchRecommendationResponse>
+  </soapenv:Body>
+  </soapenv:Envelope>

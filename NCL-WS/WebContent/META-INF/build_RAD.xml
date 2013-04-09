@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="NCL-WS Ant" default="Total" basedir=".">
+
+	<!-- Set global properties -->
+	<property name="work.dir" value="C:\IBM\WCDE_ENT70\workspace\NCL-WS" />
+	<property name="dist" value="${work.dir}/dist" />
+	<property name="project.ear" value="NCLEar" />
+	<property name="project.war" value="NCL-WS" />
+	<property name="type" value="incremental" />
+	<property name="debug" value="true" />
+	<property name="source" value="true" />
+	<property name="meta" value="false" />
+	<property name="noValidate" value="false" />
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the dist directory where the output files are placed -->
+		<mkdir dir="${dist}" />
+	</target>
+
+	<target name="info">
+		<!-- Displays the properties for this run -->
+		<echo message="debug=${debug}" />
+		<echo message="type=${type}" />
+		<echo message="source=${source}" />
+		<echo message="meta=${meta}" />
+		<echo message="noValidate=${noValidate}" />
+		<echo message="Output directory=${dist}" />
+		<echo message="project.ear=${project.ear}" />
+		<echo message="project.ejb=${project.ejb}" />
+		<echo message="project.war=${project.war}" />
+	</target>
+
+	<target name="buildWar">
+		<!-- Builds the WAR project -->
+		<projectBuild ProjectName="${project.war}" BuildType="${type}" DebugCompilation="${debug}" />
+	</target>
+	
+	<target name="buildEar">
+		<!-- Builds the EAR project -->
+		<projectBuild ProjectName="${project.ear}" BuildType="${type}" DebugCompilation="${debug}" />
+	</target>
+
+	<target name="exportWar" depends="init">
+		<!-- Exports the WAR file -->
+		<warExport warprojectname="${project.war}" warexportfile="${dist}/${project.war}.war" exportsource="${source}" overwrite="true" />
+	</target>
+	
+	<target name="exportEar" depends="init">
+		<!-- Exports the EAR file -->
+		<echo message="Exported EAR files to ${dist}/${project.ear}.ear" />
+		<earExport earprojectname="${project.ear}" earexportfile="${dist}/${project.ear}.ear" exportsource="${source}" IncludeProjectMetaFiles="${meta}" overwrite="true" />
+	</target>
+
+	<target name="buildAll" depends="buildWar,buildEar">
+		<!-- Builds all projects -->
+		<echo message="Built all projects" />
+	</target>
+
+	<target name="exportAll" depends="exportWar,exportEar">
+		<!-- Exports all files -->
+		<echo message="Exported all files" />
+	</target>
+
+	<target name="Total" depends="buildAll,exportAll">
+		<!-- Build all projects and exports all files -->
+		<echo message="Total finished" />
+	</target>
+
+	<target name="clean">
+		<!-- Delete the output files -->
+		<delete file="${dist}/${project.war}.war" failonerror="false" />
+		<delete file="${dist}/${project.ear}.ear" failonerror="false" />
+	</target>
+
+</project>

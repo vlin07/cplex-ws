@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:ncl="http://assisted-search.ncl.com/services/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsdncl="http://assisted-search.ncl.com/messages" 
+	targetNamespace="http://assisted-search.ncl.com/services/"
+	name="AssistedSearchServices" >
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			
+		<!-- START INLINE XSD -->			
+			
+		<xsd:import namespace="http://assisted-search.ncl.com/messages" schemaLocation="NCL-AssistedSearch.xsd" />
+	
+		<!-- END INLINE XSD -->			
+			
+  		</xsd:schema>
+  </wsdl:types>
+		
+
+	<wsdl:message name="GetAssistedSearchRecommendationRequest">
+		<wsdl:part element="xsdncl:GetAssistedSearchRecommendation"
+			name="GetAssistedSearchRecommendation" />
+	</wsdl:message>
+
+	<wsdl:message name="GetAssistedSearchRecommendationResponse">
+		<wsdl:part element="xsdncl:GetAssistedSearchRecommendationResponse"
+			name="GetAssistedSearchRecommendationResponse" />
+	</wsdl:message>
+	
+	
+  <wsdl:portType name="AssistedSearchServicesPortType">
+  	<wsdl:operation name="GetAssistedSearchRecommendations">
+  		<wsdl:input message="ncl:GetAssistedSearchRecommendationRequest" name="GetAssistedSearchRecommendationRequest" />
+  		<wsdl:output message="ncl:GetAssistedSearchRecommendationResponse"  name="GetAssistedSearchRecommendationResponse" />
+  	</wsdl:operation>
+  </wsdl:portType>
+  
+  
+  <wsdl:binding name="AssistedSearchServicesSOAP" type="ncl:AssistedSearchServicesPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetAssistedSearchRecommendations">
+      <soap:operation soapAction="http://assisted-search.ncl.com/services/AssistedSearchServices/GetAssistedSearchRecommendations"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  
+  <wsdl:service name="AssistedSearchServices">
+    <wsdl:port binding="ncl:AssistedSearchServicesSOAP" name="AssistedSearchServicesSOAP">
+      <soap:address location="http://assisted-search.ncl.com/services"/>
+    </wsdl:port>
+  </wsdl:service>
+
+  		</wsdl:definitions>
+  

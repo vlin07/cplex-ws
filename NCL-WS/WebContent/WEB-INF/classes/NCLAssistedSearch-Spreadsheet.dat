@@ -1,0 +1,26 @@
+/*********************************************
+ * OPL 12.4 Data
+ * Author: Chuck
+ * Creation Date: Dec 18, 2012 at 1:13:20 PM
+ *********************************************/
+
+
+
+SheetConnection InputSheet("NCL_CPLEX_API_InputData.xlsx");
+
+WB7 = 10000;
+WB8 = 1;
+
+ConstraintViolationUpperBound = 0.0;
+
+Input_CruisePackage from SheetRead(InputSheet,"'CruisePackage'!A3:N153");					 
+Input_Itinerary from SheetRead(InputSheet,"'Itinerary'!A3:B122");
+Input_ThingsToDo from SheetRead(InputSheet,"'ThingsToDo'!A3:B718");
+Input_Parameters from SheetRead(InputSheet,"'Parameters'!A3:L3");
+Input_ItinerarySimilarity from SheetRead(InputSheet,"'ItinerarySimilarity'!A3:C58");				   
+Input_InterestThingsToDo from SheetRead(InputSheet,"'InterestThingsToDo'!A3:G13");	
+Input_RecommendationRequestLimit from SheetRead(InputSheet,"'RecommendationRequestLimit'!A3:D3");
+
+			   
+//SheetConnection OutputSheet("NCL_CPLEX_API_OutputData.xlsx");
+						

@@ -1,0 +1,1957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:uml="http://www.eclipse.org/uml2/2.1.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_l7OSUJY0EeKir9DieLrzpA" type="Class" name="WebService-Design.dnx">
+  <eAnnotations xmi:id="_l7OSUZY0EeKir9DieLrzpA" source="com.ibm.xtools.common.ui.reduction.editingCapabilities">
+    <details xmi:id="_l7OSUpY0EeKir9DieLrzpA" key="com.ibm.xtools.viz.java.webservice.capability" value="1"/>
+    <details xmi:id="_l7OSU5Y0EeKir9DieLrzpA" key="com.ibm.xtools.viz.webservice.capabilty" value="1"/>
+    <details xmi:id="_l7OSVJY0EeKir9DieLrzpA" key="com.ibm.xtools.activities.javaVisualizerActivity" value="1"/>
+  </eAnnotations>
+  <children xmi:id="_l7OSVZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSVpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSV5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSWJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSWZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSWpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSW5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSXJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSXZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSXpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSX5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSYJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSYZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OSYpY0EeKir9DieLrzpA" x="157232" y="6023"/>
+  </children>
+  <children xmi:id="_l7OSY5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSZJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSZZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSZpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSZ5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSaJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSaZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSapY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSa5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSbJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSbZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSbpY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSb5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OScJY0EeKir9DieLrzpA" x="62766" y="951"/>
+  </children>
+  <children xmi:id="_l7OScZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OScpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSc5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSdJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSdZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSdpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSd5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSeJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSeZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSepY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSe5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSfJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSfZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=itinerarySimilarity%5Bjcu%5Ename=itinerarySimilarity.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OSfpY0EeKir9DieLrzpA" x="61498" y="8559"/>
+  </children>
+  <children xmi:id="_l7OSf5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSgJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSgZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSgpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSg5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OShJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OShZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OShpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSh5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSiJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSiZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSipY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSi5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=SailDateRange%5Bjcu%5Ename=SailDateRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OSjJY0EeKir9DieLrzpA" x="2536" y="8559"/>
+  </children>
+  <children xmi:id="_l7OSjZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSjpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSj5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSkJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSkZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSkpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSk5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSlJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSlZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSlpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSl5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSmJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSmZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=FlexDatesSet%5Bjcu%5Ename=FlexDatesSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OSmpY0EeKir9DieLrzpA" x="52305" y="6023"/>
+  </children>
+  <children xmi:id="_l7OSm5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSnJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSnZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSnpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSn5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSoJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSoZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSopY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSo5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSpJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSpZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSppY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSp5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OSqJY0EeKir9DieLrzpA" x="165474" y="6023"/>
+  </children>
+  <children xmi:id="_l7OSqZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSqpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSq5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSrJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSrZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSrpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSr5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSsJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSsZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSspY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSs5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OStJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OStZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CruisePackage%5Bjcu%5Ename=CruisePackage.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OStpY0EeKir9DieLrzpA" x="66887" y="8559"/>
+  </children>
+  <children xmi:id="_l7OSt5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSuJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSuZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSupY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSu5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSvJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSvZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSvpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSv5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSwJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSwZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSwpY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OSw5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OSxJY0EeKir9DieLrzpA" x="70691" y="6023"/>
+  </children>
+  <children xmi:id="_l7OSxZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OSxpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OSx5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OSyJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OSyZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OSypY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OSy5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSzJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSzZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OSzpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OSz5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS0JY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OS0ZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ItinerarySet%5Bjcu%5Ename=ItinerarySet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OS0pY0EeKir9DieLrzpA" x="141382" y="6023"/>
+  </children>
+  <children xmi:id="_l7OS05Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OS1JY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OS1ZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OS1pY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OS15Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OS2JY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OS2ZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS2pY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OS25Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS3JY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OS3ZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS3pY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OS35Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DeparturePortSet%5Bjcu%5Ename=DeparturePortSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OS4JY0EeKir9DieLrzpA" x="62766" y="6023"/>
+  </children>
+  <children xmi:id="_l7OS4ZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OS4pY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OS45Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OS5JY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OS5ZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OS5pY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OS55Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS6JY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OS6ZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS6pY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OS65Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS7JY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OS7ZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ExactDatesSet%5Bjcu%5Ename=ExactDatesSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OS7pY0EeKir9DieLrzpA" x="27896" y="951"/>
+  </children>
+  <children xmi:id="_l7OS75Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OS8JY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OS8ZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OS8pY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OS85Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OS9JY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OS9ZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS9pY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OS95Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS-JY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OS-ZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OS-pY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OS-5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=AccommodationPreference%5Bjcu%5Ename=AccommodationPreference.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OS_JY0EeKir9DieLrzpA" x="7291" y="8559"/>
+  </children>
+  <children xmi:id="_l7OS_ZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OS_pY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OS_5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTAJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTAZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTApY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTA5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTBJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTBZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTBpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTB5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTCJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTCZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=Parameters%5Bjcu%5Ename=Parameters.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTCpY0EeKir9DieLrzpA" x="71642" y="8559"/>
+  </children>
+  <children xmi:id="_l7OTC5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTDJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTDZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTDpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTD5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTEJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTEZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTEpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTE5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTFJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTFZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTFpY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTF5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=RecommReqLimitSet%5Bjcu%5Ename=RecommReqLimitSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTGJY0EeKir9DieLrzpA" x="77348" y="6023"/>
+  </children>
+  <children xmi:id="_l7OTGZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTGpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTG5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTHJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTHZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTHpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTH5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTIJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTIZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTIpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTI5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTJJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTJZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTJpY0EeKir9DieLrzpA" x="106512" y="3487"/>
+  </children>
+  <children xmi:id="_l7OTJ5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTKJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTKZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTKpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTK5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTLJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTLZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTLpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTL5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTMJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTMZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTMpY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTM5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ThingsToDo%5Bjcu%5Ename=ThingsToDo.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTNJY0EeKir9DieLrzpA" x="76080" y="8559"/>
+  </children>
+  <children xmi:id="_l7OTNZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTNpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTN5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTOJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTOZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTOpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTO5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTPJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTPZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTPpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTP5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTQJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTQZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ThingToDoSet%5Bjcu%5Ename=ThingToDoSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTQpY0EeKir9DieLrzpA" x="85273" y="6023"/>
+  </children>
+  <children xmi:id="_l7OTQ5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTRJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTRZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTRpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTR5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTSJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTSZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTSpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTS5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTTJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTTZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTTpY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTT5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DurationRange%5Bjcu%5Ename=DurationRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTUJY0EeKir9DieLrzpA" x="14265" y="8559"/>
+  </children>
+  <children xmi:id="_l7OTUZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTUpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTU5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTVJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTVZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTVpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTV5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTWJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTWZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTWpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTW5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTXJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTXZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTXpY0EeKir9DieLrzpA" x="42795" y="8559"/>
+  </children>
+  <children xmi:id="_l7OTX5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTYJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTYZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTYpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTY5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTZJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTZZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTZpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTZ5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTaJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTaZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTapY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTa5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=PriceRangeSet%5Bjcu%5Ename=PriceRangeSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTbJY0EeKir9DieLrzpA" x="93198" y="6023"/>
+  </children>
+  <children xmi:id="_l7OTbZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTbpY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTb5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTcJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTcZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTcpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTc5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTdJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTdZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTdpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTd5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTeJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTeZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CruisePackagePrice%5Bjcu%5Ename=CruisePackagePrice.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTepY0EeKir9DieLrzpA" x="93515" y="951"/>
+  </children>
+  <children xmi:id="_l7OTe5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTfJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTfZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTfpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTf5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTgJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTgZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTgpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTg5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OThJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OThZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OThpY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTh5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTiJY0EeKir9DieLrzpA" x="122362" y="951"/>
+  </children>
+  <children xmi:id="_l7OTiZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTipY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTi5Y0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTjJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTjZY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTjpY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTj5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTkJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTkZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTkpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTk5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTlJY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTlZY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DurationSet%5Bjcu%5Ename=DurationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTlpY0EeKir9DieLrzpA" x="101123" y="6023"/>
+  </children>
+  <children xmi:id="_l7OTl5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTmJY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTmZY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTmpY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTm5Y0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTnJY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTnZY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTnpY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTn5Y0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OToJY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OToZY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTopY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTo5Y0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=InterestThingsToDo%5Bjcu%5Ename=InterestThingsToDo.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTpJY0EeKir9DieLrzpA" x="80518" y="8559"/>
+  </children>
+  <children xmi:id="_l7OTpZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTppY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTp5Y0EeKir9DieLrzpA" width="530" height="530"/>
+    </children>
+    <children xmi:id="_l7OTqJY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTqZY0EeKir9DieLrzpA" type="Kind"/>
+    <children xmi:id="_l7OTqpY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTq5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTrJY0EeKir9DieLrzpA" visible="false" type="AttributeCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTrZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTrpY0EeKir9DieLrzpA" visible="false" type="OperationCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTr5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTsJY0EeKir9DieLrzpA" visible="false" type="SignalCompartment">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTsZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLClassifierStyle" xmi:id="_l7OTspY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label" useClassifierShape="true"/>
+    <element xmi:type="uml:Interface" href="mmi:///#jsrctype%5Ename=AssistedSearchServicesPortType%5Bjcu%5Ename=AssistedSearchServicesPortType.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Interface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTs5Y0EeKir9DieLrzpA" x="128702" y="951"/>
+  </children>
+  <children xmi:id="_l7OTtJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTtZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTtpY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTt5Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTuJY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTuZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTupY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTu5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTvJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTvZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTvpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTv5Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTwJY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTwZY0EeKir9DieLrzpA" x="173399" y="6023"/>
+  </children>
+  <children xmi:id="_l7OTwpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OTw5Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OTxJY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OTxZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OTxpY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OTx5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OTyJY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTyZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTypY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTy5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OTzJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OTzZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OTzpY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=InterestSet%5Bjcu%5Ename=InterestSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OTz5Y0EeKir9DieLrzpA" x="109365" y="6023"/>
+  </children>
+  <children xmi:id="_l7OT0JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OT0ZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OT0pY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OT05Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OT1JY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OT1ZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OT1pY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT15Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OT2JY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT2ZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OT2pY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT25Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OT3JY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=OptimizationResponseData%5Bjcu%5Ename=OptimizationResponseData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OT3ZY0EeKir9DieLrzpA" x="38357" y="6023"/>
+  </children>
+  <children xmi:id="_l7OT3pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OT35Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OT4JY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OT4ZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OT4pY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OT45Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OT5JY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT5ZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OT5pY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT55Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OT6JY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT6ZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OT6pY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OT65Y0EeKir9DieLrzpA" x="48501" y="8559"/>
+  </children>
+  <children xmi:id="_l7OT7JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OT7ZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OT7pY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OT75Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OT8JY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OT8ZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OT8pY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT85Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OT9JY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT9ZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OT9pY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OT95Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OT-JY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=RecommendationRequestLimit%5Bjcu%5Ename=RecommendationRequestLimit.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OT-ZY0EeKir9DieLrzpA" x="28213" y="8559"/>
+  </children>
+  <children xmi:id="_l7OT-pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OT-5Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OT_JY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OT_ZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OT_pY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OT_5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUAJY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUAZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUApY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUA5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUBJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUBZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUBpY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DiscTypes%5Bjcu%5Ename=DiscTypes.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUB5Y0EeKir9DieLrzpA" x="117290" y="6023"/>
+  </children>
+  <children xmi:id="_l7OUCJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUCZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUCpY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUC5Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUDJY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUDZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUDpY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUD5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUEJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUEZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUEpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUE5Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUFJY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=PriceRange%5Bjcu%5Ename=PriceRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUFZY0EeKir9DieLrzpA" x="19337" y="8559"/>
+  </children>
+  <children xmi:id="_l7OUFpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUF5Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUGJY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUGZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUGpY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUG5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUHJY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUHZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUHpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUH5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUIJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUIZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUIpY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=DestinationSet%5Bjcu%5Ename=DestinationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUI5Y0EeKir9DieLrzpA" x="125215" y="6023"/>
+  </children>
+  <children xmi:id="_l7OUJJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUJZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUJpY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUJ5Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUKJY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUKZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUKpY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUK5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OULJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OULZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OULpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUL5Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUMJY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUMZY0EeKir9DieLrzpA" x="148039" y="3487"/>
+  </children>
+  <children xmi:id="_l7OUMpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUM5Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUNJY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUNZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUNpY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUN5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUOJY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUOZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUOpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUO5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUPJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUPZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUPpY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=AccomodationSet%5Bjcu%5Ename=AccomodationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUP5Y0EeKir9DieLrzpA" x="133140" y="6023"/>
+  </children>
+  <children xmi:id="_l7OUQJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUQZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUQpY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUQ5Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OURJY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OURZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OURpY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUR5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUSJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUSZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUSpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUS5Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUTJY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUTZY0EeKir9DieLrzpA" x="35504" y="8559"/>
+  </children>
+  <children xmi:id="_l7OUTpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUT5Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUUJY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUUZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUUpY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUU5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUVJY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUVZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUVpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUV5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUWJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUWZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUWpY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=UserWeight%5Bjcu%5Ename=UserWeight.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUW5Y0EeKir9DieLrzpA" x="23458" y="8559"/>
+  </children>
+  <children xmi:id="_l7OUXJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUXZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUXpY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUX5Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUYJY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUYZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUYpY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUY5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUZJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUZZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUZpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUZ5Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUaJY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUaZY0EeKir9DieLrzpA" x="22190" y="3487"/>
+  </children>
+  <children xmi:id="_l7OUapY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUa5Y0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUbJY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUbZY0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUbpY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUb5Y0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUcJY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUcZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUcpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUc5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUdJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUdZY0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUdpY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=UserWeightSet%5Bjcu%5Ename=UserWeightSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUd5Y0EeKir9DieLrzpA" x="149307" y="6023"/>
+  </children>
+  <children xmi:id="_l7OUeJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUeZY0EeKir9DieLrzpA" type="ImageCompartment">
+      <layoutConstraint xmi:type="notation:Size" xmi:id="_l7OUepY0EeKir9DieLrzpA" width="1320" height="1320"/>
+    </children>
+    <children xmi:id="_l7OUe5Y0EeKir9DieLrzpA" type="Stereotype"/>
+    <children xmi:id="_l7OUfJY0EeKir9DieLrzpA" type="Name"/>
+    <children xmi:id="_l7OUfZY0EeKir9DieLrzpA" type="Parent"/>
+    <children xmi:id="_l7OUfpY0EeKir9DieLrzpA" visible="false" type="ANNOTATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUf5Y0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUgJY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_ATTRIBUTE_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUgZY0EeKir9DieLrzpA"/>
+    </children>
+    <children xmi:id="_l7OUgpY0EeKir9DieLrzpA" visible="false" type="ANNOTATED_OPERATION_COMPARTMENT">
+      <styles xmi:type="umlnotation:UMLListCompartmentStyle" xmi:id="_l7OUg5Y0EeKir9DieLrzpA"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_l7OUhJY0EeKir9DieLrzpA" fontName="Segoe UI" showStereotype="Label"/>
+    <element xmi:type="uml:Class" href="mmi:///#jsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D$uml.Class"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUhZY0EeKir9DieLrzpA" x="15216" y="6023"/>
+  </children>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_l7OUhpY0EeKir9DieLrzpA"/>
+  <element xsi:nil="true"/>
+  <edges xmi:id="_l7OUh5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTQ5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUiJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUiZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUipY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUi5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUjJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUjZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DurationRange%5Bjcu%5Ename=DurationRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUjpY0EeKir9DieLrzpA" points="[0, 0, 48149, -6866]$[-52740, 1586, -4591, -5280]$[-57502, 4226, -9353, -2640]$[-57502, 5279, -9353, -1587]$[-48148, 6866, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUj5Y0EeKir9DieLrzpA" id="(0.10705476,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUkJY0EeKir9DieLrzpA" id="(0.32259017,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUkZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTC5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUkpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUk5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUlJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUlZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUlpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUl5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommReqLimitSet%5Bjcu%5Ename=RecommReqLimitSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUmJY0EeKir9DieLrzpA" points="[0, 0, -14364, -4226]$[14365, 1586, 1, -2640]$[14365, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUmZY0EeKir9DieLrzpA" id="(0.533136,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUmpY0EeKir9DieLrzpA" id="(0.49984437,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUm5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUCJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUnJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUnZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUnpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUn5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUoJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUoZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=PriceRange%5Bjcu%5Ename=PriceRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUopY0EeKir9DieLrzpA" points="[0, 0, 43782, -6866]$[-45712, 1586, -1930, -5280]$[-50576, 4226, -6794, -2640]$[-50576, 5279, -6794, -1587]$[-43782, 6866, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUo5Y0EeKir9DieLrzpA" id="(0.14273968,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUpJY0EeKir9DieLrzpA" id="(0.24982308,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUpZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUFpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUppY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUp5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUqJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUqZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUqpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUq5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DestinationSet%5Bjcu%5Ename=DestinationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUrJY0EeKir9DieLrzpA" points="[1, 0, -58877, -4226]$[49890, 1586, -8988, -2640]$[49892, 2639, -8986, -1587]$[58878, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUrZY0EeKir9DieLrzpA" id="(0.76648575,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUrpY0EeKir9DieLrzpA" id="(0.16666667,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUr5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUQJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUsJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUsZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUspY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUs5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUtJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUtZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUtpY0EeKir9DieLrzpA" points="[1, 0, 23844, -6866]$[-17100, 1586, 6743, -5280]$[-17102, 5279, 6741, -1587]$[-23842, 6866, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUt5Y0EeKir9DieLrzpA" id="(0.35701364,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUuJY0EeKir9DieLrzpA" id="(0.96590906,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUuZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTUZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUupY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUu5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUvJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUvZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUvpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUv5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUwJY0EeKir9DieLrzpA" points="[1, 0, 19300, -6866]$[-11686, 1586, 7613, -5280]$[-14936, 4226, 4363, -2640]$[-14938, 5279, 4361, -1587]$[-19299, 6866, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUwZY0EeKir9DieLrzpA" id="(0.39269856,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUwpY0EeKir9DieLrzpA" id="(0.75,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUw5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUapY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUxJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUxZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OUxpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OUx5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OUyJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OUyZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserWeightSet%5Bjcu%5Ename=UserWeightSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OUypY0EeKir9DieLrzpA" points="[0, 0, -84649, -4226]$[61388, 1586, -23261, -2640]$[61390, 2639, -23259, -1587]$[84649, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUy5Y0EeKir9DieLrzpA" id="(0.8332511,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OUzJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OUzZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTGZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OUzpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OUz5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OU0JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OU0ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OU0pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OU05Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OU1JY0EeKir9DieLrzpA" points="[1, 0, -41404, -1586]$[41405, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU1ZY0EeKir9DieLrzpA" id="(0.73326755,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU1pY0EeKir9DieLrzpA" id="(0.25,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OU15Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OT7JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OU2JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OU2ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OU2pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OU25Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OU3JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OU3ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommendationRequestLimit%5Bjcu%5Ename=RecommendationRequestLimit.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OU3pY0EeKir9DieLrzpA" points="[0, 0, 32985, -6866]$[-21429, 1586, 11556, -5280]$[-30551, 4226, 2434, -2640]$[-30553, 5279, 2432, -1587]$[-32985, 6866, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU35Y0EeKir9DieLrzpA" id="(0.28564382,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU4JY0EeKir9DieLrzpA" id="(0.59996516,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OU4ZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTwpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OU4pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OU45Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OU5JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OU5ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OU5pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OU55Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=InterestSet%5Bjcu%5Ename=InterestSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OU6JY0EeKir9DieLrzpA" points="[0, 0, -43995, -4226]$[30447, 1586, -13548, -2640]$[30449, 2639, -13546, -1587]$[43996, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU6ZY0EeKir9DieLrzpA" id="(0.66650224,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU6pY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OU65Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OSjZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OU7JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OU7ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OU7pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OU75Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OU8JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OU8ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=FlexDatesSet%5Bjcu%5Ename=FlexDatesSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OU8pY0EeKir9DieLrzpA" points="[0, 0, 9523, -4226]$[-9523, 1586, 0, -2640]$[-9523, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU85Y0EeKir9DieLrzpA" id="(0.4283835,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU9JY0EeKir9DieLrzpA" id="(0.56769377,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OU9ZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OT3pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OU9pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OU95Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OU-JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OU-ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OU-pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OU-5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OU_JY0EeKir9DieLrzpA" points="[0, 0, 13014, -6866]$[-2162, 1586, 10852, -5280]$[-4978, 4226, 8036, -2640]$[-4980, 5279, 8034, -1587]$[-13014, 6866, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU_ZY0EeKir9DieLrzpA" id="(0.4640684,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OU_pY0EeKir9DieLrzpA" id="(0.7498643,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OU_5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OSm5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVAJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVAZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVApY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVA5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVBJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVBZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVBpY0EeKir9DieLrzpA" points="[1, 0, -98660, -4226]$[70508, 1586, -28153, -2640]$[70510, 2639, -28151, -1587]$[98662, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVB5Y0EeKir9DieLrzpA" id="(0.899852,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVCJY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVCZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OS05Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVCpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVC5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVDJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVDZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVDpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVD5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeparturePortSet%5Bjcu%5Ename=DeparturePortSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVEJY0EeKir9DieLrzpA" points="[1, 0, 0, -4226]$[1, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVEZY0EeKir9DieLrzpA" id="(0.49991778,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVEpY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVE5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUeJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVFJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVFZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVFpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVF5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVGJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVGZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVGpY0EeKir9DieLrzpA" points="[1, 0, 47930, -4226]$[-43547, 1586, 4382, -2640]$[-47929, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVG5Y0EeKir9DieLrzpA" id="(0.1784246,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVHJY0EeKir9DieLrzpA" id="(0.33320713,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVHZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OS75Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVHpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVH5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVIJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVIZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVIpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVI5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=AccommodationPreference%5Bjcu%5Ename=AccommodationPreference.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVJJY0EeKir9DieLrzpA" points="[0, 0, 54182, -6866]$[-59666, 1586, -5484, -5280]$[-59666, 5279, -5484, -1587]$[-54182, 6866, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVJZY0EeKir9DieLrzpA" id="(0.07136984,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVJpY0EeKir9DieLrzpA" id="(0.31715706,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVJ5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OT-pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVKJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVKZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVKpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVK5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVLJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVLZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiscTypes%5Bjcu%5Ename=DiscTypes.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVLpY0EeKir9DieLrzpA" points="[0, 0, -51804, -4226]$[35006, 1586, -16798, -2640]$[35008, 2639, -16796, -1587]$[51805, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVL5Y0EeKir9DieLrzpA" id="(0.6998849,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVMJY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVMZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OT0JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVMpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVM5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVNJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVNZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVNpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVN5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=OptimizationResponseData%5Bjcu%5Ename=OptimizationResponseData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVOJY0EeKir9DieLrzpA" points="[0, 0, 22968, -4226]$[-19265, 1586, 3703, -2640]$[-22968, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVOZY0EeKir9DieLrzpA" id="(0.32132873,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVOpY0EeKir9DieLrzpA" id="(0.66653734,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVO5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUMpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVPJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVPZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVPpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVP5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVQJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVQZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=AccomodationSet%5Bjcu%5Ename=AccomodationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVQpY0EeKir9DieLrzpA" points="[0, 0, -68828, -4226]$[54448, 1586, -14380, -2640]$[54450, 2639, -14378, -1587]$[68828, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVQ5Y0EeKir9DieLrzpA" id="(0.79986846,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVRJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVRZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OSVZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVRpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVR5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVSJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVSZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVSpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVS5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVTJY0EeKir9DieLrzpA" points="[1, 0, -90850, -4226]$[65948, 1586, -24903, -2640]$[65950, 2639, -24901, -1587]$[90852, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVTZY0EeKir9DieLrzpA" id="(0.8666338,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVTpY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVT5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OSf5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVUJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVUZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVUpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVU5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVVJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVVZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=SailDateRange%5Bjcu%5Ename=SailDateRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVVpY0EeKir9DieLrzpA" points="[0, 0, 59689, -6866]$[-61830, 1586, -2141, -5280]$[-61830, 5279, -2141, -1587]$[-59689, 6866, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVV5Y0EeKir9DieLrzpA" id="(0.03568492,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVWJY0EeKir9DieLrzpA" id="(0.24977294,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVWZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUTpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVWpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVW5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVXJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVXZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVXpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVX5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserWeight%5Bjcu%5Ename=UserWeight.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVYJY0EeKir9DieLrzpA" points="[1, 0, 38829, -6866]$[-32714, 1586, 6114, -5280]$[-35095, 4226, 3733, -2640]$[-35097, 5279, 3731, -1587]$[-38827, 6866, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVYZY0EeKir9DieLrzpA" id="(0.24995889,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVYpY0EeKir9DieLrzpA" id="(0.6480218,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVY5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTiZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVZJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVZZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVZpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVZ5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVaJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVaZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DurationSet%5Bjcu%5Ename=DurationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVapY0EeKir9DieLrzpA" points="[1, 0, -36188, -4226]$[25308, 1586, -10881, -2640]$[25891, 2639, -10298, -1587]$[36189, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVa5Y0EeKir9DieLrzpA" id="(0.6331195,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVbJY0EeKir9DieLrzpA" id="(0.2500778,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVbZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTNZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVbpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVb5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVcJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVcZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVcpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVc5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingToDoSet%5Bjcu%5Ename=ThingToDoSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVdJY0EeKir9DieLrzpA" points="[1, 0, -20567, -4226]$[16544, 1586, -4024, -2640]$[20569, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVdZY0EeKir9DieLrzpA" id="(0.56651866,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVdpY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVd5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTX5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVeJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVeZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVepY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVe5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVfJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVfZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=PriceRangeSet%5Bjcu%5Ename=PriceRangeSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVfpY0EeKir9DieLrzpA" points="[1, 0, -28376, -4226]$[23129, 1586, -5248, -2640]$[23131, 2639, -5246, -1587]$[28378, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVf5Y0EeKir9DieLrzpA" id="(0.5999013,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVgJY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVgZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUXJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVgpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVg5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVhJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVhZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVhpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVh5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OViJY0EeKir9DieLrzpA" points="[0, 0, 39641, -1586]$[-39641, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OViZY0EeKir9DieLrzpA" id="(0.21410953,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVipY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVi5Y0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OUJJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVjJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVjZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVjpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVj5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVkJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVkZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVkpY0EeKir9DieLrzpA" points="[0, 0, -81464, -1586]$[81464, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVk5Y0EeKir9DieLrzpA" id="(0.96661735,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVlJY0EeKir9DieLrzpA" id="(0.25,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVlZY0EeKir9DieLrzpA" source="_l7OSY5Y0EeKir9DieLrzpA" target="_l7OTtJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVlpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVl5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVmJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVmZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVmpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVm5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesSOAPImpl%5Bjcu%5Ename=AssistedSearchServicesSOAPImpl.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVnJY0EeKir9DieLrzpA" points="[0, 0, -106469, -4226]$[75066, 1586, -31403, -2640]$[75068, 2639, -31401, -1587]$[106470, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVnZY0EeKir9DieLrzpA" id="(0.9332347,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVnpY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVn5Y0EeKir9DieLrzpA" source="_l7OSt5Y0EeKir9DieLrzpA" target="_l7OT7JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVoJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVoZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVopY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVo5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVpJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVpZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommendationRequestLimit%5Bjcu%5Ename=RecommendationRequestLimit.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVppY0EeKir9DieLrzpA" points="[0, 0, 38562, -1586]$[-38561, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVp5Y0EeKir9DieLrzpA" id="(0.1249497,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVqJY0EeKir9DieLrzpA" id="(0.7998954,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVqZY0EeKir9DieLrzpA" source="_l7OSt5Y0EeKir9DieLrzpA" target="_l7OS_ZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVqpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVq5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVrJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVrZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVrpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVr5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=Parameters%5Bjcu%5Ename=Parameters.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVsJY0EeKir9DieLrzpA" points="[0, 0, 1, -1586]$[0, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVsZY0EeKir9DieLrzpA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVspY0EeKir9DieLrzpA" id="(0.49982473,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVs5Y0EeKir9DieLrzpA" source="_l7OSt5Y0EeKir9DieLrzpA" target="_l7OTl5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVtJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVtZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVtpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVt5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVuJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVuZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=InterestThingsToDo%5Bjcu%5Ename=InterestThingsToDo.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVupY0EeKir9DieLrzpA" points="[0, 0, -7897, -1586]$[7897, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVu5Y0EeKir9DieLrzpA" id="(0.8331992,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVvJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVvZY0EeKir9DieLrzpA" source="_l7OSt5Y0EeKir9DieLrzpA" target="_l7OTJ5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVvpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVv5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVwJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVwZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVwpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVw5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDo%5Bjcu%5Ename=ThingsToDo.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVxJY0EeKir9DieLrzpA" points="[1, 0, -3638, -1586]$[3639, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVxZY0EeKir9DieLrzpA" id="(0.6665996,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVxpY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OVx5Y0EeKir9DieLrzpA" source="_l7OSt5Y0EeKir9DieLrzpA" target="_l7OScZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OVyJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OVyZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OVypY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OVy5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OVzJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OVzZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=itinerarySimilarity%5Bjcu%5Ename=itinerarySimilarity.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OVzpY0EeKir9DieLrzpA" points="[0, 0, 8522, -1586]$[-8521, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OVz5Y0EeKir9DieLrzpA" id="(0.2498994,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV0JY0EeKir9DieLrzpA" id="(0.49986768,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OV0ZY0EeKir9DieLrzpA" source="_l7OSt5Y0EeKir9DieLrzpA" target="_l7OSqZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OV0pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OV05Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OV1JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OV1ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OV1pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OV15Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequestData%5Bjcu%5Ename=OptimizationRequestData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackage%5Bjcu%5Ename=CruisePackage.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OV2JY0EeKir9DieLrzpA" points="[1, 0, 4028, -1586]$[-4027, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV2ZY0EeKir9DieLrzpA" id="(0.37484908,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV2pY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OV25Y0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OTiZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OV3JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OV3ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OV3pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OV35Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OV4JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OV4ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DurationSet%5Bjcu%5Ename=DurationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OV4pY0EeKir9DieLrzpA" points="[0, 0, 5544, -1586]$[-5543, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV45Y0EeKir9DieLrzpA" id="(0.57785237,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV5JY0EeKir9DieLrzpA" id="(0.7500778,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OV5ZY0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OT-pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OV5pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OV55Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OV6JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OV6ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OV6pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OV65Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiscTypes%5Bjcu%5Ename=DiscTypes.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OV7JY0EeKir9DieLrzpA" points="[0, 0, -7527, -1586]$[7527, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV7ZY0EeKir9DieLrzpA" id="(0.7285235,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV7pY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OV75Y0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OUMpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OV8JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OV8ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OV8pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OV85Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OV9JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OV9ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=AccomodationSet%5Bjcu%5Ename=AccomodationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OV9pY0EeKir9DieLrzpA" points="[1, 0, -20972, -1586]$[20974, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV95Y0EeKir9DieLrzpA" id="(0.83713645,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OV-JY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OV-ZY0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OTX5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OV-pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OV-5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OV_JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OV_ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OV_pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OV_5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=PriceRangeSet%5Bjcu%5Ename=PriceRangeSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWAJY0EeKir9DieLrzpA" points="[0, 0, 12695, -1586]$[-12695, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWAZY0EeKir9DieLrzpA" id="(0.48154363,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWApY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWA5Y0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OSjZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWBJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWBZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWBpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWB5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWCJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWCZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=FlexDatesSet%5Bjcu%5Ename=FlexDatesSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWCpY0EeKir9DieLrzpA" points="[1, 0, 48827, -1586]$[-48826, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWC5Y0EeKir9DieLrzpA" id="(0.09630872,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWDJY0EeKir9DieLrzpA" id="(0.9691877,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWDZY0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OTNZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWDpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWD5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWEJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWEZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWEpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWE5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingToDoSet%5Bjcu%5Ename=ThingToDoSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWFJY0EeKir9DieLrzpA" points="[1, 0, 19846, -1586]$[-19845, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWFZY0EeKir9DieLrzpA" id="(0.3852349,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWFpY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWF5Y0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OS05Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWGJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWGZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWGpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWG5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWHJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWHZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeparturePortSet%5Bjcu%5Ename=DeparturePortSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWHpY0EeKir9DieLrzpA" points="[1, 0, 40169, -1586]$[-40167, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWH5Y0EeKir9DieLrzpA" id="(0.19261745,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWIJY0EeKir9DieLrzpA" id="(0.8333333,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWIZY0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OTC5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWIpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWI5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWJJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWJZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWJpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWJ5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommReqLimitSet%5Bjcu%5Ename=RecommReqLimitSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWKJY0EeKir9DieLrzpA" points="[0, 0, 26463, -1586]$[-26462, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWKZY0EeKir9DieLrzpA" id="(0.28892618,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWKpY0EeKir9DieLrzpA" id="(0.8331777,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWK5Y0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OSxZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWLJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWLZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWLpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWL5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWMJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWMZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ItinerarySet%5Bjcu%5Ename=ItinerarySet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWMpY0EeKir9DieLrzpA" points="[0, 0, -29036, -1586]$[29036, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWM5Y0EeKir9DieLrzpA" id="(0.89138705,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWNJY0EeKir9DieLrzpA" id="(0.33333334,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWNZY0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OUFpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWNpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWN5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWOJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWOZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWOpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWO5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DestinationSet%5Bjcu%5Ename=DestinationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWPJY0EeKir9DieLrzpA" points="[1, 0, -12375, -1586]$[12377, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWPZY0EeKir9DieLrzpA" id="(0.78277403,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWPpY0EeKir9DieLrzpA" id="(0.08325552,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWP5Y0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OUapY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWQJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWQZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWQpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWQ5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWRJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWRZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserWeightSet%5Bjcu%5Ename=UserWeightSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWRpY0EeKir9DieLrzpA" points="[1, 0, -36026, -1586]$[36028, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWR5Y0EeKir9DieLrzpA" id="(0.9456376,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWSJY0EeKir9DieLrzpA" id="(0.24992219,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWSZY0EeKir9DieLrzpA" source="_l7OTGZY0EeKir9DieLrzpA" target="_l7OTwpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWSpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWS5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWTJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWTZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWTpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWT5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=InterestSet%5Bjcu%5Ename=InterestSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWUJY0EeKir9DieLrzpA" points="[0, 0, 0, -1586]$[0, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWUZY0EeKir9DieLrzpA" id="(0.67427295,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWUpY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWU5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OS05Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWVJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWVZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWVpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWV5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWWJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWWZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DeparturePortSet%5Bjcu%5Ename=DeparturePortSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWWpY0EeKir9DieLrzpA" points="[1, 0, 55948, -4226]$[-44830, 1586, 11117, -2640]$[-55947, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWW5Y0EeKir9DieLrzpA" id="(0.110873185,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWXJY0EeKir9DieLrzpA" id="(0.6666667,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWXZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTX5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWXpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWX5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWYJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWYZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWYpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWY5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=PriceRangeSet%5Bjcu%5Ename=PriceRangeSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWZJY0EeKir9DieLrzpA" points="[1, 0, 27127, -4226]$[-23875, 1586, 3251, -2640]$[-23877, 2639, 3249, -1587]$[-27126, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWZZY0EeKir9DieLrzpA" id="(0.27742088,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWZpY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWZ5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OSm5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWaJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWaZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWapY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWa5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWbJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWbZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWbpY0EeKir9DieLrzpA" points="[1, 0, -44018, -4226]$[32702, 1586, -11317, -2640]$[32704, 2639, -11315, -1587]$[44019, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWb5Y0EeKir9DieLrzpA" id="(0.88865095,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWcJY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWcZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTGZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWcpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWc5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWdJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWdZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWdpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWd5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWeJY0EeKir9DieLrzpA" points="[0, 0, 13128, -1586]$[-13128, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWeZY0EeKir9DieLrzpA" id="(0.388532,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWepY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWe5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OUMpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWfJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWfZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWfpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWf5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWgJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWgZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=AccomodationSet%5Bjcu%5Ename=AccomodationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWgpY0EeKir9DieLrzpA" points="[0, 0, -13138, -4226]$[6676, 1586, -6462, -2640]$[6678, 2639, -6460, -1587]$[13138, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWg5Y0EeKir9DieLrzpA" id="(0.61075425,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWhJY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWhZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OUapY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWhpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWh5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWiJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWiZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWipY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWi5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserWeightSet%5Bjcu%5Ename=UserWeightSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWjJY0EeKir9DieLrzpA" points="[0, 0, -28695, -4226]$[15733, 1586, -12962, -2640]$[15735, 2639, -12960, -1587]$[28695, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWjZY0EeKir9DieLrzpA" id="(0.72186536,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWjpY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWj5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OUFpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWkJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWkZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWkpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWk5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWlJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWlZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DestinationSet%5Bjcu%5Ename=DestinationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWlpY0EeKir9DieLrzpA" points="[1, 0, -2148, -4226]$[2149, 1586, 0, -2640]$[2149, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWl5Y0EeKir9DieLrzpA" id="(0.5550797,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWmJY0EeKir9DieLrzpA" id="(0.2500778,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWmZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTNZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWmpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWm5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWnJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWnZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWnpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWn5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingToDoSet%5Bjcu%5Ename=ThingToDoSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWoJY0EeKir9DieLrzpA" points="[0, 0, 34906, -4226]$[-28405, 1586, 6501, -2640]$[-28988, 2639, 5918, -1587]$[-34906, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWoZY0EeKir9DieLrzpA" id="(0.2219843,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWopY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWo5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTiZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWpJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWpZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWppY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWp5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWqJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWqZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DurationSet%5Bjcu%5Ename=DurationSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWqpY0EeKir9DieLrzpA" points="[1, 0, 19348, -4226]$[-19347, 1586, 0, -2640]$[-19347, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWq5Y0EeKir9DieLrzpA" id="(0.3330954,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWrJY0EeKir9DieLrzpA" id="(0.5001556,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWrZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OSVZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWrpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWr5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWsJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWsZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWspY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWs5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWtJY0EeKir9DieLrzpA" points="[1, 0, -34867, -4226]$[20262, 1586, -14606, -2640]$[20264, 2639, -14604, -1587]$[34868, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWtZY0EeKir9DieLrzpA" id="(0.77753985,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWtpY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWt5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OUJJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWuJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWuZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWupY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWu5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWvJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWvZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWvpY0EeKir9DieLrzpA" points="[1, 0, -26482, -1586]$[26483, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWv5Y0EeKir9DieLrzpA" id="(0.83321434,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWwJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWwZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OSxZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWwpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWw5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWxJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWxZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OWxpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OWx5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ItinerarySet%5Bjcu%5Ename=ItinerarySet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OWyJY0EeKir9DieLrzpA" points="[0, 0, -20381, -4226]$[11204, 1586, -9177, -2640]$[11206, 2639, -9175, -1587]$[20381, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWyZY0EeKir9DieLrzpA" id="(0.66642874,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OWypY0EeKir9DieLrzpA" id="(0.6666667,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OWy5Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTwpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OWzJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OWzZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OWzpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OWz5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OW0JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OW0ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=InterestSet%5Bjcu%5Ename=InterestSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OW0pY0EeKir9DieLrzpA" points="[0, 0, 10197, -4226]$[-4526, 1586, 5671, -2640]$[-4528, 2639, 5669, -1587]$[-10197, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW05Y0EeKir9DieLrzpA" id="(0.4439686,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW1JY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OW1ZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OSjZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OW1pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OW15Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OW2JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OW2ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OW2pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OW25Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=FlexDatesSet%5Bjcu%5Ename=FlexDatesSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OW3JY0EeKir9DieLrzpA" points="[1, 0, 64364, -4226]$[-64362, 1586, 1, -2640]$[-64362, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW3ZY0EeKir9DieLrzpA" id="(0.055436593,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW3pY0EeKir9DieLrzpA" id="(0.9382197,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OW35Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTtJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OW4JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OW4ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OW4pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OW45Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OW5JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OW5ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OW5pY0EeKir9DieLrzpA" points="[0, 0, -51796, -4226]$[34848, 1586, -16948, -2640]$[51796, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW55Y0EeKir9DieLrzpA" id="(0.9443255,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW6JY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OW6ZY0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OTC5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OW6pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OW65Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OW7JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OW7ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OW7pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OW75Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommReqLimitSet%5Bjcu%5Ename=RecommReqLimitSet.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OW8JY0EeKir9DieLrzpA" points="[1, 0, 41615, -4226]$[-35895, 1586, 5719, -2640]$[-37923, 2639, 3691, -1587]$[-41614, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW8ZY0EeKir9DieLrzpA" id="(0.1665477,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW8pY0EeKir9DieLrzpA" id="(0.66651106,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OW85Y0EeKir9DieLrzpA" source="_l7OTe5Y0EeKir9DieLrzpA" target="_l7OT-pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OW9JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OW9ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OW9pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OW95Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OW-JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OW-ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=ObjectFactory%5Bjcu%5Ename=ObjectFactory.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DiscTypes%5Bjcu%5Ename=DiscTypes.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OW-pY0EeKir9DieLrzpA" points="[0, 0, 2419, -4226]$[0, 2639, 2419, -1587]$[-2419, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW-5Y0EeKir9DieLrzpA" id="(0.49964312,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OW_JY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OW_ZY0EeKir9DieLrzpA" source="_l7OTpZY0EeKir9DieLrzpA" target="_l7OUJJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OW_pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OW_5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXAJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXAZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXApY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXA5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesPortType%5Bjcu%5Ename=AssistedSearchServicesPortType.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXBJY0EeKir9DieLrzpA" points="[1, 0, -21983, -1586]$[21984, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXBZY0EeKir9DieLrzpA" id="(0.6666106,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXBpY0EeKir9DieLrzpA" id="(0.75,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXB5Y0EeKir9DieLrzpA" source="_l7OTpZY0EeKir9DieLrzpA" target="_l7OTGZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXCJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXCZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXCpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXC5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXDJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXDZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=AssistedSearchServicesPortType%5Bjcu%5Ename=AssistedSearchServicesPortType.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=GetAssistedSearchRecommendation%5Bjcu%5Ename=GetAssistedSearchRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXDpY0EeKir9DieLrzpA" points="[0, 0, 17513, -1586]$[-17513, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXD5Y0EeKir9DieLrzpA" id="(0.33322126,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXEJY0EeKir9DieLrzpA" id="(0.75,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXEZY0EeKir9DieLrzpA" source="_l7OT0JY0EeKir9DieLrzpA" target="_l7OTUZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXEpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXE5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXFJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXFZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXFpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXF5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationResponseData%5Bjcu%5Ename=OptimizationResponseData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXGJY0EeKir9DieLrzpA" points="[0, 0, -3111, -1586]$[3111, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXGZY0EeKir9DieLrzpA" id="(0.66653734,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXGpY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXG5Y0EeKir9DieLrzpA" source="_l7OT0JY0EeKir9DieLrzpA" target="_l7OUQJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXHJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXHZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXHpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXH5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXIJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXIZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationResponseData%5Bjcu%5Ename=OptimizationResponseData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXIpY0EeKir9DieLrzpA" points="[1, 0, 0, -1586]$[1, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXI5Y0EeKir9DieLrzpA" id="(0.499903,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXJJY0EeKir9DieLrzpA" id="(0.9318182,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXJZY0EeKir9DieLrzpA" source="_l7OT0JY0EeKir9DieLrzpA" target="_l7OT3pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXJpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXJ5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXKJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXKZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXKpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXK5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationResponseData%5Bjcu%5Ename=OptimizationResponseData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXLJY0EeKir9DieLrzpA" points="[1, 0, -7200, -1586]$[7202, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXLZY0EeKir9DieLrzpA" id="(0.83317167,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXLpY0EeKir9DieLrzpA" id="(0.24995475,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXL5Y0EeKir9DieLrzpA" source="_l7OUJJY0EeKir9DieLrzpA" target="_l7OTtJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXMJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXMZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXMpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXM5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXNJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXNZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXNpY0EeKir9DieLrzpA" points="[0, 0, -21940, -1586]$[21940, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXN5Y0EeKir9DieLrzpA" id="(0.75,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXOJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXOZY0EeKir9DieLrzpA" source="_l7OUJJY0EeKir9DieLrzpA" target="_l7OSVZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXOpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXO5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXPJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXPZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXPpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXP5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXQJY0EeKir9DieLrzpA" points="[0, 0, -11992, -1586]$[11992, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXQZY0EeKir9DieLrzpA" id="(0.25,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXQpY0EeKir9DieLrzpA" id="(0.7499222,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXQ5Y0EeKir9DieLrzpA" source="_l7OUJJY0EeKir9DieLrzpA" target="_l7OSm5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXRJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXRZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXRpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXR5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXSJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXSZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=GetAssistedSearchRecommendationResponse%5Bjcu%5Ename=GetAssistedSearchRecommendationResponse.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXSpY0EeKir9DieLrzpA" points="[0, 0, -16163, -1586]$[16163, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXS5Y0EeKir9DieLrzpA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXTJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXTZY0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OUQJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXTpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXT5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXUJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXUZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXUpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXU5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=CruisePackageRecommendation%5Bjcu%5Ename=CruisePackageRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXVJY0EeKir9DieLrzpA" points="[0, 0, -13006, -4226]$[6429, 1586, -6577, -2640]$[6431, 2639, -6575, -1587]$[13006, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXVZY0EeKir9DieLrzpA" id="(0.666511,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXVpY0EeKir9DieLrzpA" id="(0.4659091,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXV5Y0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OUTpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXWJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXWZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXWpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXW5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXXJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXXZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserWeight%5Bjcu%5Ename=UserWeight.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXXpY0EeKir9DieLrzpA" points="[0, 0, 0, -4226]$[0, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXX5Y0EeKir9DieLrzpA" id="(0.5,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXYJY0EeKir9DieLrzpA" id="(0.29638472,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXYZY0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OTQ5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXYpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXY5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXZJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXZZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXZpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXZ5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DurationRange%5Bjcu%5Ename=DurationRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXaJY0EeKir9DieLrzpA" points="[0, 0, 6754, -4226]$[-4047, 1586, 2707, -2640]$[-4049, 2639, 2705, -1587]$[-6753, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXaZY0EeKir9DieLrzpA" id="(0.3332555,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXapY0EeKir9DieLrzpA" id="(0.8225902,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXa5Y0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OS75Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXbJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXbZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXbpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXb5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXcJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXcZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=AccommodationPreference%5Bjcu%5Ename=AccommodationPreference.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXcpY0EeKir9DieLrzpA" points="[1, 0, 12323, -4226]$[-12321, 1586, 1, -2640]$[-12321, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXc5Y0EeKir9DieLrzpA" id="(0.16651097,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXdJY0EeKir9DieLrzpA" id="(0.634123,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXdZY0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OUCJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXdpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXd5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXeJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXeZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXepY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXe5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=PriceRange%5Bjcu%5Ename=PriceRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXfJY0EeKir9DieLrzpA" points="[1, 0, 2805, -4226]$[-2022, 1586, 782, -2640]$[-2024, 2639, 780, -1587]$[-2804, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXfZY0EeKir9DieLrzpA" id="(0.41662773,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXfpY0EeKir9DieLrzpA" id="(0.7498231,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXf5Y0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OUeJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXgJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXgZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXgpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXg5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXhJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXhZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXhpY0EeKir9DieLrzpA" points="[0, 0, 6555, -1586]$[-6555, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXh5Y0EeKir9DieLrzpA" id="(0.24988323,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXiJY0EeKir9DieLrzpA" id="(0.66641426,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXiZY0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OSf5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXipY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXi5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXjJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXjZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXjpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXj5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=SailDateRange%5Bjcu%5Ename=SailDateRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXkJY0EeKir9DieLrzpA" points="[1, 0, 18522, -4226]$[-14345, 1586, 4176, -2640]$[-14347, 2639, 4174, -1587]$[-18521, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXkZY0EeKir9DieLrzpA" id="(0.08313872,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXkpY0EeKir9DieLrzpA" id="(0.49984863,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXk5Y0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OT0JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXlJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXlZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXlpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXl5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXmJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXmZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=OptimizationResponseData%5Bjcu%5Ename=OptimizationResponseData.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXmpY0EeKir9DieLrzpA" points="[1, 0, -14180, -1586]$[14181, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXm5Y0EeKir9DieLrzpA" id="(0.83325547,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXnJY0EeKir9DieLrzpA" id="(0.33326867,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXnZY0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OTUZY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXnpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXn5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXoJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXoZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXopY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXo5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ConstraintViolation%5Bjcu%5Ename=ConstraintViolation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXpJY0EeKir9DieLrzpA" points="[0, 0, -18375, -4226]$[10834, 1586, -7541, -2640]$[10836, 2639, -7539, -1587]$[18375, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXpZY0EeKir9DieLrzpA" id="(0.74988323,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXppY0EeKir9DieLrzpA" id="(0.25,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXp5Y0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OT7JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXqJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXqZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXqpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXq5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXrJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXrZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommendationRequestLimit%5Bjcu%5Ename=RecommendationRequestLimit.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXrpY0EeKir9DieLrzpA" points="[1, 0, -5587, -4226]$[2025, 1586, -3563, -2640]$[2027, 2639, -3561, -1587]$[5588, 4226, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXr5Y0EeKir9DieLrzpA" id="(0.5831387,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXsJY0EeKir9DieLrzpA" id="(0.39986056,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXsZY0EeKir9DieLrzpA" source="_l7OUXJY0EeKir9DieLrzpA" target="_l7OT3pY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXspY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXs5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXtJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXtZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXtpY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXt5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=OptimizationRequest%5Bjcu%5Ename=OptimizationRequest.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=ThingsToDoRecommendation%5Bjcu%5Ename=ThingsToDoRecommendation.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXuJY0EeKir9DieLrzpA" points="[0, 0, -24981, -4226]$[19242, 1586, -5739, -2640]$[19244, 2639, -5737, -1587]$[24982, 4226, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXuZY0EeKir9DieLrzpA" id="(0.91662776,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXupY0EeKir9DieLrzpA" id="(0.4999095,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXu5Y0EeKir9DieLrzpA" source="_l7OUeJY0EeKir9DieLrzpA" target="_l7OUCJY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXvJY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXvZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXvpY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXv5Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXwJY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXwZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=PriceRange%5Bjcu%5Ename=PriceRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXwpY0EeKir9DieLrzpA" points="[0, 0, -3868, -1586]$[3868, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXw5Y0EeKir9DieLrzpA" id="(0.62476337,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXxJY0EeKir9DieLrzpA" id="(0.5,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXxZY0EeKir9DieLrzpA" source="_l7OUeJY0EeKir9DieLrzpA" target="_l7OT7JY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OXxpY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OXx5Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OXyJY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OXyZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OXypY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OXy5Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=RecommendationRequestLimit%5Bjcu%5Ename=RecommendationRequestLimit.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OXzJY0EeKir9DieLrzpA" points="[1, 0, -11872, -1586]$[11873, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXzZY0EeKir9DieLrzpA" id="(0.87466866,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OXzpY0EeKir9DieLrzpA" id="(0.19993028,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OXz5Y0EeKir9DieLrzpA" source="_l7OUeJY0EeKir9DieLrzpA" target="_l7OS75Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OX0JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OX0ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OX0pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OX05Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OX1JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OX1ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=AccommodationPreference%5Bjcu%5Ename=AccommodationPreference.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OX1pY0EeKir9DieLrzpA" points="[0, 0, 4287, -1586]$[-4286, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX15Y0EeKir9DieLrzpA" id="(0.33320713,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX2JY0EeKir9DieLrzpA" id="(0.81715703,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OX2ZY0EeKir9DieLrzpA" source="_l7OUeJY0EeKir9DieLrzpA" target="_l7OUTpY0EeKir9DieLrzpA">
+    <children xmi:id="_l7OX2pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OX25Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OX3JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OX3ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OX3pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OX35Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=UserWeight%5Bjcu%5Ename=UserWeight.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OX4JY0EeKir9DieLrzpA" points="[0, 0, -6971, -1586]$[6971, 1586, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX4ZY0EeKir9DieLrzpA" id="(0.74971604,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX4pY0EeKir9DieLrzpA" id="(0.14802183,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OX45Y0EeKir9DieLrzpA" source="_l7OUeJY0EeKir9DieLrzpA" target="_l7OTQ5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OX5JY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OX5ZY0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OX5pY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OX55Y0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OX6JY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OX6ZY0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=DurationRange%5Bjcu%5Ename=DurationRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OX6pY0EeKir9DieLrzpA" points="[1, 0, 1, -1586]$[1, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX65Y0EeKir9DieLrzpA" id="(0.49981067,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX7JY0EeKir9DieLrzpA" id="(0.64547604,0.0)"/>
+  </edges>
+  <edges xmi:id="_l7OX7ZY0EeKir9DieLrzpA" source="_l7OUeJY0EeKir9DieLrzpA" target="_l7OSf5Y0EeKir9DieLrzpA">
+    <children xmi:id="_l7OX7pY0EeKir9DieLrzpA" type="KindLabel">
+      <children xmi:id="_l7OX75Y0EeKir9DieLrzpA" type="Stereotype"/>
+      <children xmi:id="_l7OX8JY0EeKir9DieLrzpA" type="Kind"/>
+      <children xmi:id="_l7OX8ZY0EeKir9DieLrzpA" type="Name"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7OX8pY0EeKir9DieLrzpA" y="-186"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLConnectorStyle" xmi:id="_l7OX85Y0EeKir9DieLrzpA" fontName="Segoe UI" lineWidth="1" showStereotype="Text"/>
+    <element xmi:type="uml:Usage" href="mmi:///#jdep%5Bjsrctype%5Ename=UserInput%5Bjcu%5Ename=UserInput.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D%5Bjsrctype%5Ename=SailDateRange%5Bjcu%5Ename=SailDateRange.java%5Bjpack%5Ename=delete%5Bjsrcroot%5Esrcfolder=src%5Bproject%5Eid=NCL-WS%5D%5D%5D%5D%5D$uml.Usage"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_l7OX9JY0EeKir9DieLrzpA" points="[0, 0, 10536, -1586]$[-10535, 1586, 1, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX9ZY0EeKir9DieLrzpA" id="(0.16660357,1.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_l7OX9pY0EeKir9DieLrzpA" id="(0.7499243,0.0)"/>
+  </edges>
+</notation:Diagram>

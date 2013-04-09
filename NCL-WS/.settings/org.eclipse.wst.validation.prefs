@@ -1,0 +1,11 @@
+#Fri Mar 29 10:51:44 EDT 2013
+vals/org.eclipse.wst.dtd.core.dtdDTDValidator/groups=0107include03111contentType134org.eclipse.wst.dtd.core.dtdsourceT07fileext03dtdF07fileext03entF0107exclude0104file117NCCustomer_10.modF01
+override=true
+USER_MANUAL_PREFERENCE=enabledManualValidatorListorg.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;org.eclipse.wst.common.componentcore.internal.ModuleCoreValidator;org.eclipse.wst.wsi.ui.internal.WSIMessageValidator;com.ibm.etools.j2ee.migration.classpath.J2EEClasspathValidator;com.ibm.ast.ws.ext.validator.WsExtValidator;
+suspend=false
+eclipse.preferences.version=1
+vf.version=3
+DELEGATES_PREFERENCE=delegateValidatorList
+USER_PREFERENCE=overrideGlobalPreferencestruedisableAllValidationfalseversion1.2.16.v201109011710
+vals/org.eclipse.wst.dtd.core.dtdDTDValidator/global=FF01
+USER_BUILD_PREFERENCE=enabledBuildValidatorListorg.eclipse.jst.j2ee.internal.classpathdep.ClasspathDependencyValidator;org.eclipse.wst.common.componentcore.internal.ModuleCoreValidator;org.eclipse.wst.wsi.ui.internal.WSIMessageValidator;com.ibm.etools.j2ee.migration.classpath.J2EEClasspathValidator;com.ibm.ast.ws.ext.validator.WsExtValidator;

@@ -1,0 +1,282 @@
+/*********************************************
+ * OPL 12.4 Data
+ * Author: Chuck
+ * Creation Date: Dec 18, 2012 at 1:13:20 PM
+ *********************************************/
+
+/*
+   tuple CruisePackage
+   {
+     key int CruisePackageID;
+     string SailID;//3-11-2013     
+     string PackageID;//3-11-2013
+     string DateID;//3-11-2013
+     int Date;							// Departure Date
+     string ShipID;
+     string ItineraryID;					// 3-11-2013 Itinerary ID 
+     string Destination;			//3-11-2013      
+     string DepartingPort;
+     string RoomType;  					// Room Type  
+     string Meta;//3-11-2013
+     float Duration;
+	 //float AccommodationPreference;			// Accommodation Preference (FP1)
+	 //float InterestPreference;				// Interest Preference (FP21)
+	 //float RoomTypeViolation;				// Room Type Violation (FC1)
+	 //float ThingsToDoViolation;				// Things To Do Violation (FC2)
+	 //float PriceViolation;					// Price Violation (FC3)
+	 //float DateViolation;					// Date Violation (FC41)
+	 //float DurationViolation;				// Duration Violation (FC42)
+	 //float DestinationViolation;			// Destination Violation (FC5)
+	 //float DepartingPortViolation;			// Departing Port Violation (FC6)
+	 float DrupalWeight;					// Drupal Weight             
+	 //string DiscountType;//3-11-2013
+	 //float PricePerGuest;//3-11-2013                                                                                                                
+*/
+
+
+Input_CruisePackage = { 
+							< 1,"101","1", "01012013",1,"Ship1","Itinerary1","Destination1","Port1","Balcony", "Meta1", 1,0.5 >,
+					    	< 2,"102","2", "01022013",2,"Ship2","Itinerary2","Destination2","Port2","Interior","Meta2", 2,0>,
+					    	< 3,"103","3", "01032013",3,"Ship3","Itinerary3","Destination3","Port3","Balcony", "Meta3", 3,0 >, 
+					    	< 4,"104","4", "01042013",4,"Ship4","Itinerary4","Destination4","Port4","Balcony", "Meta4", 4,0 >, 
+					 };
+					 
+Input_CruisePackagePrice = {
+<1,100>,//"discountType1",100>,
+<2,200>,//"discountType2",200>,
+<3,300>,//"discountType3",300>,
+<4,400>//"discountType4",400>
+};
+					 
+Input_PricePerGuestRange=
+{
+ <0,100>,<200,500>
+};
+					 
+Input_SailDateRange =
+{
+	<1,3>,<4,4>
+};
+
+/*
+   tuple BusPenalty
+   {
+     string PenType;
+     float DiffMin;
+     float DiffMax;
+     float PenWght;
+   }
+*/
+
+Input_BusPenalty=
+{
+	<"DURATION",0,1,0.1>,
+	<"DURATION",1,2,0.2>,
+	<"DURATION",2,99,0.3>,
+	<"SAILDATE",0,1,0.4>,
+	<"SAILDATE",1,2,0.5>,
+	<"SAILDATE",2,99,0.6>,
+	<"PRICE",0,100,0.7>,
+	<"PRICE",100,200,0.8>,
+	<"PRICE",200,9900,0.9>			
+};
+
+Input_DurationRange =
+{
+	<1,3>,<3,5>
+};
+   
+Input_AccommodationPreferenceScore = {
+	<"Ship3","Balcony", "Room","Spacious",1,4,0.3>,
+	<"Ship3","Balcony", "View","Important",1,4,1>,	
+	<"Ship4","Balcony", "View","Important",1,4,1>,
+	<"Ship4","Balcony", "Room","Spacious",1,4,0.3>,
+			
+};
+
+Input_PortRange =
+{
+	<"Port2">,<"Port3">,<"Port4">
+};			    
+Input_MetaRange = {
+<"Meta2">,<"Meta3">,<"Meta4">
+};
+
+Input_DestinationRange = {
+ <"Destination2">,<"Destination3">,<"Destination4">
+};
+Input_ThingsToDoRange = {
+	//<"ThingsToDo2">//,<"ThingsToDo4">
+};
+Input_InterestRange = {
+	<"Interest1">,
+	<"Interest2">
+};
+
+Input_AccommodationPreference = {
+	<"Room","Spacious">,
+	<"View","Important">
+};	
+/*				    
+   tuple InterestMetaScore
+   {
+     string Interest;
+     string ShipID;
+     string Meta;
+     int StartDate;
+     int EndDate;
+     float Score;
+   }
+*/ 
+
+Input_InterestDestinationScore = {
+	<"Interest1","Destination3",1,4,1>,
+	<"Interest2","Destination3",1,4,2>,
+	<"Interest1","Destination4",1,4,3>,
+	<"Interest2","Destination4",1,4,4>		
+};
+
+Input_InterestMetaScore = {
+	<"Interest1","Ship3","Meta3",1,4,1>,
+	<"Interest2","Ship3","Meta3",1,4,2>,
+	<"Interest1","Ship4","Meta4",1,4,3>,
+	<"Interest2","Ship4","Meta4",1,4,4>		
+};
+
+Input_InterestShipScore = {
+	<"Interest1","Ship2",1,4,1>,
+	<"Interest2","Ship2",1,4,2>,
+	<"Interest1","Ship2",1,4,3>,
+	<"Interest2","Ship2",1,4,4>		
+};
+/*
+   tuple Itinerary
+   {
+      int ItineraryID;					// Itinerary ID
+  
+      string Destination;				// Destination      
+   }  
+
+
+Input_Itinerary = { 
+						< 1, "Hawaii" >,
+				    	< 2, "Nova Scotia" > 
+				  };	
+
+*/
+				  
+				  
+/*
+   tuple ThingsToDo
+   {
+      String ItineraryID;					// Itinerary ID
+      String ThingsToDoID;  				// Things To Do ID     
+   }
+*/
+
+
+Input_ThingsToDo = {
+						< "Itinerary1", "ThingsToDo1" >,
+						< "Itinerary2", "ThingsToDo2" >,
+						< "Itinerary3", "ThingsToDo3" >,
+						< "Itinerary4", "ThingsToDo4" >,
+						< "Itinerary4", "ThingsToDo5" >,						
+					};	
+
+					
+
+					
+/*
+   tuple Parameters							// Note that this is a single row table
+   {
+     //int OptimRequestID;					// Optimization Request ID
+     
+     float CustomerAccommodationPriority;	// Customer Accommodation Priority (WC1)
+     float CustomerThingsToDoPriority;		// Customer Things To Do Priority (WC2)
+     float CustomerPricePriority;			// Customer Price Priority (WC3)
+     float CustomerTimePriority;			// Customer Time Priority (WC4)
+     float CustomerDestinationPriority;		// Customer Destination Priority (WC5)
+     
+     float BusinessAccommodationPriority;	// Business Accommodation Priority (WB1)
+     float BusinessThingsToDoPriority;		// Business Things to Do Priority (WB2)
+     float BusinessPricePriority;			// Business Price Priority (WB3)
+     float BusinessTimePriority;			// Business Time Priority (WB4)
+     float BusinessDestinationPriority;		// Business Destination Priority (WB5)
+     float BusinessDepartingPriority;		// Business Destination Priority (WB6)
+     float RemommendationLimitPriority;		//WB7: set to 10000
+     float ItineraryUniquenessPriority;	    //WB8 : set to 0.001     	     
+   }   
+*/
+
+
+Input_Parameters = {
+						< 1.0, 1.0, 1.0, 1.0, 1, 1, 1, 1, 1, 1, 1,10000,0.0001 >
+				   };
+
+
+				   
+				   
+/*
+   tuple ItinerarySimilarity
+   {
+	 key string Itinerary1;					// 3-11-2013 First Itinerary
+	 key string Itinerary2;					// 3-11-2013 Second Itinerary
+	 //3-11-2013 key int OptimRequestID;				// Optimization Request ID	 
+   }  
+   }       
+*/
+
+
+Input_ItinerarySimilarity = {
+								//< "Itinerary3","Itinerary4" >
+							};
+
+
+							
+
+/*
+   tuple InterestThingsToDo
+   {
+     //3-11-2013 key int OptimRequestID;				// Optimization Request ID
+     key string InterestID;					//3-11-2013 Interest ID
+     key string ThingsToDoID;					// 3-11-2013 Things to do ID
+     //int ThingsToDoPrefMatch;				// FP22j
+     //3-11-2013 int ThingsToDoSelected;				// Unused?
+	 //float ThingsToDoViolation;				// Things to do Violation (FC2j)     
+     float DrupalWeight;					// Drupal Weight        
+   }       
+*/											   
+
+
+Input_InterestThingsToDo = {
+								< "Interest1", "ThingsToDo1",  0.5 >,
+								< "Interest1", "ThingsToDo2",  1.0 >,
+								< "Interest2", "ThingsToDo3",  0.5 >,
+								< "Interest2", "ThingsToDo4",  0 >,
+								< "Interest3", "ThingsToDo5",  1.0 >,																
+						   };
+	
+/*					   
+   tuple RecommendationRequestLimit
+   {										
+      int NumPackageRecommendations;		// Non-zero for Use Case 4: Top Cruise Packages
+      int NumThingsToDo;					// Non-zero for Use Case 2: Top Things To Do
+      int NumDestinations;					// Non-zero for Use Case 3: Top Destinations
+      int NumStateRoomTypes;     			// Non-zero for Use Case 1: Top Stateroom Types
+   }     
+  */
+  
+Input_RecommendationRequestLimit = { <2,0,0,0>};
+   
+   /*						   
+   tuple ConstraintViolation
+   {
+	 //3-11-2013 key int OptimRequestID;
+	 
+	 float PackageLimitViolation;
+	 float ThingsToDoLimViolation;
+	 float DestinationLimViolation;
+	 float RoomTypeLimViolation;
+	 float ItineraryUniquenessViolation;         
+   }*/
+ ConstraintViolationUpperBound =[0];  
