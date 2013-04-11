@@ -39,25 +39,6 @@
 			<xs:element name="endDate" type="xs:string" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
-<<<<<<< HEAD
-=======
-	<xs:complexType name="discTypes">
-		<xs:sequence>
-			<xs:element name="BESTFARE" type="xs:boolean" maxOccurs="1" default="true" />
-			<xs:element name="MILITARY" type="xs:boolean" maxOccurs="1" />
-			<xs:element name="AARP" type="xs:boolean" maxOccurs="1" />
-			<xs:element name="LATITUDES" type="xs:boolean" maxOccurs="1" />
-			<xs:element name="SENIOR" type="xs:boolean" maxOccurs="1" />
-			<xs:element name="UNION" type="xs:boolean" maxOccurs="1" />
-			<xs:element name="TEAMMEMBER" type="xs:boolean" maxOccurs="1" />
-			<xs:element name="SPECIALFARES" type="xs:boolean"
-				maxOccurs="1" />
-			<xs:element name="FRIENDSFAMILY" type="xs:boolean"
-				maxOccurs="1" />
-			<xs:element name="stateCode" type="xs:string" maxOccurs="1" />
-		</xs:sequence>
-	</xs:complexType>
->>>>>>> c7225bc79c2affbcdfbb3062fc8c8654d26df30b
 	<xs:complexType name="priceRangeSet">
 		<xs:sequence>
 			<xs:element name="priceRange" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
@@ -138,7 +119,7 @@
 				<xs:element name="interestSet" type="ncl:interestSet" maxOccurs="1" />
 				<xs:element name="departurePortSet" type="ncl:departurePortSet" maxOccurs="1" />
 				<xs:element name="durationSet" type="ncl:durationSet" maxOccurs="1" />
-				<xs:element name="flexDatesSet" type="ncl:flexDatesSet" maxOccurs="1" />
+				<xs:element name="flexDatesSet" type="ncl:flexDatesSet" nillable="true" minOccurs="0" maxOccurs="1" />
 				<xs:element name="promoCodeSet" type="ncl:promoCodeSet" maxOccurs="1" />
 				<xs:element name="priceRangeSet" type="ncl:priceRangeSet" maxOccurs="1" />
 				<xs:element name="stateroomView" maxOccurs="1" nillable="false" type="xs:string" />
