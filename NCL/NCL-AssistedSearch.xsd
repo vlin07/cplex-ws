@@ -1,154 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://assisted-search.ncl.com/messages" 
- xmlns:xs="http://www.w3.org/2001/XMLSchema"
- xmlns:ncl="http://assisted-search.ncl.com/messages"
->
-				<xs:complexType name="destinationSet">
-						<xs:sequence>
-							<xs:element name="destination" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-				</xs:complexType>
-				<xs:complexType name="accomodationSet" >
-						<xs:sequence>
-							<xs:element name="accomodation" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-				</xs:complexType>
-				<xs:complexType name="thingToDoSet" >
-						<xs:sequence>
-							<xs:element name="thingToDo" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-				</xs:complexType>
+<xs:schema targetNamespace="http://assisted-search.ncl.com/messages"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncl="http://assisted-search.ncl.com/messages">
+	<xs:complexType name="destinationSet">
+		<xs:sequence>
+			<xs:element name="destination" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="accomodationSet">
+		<xs:sequence>
+			<xs:element name="accomodation" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="thingToDoSet">
+		<xs:sequence>
+			<xs:element name="thingToDo" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
 
-				<xs:complexType name="interestSet" >
-						<xs:sequence>
-							<xs:element name="interest" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-				</xs:complexType>
+	<xs:complexType name="interestSet">
+		<xs:sequence>
+			<xs:element name="interest" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
 
-				<xs:complexType name="departurePortSet" >
-						<xs:sequence>
-							<xs:element name="departurePort" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="durationSet" >
-						<xs:sequence>
-							<xs:element name="duration" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="flexDatesSet">
-						<xs:sequence>
-							<xs:element name="startDate" type="xs:string" maxOccurs="1" />
-							<xs:element name="endDate" type="xs:string" maxOccurs="1" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="discTypes">
-						<xs:sequence>
-							<xs:element name="BESTFARE" type="xs:boolean" maxOccurs="1" default="true"/>
-							<xs:element name="MILITARY" type="xs:boolean"	maxOccurs="1"  />
-							<xs:element name="AARP" type="xs:boolean" maxOccurs="1"/>
-							<xs:element name="LATITUDES" type="xs:boolean" maxOccurs="1"  />
-							<xs:element name="SENIOR" type="xs:boolean" maxOccurs="1" />
-							<xs:element name="UNION" type="xs:boolean"	maxOccurs="1" />
-							<xs:element name="TEAMMEMBER" type="xs:boolean"	maxOccurs="1" />
-							<xs:element name="SPECIALFARES" type="xs:boolean"	maxOccurs="1" />
-							<xs:element name="FRIENDSFAMILY" type="xs:boolean"	maxOccurs="1" />
-							<xs:element name="stateCode" type="xs:string" maxOccurs="1"  />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="priceRangeSet" >
-						<xs:sequence>
-							<xs:element name="priceRange" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="promoCodeSet" >
-						<xs:sequence>
-							<xs:element name="promoCode" type="xs:string"
-								maxOccurs="unbounded" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="userWeightSet" >
-						<xs:sequence>
-							<xs:element name="wc1" type="xs:double"	maxOccurs="1" />
-							<xs:element name="wc2" type="xs:double"	maxOccurs="1" />
-							<xs:element name="wc3" type="xs:double"	maxOccurs="1" />
-							<xs:element name="wc4" type="xs:double"	maxOccurs="1" />
-							<xs:element name="wc5" type="xs:double"	maxOccurs="1" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="recommReqLimitSet" >
-						<xs:sequence>
-							<xs:element name="numPackageRecomm" type="xs:int"	maxOccurs="1" />
-							<xs:element name="numThingsToDo" type="xs:int"	maxOccurs="1" />
-							<xs:element name="numDest" type="xs:int"	maxOccurs="1" />
-							<xs:element name="numStateRoomTypes" type="xs:int"	maxOccurs="1" />
-						</xs:sequence>
-					</xs:complexType>
-					
-					<xs:complexType name="cruisePackageRecommendation">
-						<xs:sequence>
-							<xs:element name="sailID" type="xs:string" maxOccurs="1"/>
-							<xs:element name="packageID" type="xs:string" maxOccurs="1" />
-							<xs:element name="dateID" type="xs:string" maxOccurs="1" />
-							<xs:element name="itineraryID" type="xs:string" maxOccurs="1" />
-							<xs:element name="destination" type="xs:string" maxOccurs="1" />
-							<xs:element name="roomType" type="xs:string" maxOccurs="1" />
-							<xs:element name="meta" type="xs:string" maxOccurs="1" />
-							<xs:element name="interestPrefContrib" type="xs:double" maxOccurs="1" />
-							<xs:element name="accomodationPrefContrib" type="xs:double" maxOccurs="1" />
-							<xs:element name="roomViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="thingsToDoViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="priceViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="dateViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="durationViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="destinationViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="portViolationValue" type="xs:double" maxOccurs="1" />
-							<xs:element name="drupalWeightContrib" type="xs:double" maxOccurs="1" />
-							<xs:element name="isRecommended" type="xs:int" maxOccurs="1" />
-							<xs:element name="pricePerGuest" type="xs:double" maxOccurs="1" />
-						</xs:sequence>
-					</xs:complexType>
-					
-					<xs:complexType name="constraintViolation" >
-						<xs:sequence>
-							<xs:element name="packageLimitViolation" type="xs:double" maxOccurs="1" />
-							<xs:element name="thingsToDoLimitViolation" type="xs:double" maxOccurs="1" />
-							<xs:element name="destinationViolation" type="xs:double" maxOccurs="1" />
-							<xs:element name="roomTypeLimitViolation" type="xs:double" maxOccurs="1" />
-							<xs:element name="itineraryUniquenessViolation" type="xs:double" maxOccurs="1" />
-						</xs:sequence>
-					</xs:complexType>
-				<xs:complexType name="thingsToDoRecommendation" >
-						<xs:sequence>
-							<xs:element name="thingsToDoID" type="xs:string" maxOccurs="1" />
-							<xs:element name="interestID" type="xs:string" maxOccurs="1" />
-							<xs:element name="interestPrefContrib" type="xs:double" maxOccurs="1" />
-							<xs:element name="drupalWeightContrib" type="xs:double" maxOccurs="1" />
-							<xs:element name="isRecommended" type="xs:int" maxOccurs="1" />
-						</xs:sequence>
-					</xs:complexType>
-					
-					
+	<xs:complexType name="departurePortSet">
+		<xs:sequence>
+			<xs:element name="departurePort" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="durationSet">
+		<xs:sequence>
+			<xs:element name="duration" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="flexDatesSet">
+		<xs:sequence>
+			<xs:element name="startDate" type="xs:string" maxOccurs="1" />
+			<xs:element name="endDate" type="xs:string" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="priceRangeSet">
+		<xs:sequence>
+			<xs:element name="priceRange" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="promoCodeSet">
+		<xs:sequence>
+			<xs:element name="promoCode" type="xs:string" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="userWeightSet">
+		<xs:sequence>
+			<xs:element name="wc1" type="xs:double" minOccurs="1" maxOccurs="1" />
+			<xs:element name="wc2" type="xs:double" minOccurs="1" maxOccurs="1" />
+			<xs:element name="wc3" type="xs:double" minOccurs="1" maxOccurs="1" />
+			<xs:element name="wc4" type="xs:double" minOccurs="1" maxOccurs="1" />
+			<xs:element name="wc5" type="xs:double" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="recommReqLimitSet">
+		<xs:sequence>
+			<xs:element name="numPackageRecomm" type="xs:int" minOccurs="1" maxOccurs="1" />
+			<xs:element name="numThingsToDo" type="xs:int" minOccurs="1" maxOccurs="1" />
+			<xs:element name="numDest" type="xs:int" minOccurs="1" maxOccurs="1" />
+			<xs:element name="numStateRoomTypes" type="xs:int" minOccurs="1" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cruisePackageRecommendation">
+		<xs:sequence>
+			<xs:element name="sailID" type="xs:string" maxOccurs="1" />
+			<xs:element name="packageID" type="xs:string" maxOccurs="1" />
+			<xs:element name="dateID" type="xs:string" maxOccurs="1" />
+			<xs:element name="itineraryID" type="xs:string" maxOccurs="1" />
+			<xs:element name="destination" type="xs:string" maxOccurs="1" />
+			<xs:element name="roomType" type="xs:string" maxOccurs="1" />
+			<xs:element name="meta" type="xs:string" maxOccurs="1" />
+			<xs:element name="interestPrefContrib" type="xs:double" maxOccurs="1" />
+			<xs:element name="accomodationPrefContrib" type="xs:double" maxOccurs="1" />
+			<xs:element name="roomViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="thingsToDoViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="priceViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="dateViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="durationViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="destinationViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="portViolationValue" type="xs:double" maxOccurs="1" />
+			<xs:element name="drupalWeightContrib" type="xs:double" maxOccurs="1" />
+			<xs:element name="isRecommended" type="xs:int" maxOccurs="1" />
+			<xs:element name="pricePerGuest" type="xs:double" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="constraintViolation">
+		<xs:sequence>
+			<xs:element name="packageLimitViolation" type="xs:double" maxOccurs="1" />
+			<xs:element name="thingsToDoLimitViolation" type="xs:double" maxOccurs="1" />
+			<xs:element name="destinationViolation" type="xs:double" maxOccurs="1" />
+			<xs:element name="roomTypeLimitViolation" type="xs:double" maxOccurs="1" />
+			<xs:element name="itineraryUniquenessViolation" type="xs:double" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="thingsToDoRecommendation">
+		<xs:sequence>
+			<xs:element name="thingsToDoID" type="xs:string" maxOccurs="1" />
+			<xs:element name="interestID" type="xs:string" maxOccurs="1" />
+			<xs:element name="interestPrefContrib" type="xs:double" maxOccurs="1" />
+			<xs:element name="drupalWeightContrib" type="xs:double" maxOccurs="1" />
+			<xs:element name="isRecommended" type="xs:int" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+
 	<xs:element name="GetAssistedSearchRecommendation" nillable="false">
 		<xs:complexType>
 			<xs:sequence>
-			 	<xs:element name="destinationSet" type="ncl:destinationSet" maxOccurs="1" />
+				<xs:element name="destinationSet" type="ncl:destinationSet" maxOccurs="1" />
 				<xs:element name="accomodationSet" type="ncl:accomodationSet" maxOccurs="1" />
 				<xs:element name="thingToDoSet" type="ncl:thingToDoSet" maxOccurs="1" />
 				<xs:element name="interestSet" type="ncl:interestSet" maxOccurs="1" />
 				<xs:element name="departurePortSet" type="ncl:departurePortSet" maxOccurs="1" />
 				<xs:element name="durationSet" type="ncl:durationSet" maxOccurs="1" />
 				<xs:element name="flexDatesSet" type="ncl:flexDatesSet" maxOccurs="1" />
-				<xs:element name="discTypes" type="ncl:discTypes" maxOccurs="1" />
 				<xs:element name="promoCodeSet" type="ncl:promoCodeSet" maxOccurs="1" />
 				<xs:element name="priceRangeSet" type="ncl:priceRangeSet" maxOccurs="1" />
-				<xs:element name="stateroomView" maxOccurs="1" nillable="false"	type="xs:string" />
+				<xs:element name="stateroomView" maxOccurs="1" nillable="false" type="xs:string" />
 				<xs:element name="stateroomSpace" maxOccurs="1" nillable="false" type="xs:string" />
 				<xs:element name="stateroomLocation" maxOccurs="1" nillable="false" type="xs:string" />
 				<xs:element name="numberOfGuests" maxOccurs="1" nillable="false" type="xs:positiveInteger" />
@@ -160,9 +134,9 @@
 	<xs:element name="GetAssistedSearchRecommendationResponse" nillable="false">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="cruisePackageRecommendation" maxOccurs="unbounded" minOccurs="1" type="ncl:cruisePackageRecommendation"/>
-				<xs:element name="constraintViolation" maxOccurs="unbounded" minOccurs="1" type="ncl:constraintViolation" />
-				<xs:element name="thingsToDoRecommendation" maxOccurs="unbounded" minOccurs="1" type="ncl:thingsToDoRecommendation" />
+				<xs:element name="cruisePackageRecommendation" maxOccurs="unbounded" minOccurs="1" type="ncl:cruisePackageRecommendation" />
+				<xs:element name="constraintViolation" maxOccurs="unbounded" minOccurs="0" type="ncl:constraintViolation" />
+				<xs:element name="thingsToDoRecommendation" maxOccurs="unbounded" minOccurs="0" type="ncl:thingsToDoRecommendation" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
