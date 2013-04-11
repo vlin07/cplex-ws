@@ -39,6 +39,25 @@
 			<xs:element name="endDate" type="xs:string" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
+<<<<<<< HEAD
+=======
+	<xs:complexType name="discTypes">
+		<xs:sequence>
+			<xs:element name="BESTFARE" type="xs:boolean" maxOccurs="1" default="true" />
+			<xs:element name="MILITARY" type="xs:boolean" maxOccurs="1" />
+			<xs:element name="AARP" type="xs:boolean" maxOccurs="1" />
+			<xs:element name="LATITUDES" type="xs:boolean" maxOccurs="1" />
+			<xs:element name="SENIOR" type="xs:boolean" maxOccurs="1" />
+			<xs:element name="UNION" type="xs:boolean" maxOccurs="1" />
+			<xs:element name="TEAMMEMBER" type="xs:boolean" maxOccurs="1" />
+			<xs:element name="SPECIALFARES" type="xs:boolean"
+				maxOccurs="1" />
+			<xs:element name="FRIENDSFAMILY" type="xs:boolean"
+				maxOccurs="1" />
+			<xs:element name="stateCode" type="xs:string" maxOccurs="1" />
+		</xs:sequence>
+	</xs:complexType>
+>>>>>>> c7225bc79c2affbcdfbb3062fc8c8654d26df30b
 	<xs:complexType name="priceRangeSet">
 		<xs:sequence>
 			<xs:element name="priceRange" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
