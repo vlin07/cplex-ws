@@ -6,9 +6,11 @@
 package com.ncl.assisted_search.messages;
 
 import java.math.BigInteger;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
@@ -30,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="interestSet" type="{http://assisted-search.ncl.com/messages}interestSet"/>
  *         &lt;element name="departurePortSet" type="{http://assisted-search.ncl.com/messages}departurePortSet"/>
  *         &lt;element name="durationSet" type="{http://assisted-search.ncl.com/messages}durationSet"/>
- *         &lt;element name="flexDatesSet" type="{http://assisted-search.ncl.com/messages}flexDatesSet"/>
+ *         &lt;element name="flexDatesSet" type="{http://assisted-search.ncl.com/messages}flexDatesSet" minOccurs="0"/>
  *         &lt;element name="promoCodeSet" type="{http://assisted-search.ncl.com/messages}promoCodeSet"/>
  *         &lt;element name="priceRangeSet" type="{http://assisted-search.ncl.com/messages}priceRangeSet"/>
  *         &lt;element name="stateroomView" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -80,8 +82,8 @@ public class GetAssistedSearchRecommendation {
     protected DeparturePortSet departurePortSet;
     @XmlElement(required = true)
     protected DurationSet durationSet;
-    @XmlElement(required = true)
-    protected FlexDatesSet flexDatesSet;
+    @XmlElementRef(name = "flexDatesSet", type = JAXBElement.class)
+    protected JAXBElement<FlexDatesSet> flexDatesSet;
     @XmlElement(required = true)
     protected PromoCodeSet promoCodeSet;
     @XmlElement(required = true)
@@ -249,10 +251,10 @@ public class GetAssistedSearchRecommendation {
      * 
      * @return
      *     possible object is
-     *     {@link FlexDatesSet }
+     *     {@link JAXBElement }{@code <}{@link FlexDatesSet }{@code >}
      *     
      */
-    public FlexDatesSet getFlexDatesSet() {
+    public JAXBElement<FlexDatesSet> getFlexDatesSet() {
         return flexDatesSet;
     }
 
@@ -261,11 +263,11 @@ public class GetAssistedSearchRecommendation {
      * 
      * @param value
      *     allowed object is
-     *     {@link FlexDatesSet }
+     *     {@link JAXBElement }{@code <}{@link FlexDatesSet }{@code >}
      *     
      */
-    public void setFlexDatesSet(FlexDatesSet value) {
-        this.flexDatesSet = value;
+    public void setFlexDatesSet(JAXBElement<FlexDatesSet> value) {
+        this.flexDatesSet = ((JAXBElement<FlexDatesSet> ) value);
     }
 
     /**

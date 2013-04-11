@@ -10,6 +10,8 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.logging.Logger;
 
+import javax.xml.bind.JAXBElement;
+
 import com.ncl.assisted_search.io.AccommodationPreference;
 import com.ncl.assisted_search.io.DurationRange;
 import com.ncl.assisted_search.io.OptimizationRequest;
@@ -22,7 +24,6 @@ import com.ncl.assisted_search.io.UserWeight;
 import com.ncl.assisted_search.messages.AccomodationSet;
 import com.ncl.assisted_search.messages.DeparturePortSet;
 import com.ncl.assisted_search.messages.DestinationSet;
-import com.ncl.assisted_search.messages.DiscTypes;
 import com.ncl.assisted_search.messages.DurationSet;
 import com.ncl.assisted_search.messages.FlexDatesSet;
 import com.ncl.assisted_search.messages.GetAssistedSearchRecommendation;
@@ -74,9 +75,11 @@ public class AssistedSearchServicesSOAPImpl{
 		usrInp._sailDateRangeList.clear();
     	try {
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        	FlexDatesSet flDtSt = getAssistedSearchRecommendation.getFlexDatesSet();
-        	if(flDtSt != null)
+        	JAXBElement<FlexDatesSet> flDtStJaxB = getAssistedSearchRecommendation.getFlexDatesSet();
+        	
+        	if(flDtStJaxB != null && !flDtStJaxB.isNil())
         	{
+            	FlexDatesSet flDtSt = flDtStJaxB.getValue();
                 Date enddt = df.parse(flDtSt.getEndDate());
                 Date startdt = df.parse(flDtSt.getStartDate());
                 

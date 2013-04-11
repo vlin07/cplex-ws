@@ -1,10 +1,15 @@
 package com.ncl.assisted_search.io;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+
+import com.ncl.assisted_search.io.SailDateRange;
+
+import java.sql.*;
+import oracle.jdbc.OracleDriver;
 
 public class UserInput {
 	
@@ -56,7 +61,7 @@ public class UserInput {
 	}
 	
 	//test data set: For testing only
-	public UserInput(boolean Debug) throws Exception {
+	public UserInput(String Debug) throws Exception {
 		try{
 			/*
 	    	Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -73,12 +78,12 @@ public class UserInput {
 		
 			
 	        DateFormat df = new SimpleDateFormat("yyyyMMdd");
-	        Date ed = df.parse("20130301");
-	        Date ld = df.parse("20130305");
+	        Date ed = df.parse("20130316");
+	        Date ld = df.parse("20130501");
 			SailDateRange sdr=new SailDateRange(ed,ld);
 			_sailDateRangeList.add(sdr);
-	        ed = df.parse("20130310");
-	        ld = df.parse("20130321");
+	        ed = df.parse("20130410");
+	        ld = df.parse("20130421");
 			sdr= new SailDateRange(ed,ld);
 			_sailDateRangeList.add(sdr);
 			_numberOfGuests=2;

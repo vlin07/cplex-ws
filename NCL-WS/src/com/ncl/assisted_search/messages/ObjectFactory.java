@@ -5,7 +5,10 @@
 
 package com.ncl.assisted_search.messages;
 
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
 
 
 /**
@@ -25,6 +28,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetAssistedSearchRecommendationFlexDatesSet_QNAME = new QName("", "flexDatesSet");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ncl.assisted_search.messages
@@ -34,27 +38,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAssistedSearchRecommendationResponse }
-     * 
-     */
-    public GetAssistedSearchRecommendationResponse createGetAssistedSearchRecommendationResponse() {
-        return new GetAssistedSearchRecommendationResponse();
-    }
-
-    /**
      * Create an instance of {@link FlexDatesSet }
      * 
      */
     public FlexDatesSet createFlexDatesSet() {
         return new FlexDatesSet();
-    }
-
-    /**
-     * Create an instance of {@link CruisePackageRecommendation }
-     * 
-     */
-    public CruisePackageRecommendation createCruisePackageRecommendation() {
-        return new CruisePackageRecommendation();
     }
 
     /**
@@ -74,59 +62,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PromoCodeSet }
-     * 
-     */
-    public PromoCodeSet createPromoCodeSet() {
-        return new PromoCodeSet();
-    }
-
-    /**
-     * Create an instance of {@link DurationSet }
-     * 
-     */
-    public DurationSet createDurationSet() {
-        return new DurationSet();
-    }
-
-    /**
-     * Create an instance of {@link GetAssistedSearchRecommendation }
-     * 
-     */
-    public GetAssistedSearchRecommendation createGetAssistedSearchRecommendation() {
-        return new GetAssistedSearchRecommendation();
-    }
-
-    /**
-     * Create an instance of {@link ThingToDoSet }
-     * 
-     */
-    public ThingToDoSet createThingToDoSet() {
-        return new ThingToDoSet();
-    }
-
-    /**
      * Create an instance of {@link ThingsToDoRecommendation }
      * 
      */
     public ThingsToDoRecommendation createThingsToDoRecommendation() {
         return new ThingsToDoRecommendation();
-    }
-
-    /**
-     * Create an instance of {@link PriceRangeSet }
-     * 
-     */
-    public PriceRangeSet createPriceRangeSet() {
-        return new PriceRangeSet();
-    }
-
-    /**
-     * Create an instance of {@link InterestSet }
-     * 
-     */
-    public InterestSet createInterestSet() {
-        return new InterestSet();
     }
 
     /**
@@ -138,11 +78,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PriceRangeSet }
+     * 
+     */
+    public PriceRangeSet createPriceRangeSet() {
+        return new PriceRangeSet();
+    }
+
+    /**
      * Create an instance of {@link ConstraintViolation }
      * 
      */
     public ConstraintViolation createConstraintViolation() {
         return new ConstraintViolation();
+    }
+
+    /**
+     * Create an instance of {@link DurationSet }
+     * 
+     */
+    public DurationSet createDurationSet() {
+        return new DurationSet();
     }
 
     /**
@@ -154,11 +110,68 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CruisePackageRecommendation }
+     * 
+     */
+    public CruisePackageRecommendation createCruisePackageRecommendation() {
+        return new CruisePackageRecommendation();
+    }
+
+    /**
+     * Create an instance of {@link ThingToDoSet }
+     * 
+     */
+    public ThingToDoSet createThingToDoSet() {
+        return new ThingToDoSet();
+    }
+
+    /**
+     * Create an instance of {@link GetAssistedSearchRecommendationResponse }
+     * 
+     */
+    public GetAssistedSearchRecommendationResponse createGetAssistedSearchRecommendationResponse() {
+        return new GetAssistedSearchRecommendationResponse();
+    }
+
+    /**
+     * Create an instance of {@link InterestSet }
+     * 
+     */
+    public InterestSet createInterestSet() {
+        return new InterestSet();
+    }
+
+    /**
      * Create an instance of {@link DeparturePortSet }
      * 
      */
     public DeparturePortSet createDeparturePortSet() {
         return new DeparturePortSet();
+    }
+
+    /**
+     * Create an instance of {@link PromoCodeSet }
+     * 
+     */
+    public PromoCodeSet createPromoCodeSet() {
+        return new PromoCodeSet();
+    }
+
+    /**
+     * Create an instance of {@link GetAssistedSearchRecommendation }
+     * 
+     */
+    public GetAssistedSearchRecommendation createGetAssistedSearchRecommendation() {
+        return new GetAssistedSearchRecommendation();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FlexDatesSet }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "", name = "flexDatesSet", scope = GetAssistedSearchRecommendation.class)
+    public JAXBElement<FlexDatesSet> createGetAssistedSearchRecommendationFlexDatesSet(FlexDatesSet value) {
+        return new JAXBElement<FlexDatesSet>(_GetAssistedSearchRecommendationFlexDatesSet_QNAME, FlexDatesSet.class, GetAssistedSearchRecommendation.class, value);
     }
 
 }
