@@ -27,6 +27,7 @@ import com.ncl.assisted_search.messages.DurationSet;
 import com.ncl.assisted_search.messages.FlexDatesSet;
 import com.ncl.assisted_search.messages.GetAssistedSearchRecommendation;
 import com.ncl.assisted_search.messages.GetAssistedSearchRecommendationResponse;
+import com.ncl.assisted_search.messages.ObjectFactory;
 import com.ncl.assisted_search.messages.InterestSet;
 import com.ncl.assisted_search.messages.PriceRangeSet;
 import com.ncl.assisted_search.messages.PromoCodeSet;
@@ -101,53 +102,8 @@ public class AssistedSearchServicesSOAPImpl{
 		
 		// Set up - DiscTypes #3 
 		usrInp._discountTypeList.clear();
-		DiscTypes discTypes = getAssistedSearchRecommendation.getDiscTypes();
-
-		if(discTypes != null)
-		{
-			if(discTypes.isAARP())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.AARP"));
-			}
-			if(discTypes.isBESTFARE())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.BESTFAIR"));
-			}
-			if(discTypes.isFRIENDSFAMILY())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.FRIENDSFAMILY"));
-			}
-			if(discTypes.isLATITUDES())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.LATITUDES"));
-			}
-			if(discTypes.isMILITARY())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.MILITARY"));
-			}
-			if(discTypes.isSENIOR())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.SENIOR"));
-			}
-			if(discTypes.isSPECIALFARES())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.SPECIALFARES"));
-			}
-			if(discTypes.isTEAMMEMBER())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.TEAMMEMBER"));
-			}
-			if(discTypes.isUNION())
-			{
-				usrInp._discountTypeList.add(properties.getProperty("discountTypeList.UNION"));
-			}
-			
-			if(discTypes.getStateCode() != null && discTypes.getStateCode().trim().length() > 0)
-			{
-				usrInp._discountTypeList.add(discTypes.getStateCode());
-			}
-		}
-
+		
+		// leverage the "static string style" in future return to the "discTypes" 
 		PromoCodeSet promoCodes = getAssistedSearchRecommendation.getPromoCodeSet();
 		if(promoCodes != null)
 		{

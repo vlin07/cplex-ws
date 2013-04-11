@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="cruisePackageRecommendation" type="{http://assisted-search.ncl.com/messages}cruisePackageRecommendation" maxOccurs="unbounded"/>
- *         &lt;element name="constraintViolation" type="{http://assisted-search.ncl.com/messages}constraintViolation" maxOccurs="unbounded"/>
- *         &lt;element name="thingsToDoRecommendation" type="{http://assisted-search.ncl.com/messages}thingsToDoRecommendation" maxOccurs="unbounded"/>
+ *         &lt;element name="constraintViolation" type="{http://assisted-search.ncl.com/messages}constraintViolation" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="thingsToDoRecommendation" type="{http://assisted-search.ncl.com/messages}thingsToDoRecommendation" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -46,9 +46,7 @@ public class GetAssistedSearchRecommendationResponse {
 
     @XmlElement(required = true)
     protected List<CruisePackageRecommendation> cruisePackageRecommendation;
-    @XmlElement(required = true)
     protected List<ConstraintViolation> constraintViolation;
-    @XmlElement(required = true)
     protected List<ThingsToDoRecommendation> thingsToDoRecommendation;
 
     /**

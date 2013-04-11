@@ -31,7 +31,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="departurePortSet" type="{http://assisted-search.ncl.com/messages}departurePortSet"/>
  *         &lt;element name="durationSet" type="{http://assisted-search.ncl.com/messages}durationSet"/>
  *         &lt;element name="flexDatesSet" type="{http://assisted-search.ncl.com/messages}flexDatesSet"/>
- *         &lt;element name="discTypes" type="{http://assisted-search.ncl.com/messages}discTypes"/>
  *         &lt;element name="promoCodeSet" type="{http://assisted-search.ncl.com/messages}promoCodeSet"/>
  *         &lt;element name="priceRangeSet" type="{http://assisted-search.ncl.com/messages}priceRangeSet"/>
  *         &lt;element name="stateroomView" type="{http://www.w3.org/2001/XMLSchema}string"/>
@@ -57,7 +56,6 @@ import javax.xml.bind.annotation.XmlType;
     "departurePortSet",
     "durationSet",
     "flexDatesSet",
-    "discTypes",
     "promoCodeSet",
     "priceRangeSet",
     "stateroomView",
@@ -84,8 +82,6 @@ public class GetAssistedSearchRecommendation {
     protected DurationSet durationSet;
     @XmlElement(required = true)
     protected FlexDatesSet flexDatesSet;
-    @XmlElement(required = true)
-    protected DiscTypes discTypes;
     @XmlElement(required = true)
     protected PromoCodeSet promoCodeSet;
     @XmlElement(required = true)
@@ -270,30 +266,6 @@ public class GetAssistedSearchRecommendation {
      */
     public void setFlexDatesSet(FlexDatesSet value) {
         this.flexDatesSet = value;
-    }
-
-    /**
-     * Gets the value of the discTypes property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DiscTypes }
-     *     
-     */
-    public DiscTypes getDiscTypes() {
-        return discTypes;
-    }
-
-    /**
-     * Sets the value of the discTypes property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DiscTypes }
-     *     
-     */
-    public void setDiscTypes(DiscTypes value) {
-        this.discTypes = value;
     }
 
     /**
