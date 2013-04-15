@@ -2,7 +2,24 @@ Build instructions
 
 1. Establish a working Java 1.6 development environment
 2. Create folders to hold the two jar files in lib (used below)
-3. Export 2 environment variables:
-        export OJDBC_HOME="$HOME/lib/java/oracle/ojdbc6"
-        export OPLALL_HOME="$HOME/lib/java/ibm/cplex"
-4. run `ant` from the NCL-WS directory.
+3. Download JAXB version and put it somewhere (used below)
+
+4. Export the environment variables below (but point them to the right locations)
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+export OJDBC_HOME="$HOME/lib/java/oracle/ojdbc6"
+export OPLALL_HOME="$HOME/lib/java/ibm/cplex"
+export JAXB_HOME="$HOME/lib/java/jaxb/2.1/jaxb-ri-20100511"
+export PATH=$JAXB_HOME/bin:$PATH
+
+5. run `ant` from the NCL-WS directory.
+
+You can (and should) script this entire process so that a single command
+sets the appropriate vars and executes the build.
+
+NOTE:
+
+One important TODO will be to migrate the build to use Maven so 
+the open source dependencies can be auto-resolved and downloaded.
+
+
