@@ -6,3 +6,4 @@ NCL-WS/*.zip
 NCL-WS/dist/*
 NCL-WS/NCL-WS
 NCL-WS/.settings
+.javarc
