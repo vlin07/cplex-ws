@@ -132,7 +132,7 @@ public class OptimizationRequest {
  }
  
  //test data from Oracle database
- public static void main_oracle(String[] args) throws Exception
+ public static void main(String[] args) throws Exception
  {	 
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -151,7 +151,7 @@ public class OptimizationRequest {
 
  //test data from dat file: dataSource: for example: = oplF.createOplDataSource("NCL Assisted Search Debug.dat");
  
- public static void main(String[] args) throws Exception
+ public static void main_opl(String[] args) throws Exception
  {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -299,6 +299,7 @@ public class OptimizationRequest {
 		 query3=query3+") ";
 		 firstRange=true;
 		 String query4 ="";
+		 /*
 		 for (Iterator itr = userInput._departingPortList.iterator(); itr.hasNext();)
          {		
 			 if(firstRange==true) query4=query4+" AND (";
@@ -306,7 +307,7 @@ public class OptimizationRequest {
 			 String pref=(String) itr.next();			 
 			 query4=query4+"PORT_FROM =\'"+pref+"\'";
 			 firstRange=false;
-    	 }
+    	 }*/
 		 /*
 		 for (Iterator itr = userInput._destinationList.iterator(); itr.hasNext();)
          {		
