@@ -34,19 +34,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UserWeightSet }
+     * Create an instance of {@link DestinationSet }
      * 
      */
-    public UserWeightSet createUserWeightSet() {
-        return new UserWeightSet();
+    public DestinationSet createDestinationSet() {
+        return new DestinationSet();
     }
 
     /**
-     * Create an instance of {@link CruisePackageRecommendation }
+     * Create an instance of {@link PromoCodeSet }
      * 
      */
-    public CruisePackageRecommendation createCruisePackageRecommendation() {
-        return new CruisePackageRecommendation();
+    public PromoCodeSet createPromoCodeSet() {
+        return new PromoCodeSet();
+    }
+
+    /**
+     * Create an instance of {@link ThingsToDoRecommendation }
+     * 
+     */
+    public ThingsToDoRecommendation createThingsToDoRecommendation() {
+        return new ThingsToDoRecommendation();
+    }
+
+    /**
+     * Create an instance of {@link DeparturePortSet }
+     * 
+     */
+    public DeparturePortSet createDeparturePortSet() {
+        return new DeparturePortSet();
+    }
+
+    /**
+     * Create an instance of {@link FlexDatesSet }
+     * 
+     */
+    public FlexDatesSet createFlexDatesSet() {
+        return new FlexDatesSet();
+    }
+
+    /**
+     * Create an instance of {@link DurationSet }
+     * 
+     */
+    public DurationSet createDurationSet() {
+        return new DurationSet();
     }
 
     /**
@@ -66,27 +98,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DurationSet }
+     * Create an instance of {@link InterestSet }
      * 
      */
-    public DurationSet createDurationSet() {
-        return new DurationSet();
+    public InterestSet createInterestSet() {
+        return new InterestSet();
     }
 
     /**
-     * Create an instance of {@link PromoCodeSet }
+     * Create an instance of {@link RecommReqLimitSet }
      * 
      */
-    public PromoCodeSet createPromoCodeSet() {
-        return new PromoCodeSet();
+    public RecommReqLimitSet createRecommReqLimitSet() {
+        return new RecommReqLimitSet();
     }
 
     /**
-     * Create an instance of {@link FlexDatesSet }
+     * Create an instance of {@link UserWeightSet }
+     *
+     */
+    public UserWeightSet createUserWeightSet() {
+        return new UserWeightSet();
+    }
+
+    /**
+     * Create an instance of {@link GetAssistedSearchRecommendationResponse }
      * 
      */
-    public FlexDatesSet createFlexDatesSet() {
-        return new FlexDatesSet();
+    public GetAssistedSearchRecommendationResponse createGetAssistedSearchRecommendationResponse() {
+        return new GetAssistedSearchRecommendationResponse();
+    }
+
+    /**
+     * Create an instance of {@link CruisePackageRecommendation }
+     * 
+     */
+    public CruisePackageRecommendation createCruisePackageRecommendation() {
+        return new CruisePackageRecommendation();
+    }
+
+    /**
+     * Create an instance of {@link GetAssistedSearchRecommendation }
+     * 
+     */
+    public GetAssistedSearchRecommendation createGetAssistedSearchRecommendation() {
+        return new GetAssistedSearchRecommendation();
     }
 
     /**
@@ -99,66 +155,10 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ThingToDoSet }
-     * 
+     *
      */
     public ThingToDoSet createThingToDoSet() {
         return new ThingToDoSet();
-    }
-
-    /**
-     * Create an instance of {@link DeparturePortSet }
-     * 
-     */
-    public DeparturePortSet createDeparturePortSet() {
-        return new DeparturePortSet();
-    }
-
-    /**
-     * Create an instance of {@link DestinationSet }
-     * 
-     */
-    public DestinationSet createDestinationSet() {
-        return new DestinationSet();
-    }
-
-    /**
-     * Create an instance of {@link RecommReqLimitSet }
-     * 
-     */
-    public RecommReqLimitSet createRecommReqLimitSet() {
-        return new RecommReqLimitSet();
-    }
-
-    /**
-     * Create an instance of {@link GetAssistedSearchRecommendationResponse }
-     * 
-     */
-    public GetAssistedSearchRecommendationResponse createGetAssistedSearchRecommendationResponse() {
-        return new GetAssistedSearchRecommendationResponse();
-    }
-
-    /**
-     * Create an instance of {@link ThingsToDoRecommendation }
-     * 
-     */
-    public ThingsToDoRecommendation createThingsToDoRecommendation() {
-        return new ThingsToDoRecommendation();
-    }
-
-    /**
-     * Create an instance of {@link GetAssistedSearchRecommendation }
-     * 
-     */
-    public GetAssistedSearchRecommendation createGetAssistedSearchRecommendation() {
-        return new GetAssistedSearchRecommendation();
-    }
-
-    /**
-     * Create an instance of {@link InterestSet }
-     * 
-     */
-    public InterestSet createInterestSet() {
-        return new InterestSet();
     }
 
     /**
