@@ -179,8 +179,8 @@ tuple ConstraintViolation {
 };
 
 tuple CruisePackageRecommendation {
-  string SailID;
-  string PackageID;
+  key string SailID;
+  key string PackageID;
   key string DateID;
   key string ItineraryID;
   string Destination;
@@ -222,5 +222,5 @@ tuple ThingsToDoRecommendation {
 };
 {ConstraintViolation} Output_ConstraintViolation;
 {CruisePackageRecommendation} Output_CruisePackageRecommendation;
-{ThingsToDoRecommendation} Output_ThingsToDoRecommendation;
 {Objectives} Output_Objective;
+{ThingsToDoRecommendation} Output_ThingsToDoRecommendation;

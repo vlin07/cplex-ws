@@ -9,6 +9,39 @@
    // other option is to specify CP.   
    using CPLEX;
    
+   execute INITIALIZE_RANGE
+   {  
+   	   var index=0;
+   	   for(var pr in Input_PricePerGuestRange)
+   	   {
+   	     index=1;
+   	     break
+       } 
+       if(index==0){
+          Input_PricePerGuestRange.add(0,100000);  	     	     
+          writeln("Default Price Range: 0, 100000");
+       }  
+   	   index=0;
+   	   for(var pr1 in Input_SailDateRange)
+   	   {
+   	     index=1;
+   	     break
+       } 
+       if(index==0){
+          Input_SailDateRange.add(-1000,100000);  	     	     
+          writeln("Sail Date Range: -1000, 100000");
+       }                
+       index=0;
+   	   for(var pr2 in Input_DurationRange)
+   	   {
+   	     index=1;
+   	     break
+       } 
+       if(index==0){
+          Input_DurationRange.add(0,100000);  	     	     
+          writeln("Duration Range: 0, 100000");
+       }        
+   }       
    // Use Cases referenced below
    // Use Case = 1: Recommend Top Stateroom Types (Web App Step 2)
    // Use Case = 2: Recommend Top Things to do (Web App Step 3)
@@ -262,6 +295,229 @@
    //{RangeMinMax} Input_DurationRange = ...; 
    //{RangeMinMax} Input_SailDateRange=...;
    //{RangeMinMax} Input_PricePerGuestRange=...;
+   
+   tuple CruisePackagePrice0 {
+	  key int CruisePackageID;
+	  string SailID;
+	  string PackageID;
+	  string DateID;
+	  int Date;
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+	  string DepartingPort;
+	  string RoomType;
+	  string Meta;
+	  float Duration;
+	  float DrupalWeight;
+	  float PricePerGuest;
+	  
+  };
+  {CruisePackagePrice0} Input_CruisePackagePrice0={
+    <i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,p.PricePerGuest>
+	  |i in Input_CruisePackage, p in Input_CruisePackagePrice: i.CruisePackageID==p.CruisePackageID};
+  
+  //pkg within price range
+  {CruisePackagePrice0} Input_CruisePackagePrice1={
+    <i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+	  |i in Input_CruisePackagePrice0, p in Input_PricePerGuestRange: i.PricePerGuest>=p.Min && i.PricePerGuest<=p.Max};
+  //pkg out of price range
+  {CruisePackagePrice0} Input_CruisePackagePrice2= 
+  	{<i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+	  |i in Input_CruisePackagePrice0}
+	diff
+	{<i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+	  |i in Input_CruisePackagePrice1};	
+
+  tuple CruiseRoom{
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+	  string RoomType;
+  }
+  
+  {CruiseRoom} Input_CruiseRoom={<i.ShipID,i.ItineraryID,i.Destination,i.RoomType> | i in Input_CruisePackagePrice1};   	    
+  tuple CruiseRoomScore{
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+	  string RoomType;
+	  float Score;
+  }  
+  
+  {CruiseRoomScore} Input_CruiseRoomScore0={ <i.ShipID,i.ItineraryID,i.Destination,i.RoomType,
+  		sum(a in Input_AccommodationPreferenceScore: a.ShipID==i.ShipID && a.RoomType==i.RoomType, 
+  				c in Input_AccommodationPreference: c.Preference==a.Preference && c.PreferenceType==a.PreferenceType) a.Score> 
+  	| i in Input_CruiseRoom };  
+  	 
+    	 
+  {CruiseRoomScore} Input_CruiseRoomScore1={ <i.ShipID,i.ItineraryID,i.Destination,i.RoomType,-1>| i in Input_CruiseRoom}
+  	diff 
+  	{ <i.ShipID,i.ItineraryID,i.Destination,i.RoomType,-1>| i in Input_CruiseRoomScore0}; 
+  	
+  {CruiseRoomScore} Input_CruiseRoomScore={ <i.ShipID,i.ItineraryID,i.Destination,i.RoomType,i.Score>| i in Input_CruiseRoomScore0}
+  	union
+  	{ <i.ShipID,i.ItineraryID,i.Destination,i.RoomType,i.Score>| i in Input_CruiseRoomScore1};  
+   
+   /*
+   execute INITIALIZE_MODEL2
+   {
+     for(var c in  Input_CruiseRoomScore)
+     writeln("ship="+c.ShipID+ "Score="+c.Score);
+   } */
+    
+  tuple ShipItinerary{
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+  }
+    
+  {ShipItinerary} Input_ShipItinerary={<i.ShipID,i.ItineraryID,i.Destination>| i in Input_CruiseRoom}; 
+    
+  //find the best RoomType Score within Price Range for each Itinerary
+  tuple CruiseMaxScore{
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+	  float Score;
+  }  
+  {CruiseMaxScore} Input_CruiseMaxScore={ <i.ShipID,i.ItineraryID,i.Destination,
+  		max(a in Input_CruiseRoomScore: a.ShipID==i.ShipID && a.ItineraryID==i.ItineraryID && a.Destination==i.Destination) a.Score> 
+  	| i in Input_ShipItinerary };     
+  	
+  //the best room type within price range for each itinerary	
+  {CruiseRoom} Input_CruiseBestRoom={};//compute in the later ilog script
+  
+  
+  //pkg out of price range
+  {CruiseRoom} Input_CruiseRoom2={<i.ShipID,i.ItineraryID,i.Destination,i.RoomType> | i in Input_CruisePackagePrice2}; 
+   
+  tuple CruiseRoomPrice{
+	  string ShipID;
+	  string ItineraryID;
+	  string RoomType;
+	  string Destination;
+	  float PricePerGuest;
+  }  
+  
+  {CruiseRoomPrice} Input_CruiseRoomPrice2={ <i.ShipID,i.ItineraryID,i.RoomType,i.Destination,
+  		min(a in Input_CruisePackagePrice2: a.ShipID==i.ShipID && a.RoomType==i.RoomType && a.ItineraryID==i.ItineraryID && a.Destination==i.Destination) a.PricePerGuest> 
+  	| i in Input_CruiseRoom2 }; 
+  	    	      
+  {ShipItinerary} Input_ShipItinerary2={<i.ShipID,i.ItineraryID,i.Destination> | i in Input_CruiseRoomPrice2};
+  
+  tuple CruiseItineraryPrice{
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+	  float PricePerGuest;
+  }  
+  {CruiseItineraryPrice} Input_CruiseMinPrice2={ <i.ShipID,i.ItineraryID,i.Destination,
+  		min(a in Input_CruiseRoomPrice2: a.ShipID==i.ShipID && a.ItineraryID==i.ItineraryID && a.Destination==i.Destination) a.PricePerGuest> 
+  	| i in Input_ShipItinerary2 };  
+  
+    tuple CruiseBestRoomPrice{
+	  string ShipID;
+	  string ItineraryID;
+	  string Destination;
+	  string RoomType;
+	  float PricePerGuest;
+  }  
+   //the best room type with minimum price deviation for each itinerary outside of price range	
+  {CruiseBestRoomPrice} Input_CruiseBestRoom2={};	
+  	    
+  /*	     
+  tuple Room{
+    string RoomType;
+  };
+  {Room} Input_Room={<i.RoomType>| i in Input_CruiseRoom}; 
+  */     
+  
+   execute INITIALIZE_MODEL0
+   { 
+   	//writeln("Price0");
+   	/*
+   	var i=0;
+   	for(var c in Input_CruisePackagePrice0) i=i+1;
+   	//writeln("Iti="+i);
+   	i=0;
+   	for(var c1 in Input_CruisePackagePrice1) i=i+1;
+   	//writeln("Iti in price="+i);
+   	i=0;
+   	for(var c2 in Input_CruisePackagePrice2) i=i+1;
+   	//writeln("Iti out of price="+i);
+    i=0;
+   	for(var c3 in Input_CruiseRoom) i=i+1;
+   	//writeln("cruiseroom="+i);
+     i=0;
+   	for(var c4 in Input_CruiseRoomScore) i=i+1;
+   	//writeln("roomScore="+i);  	  	
+   	i=0;
+   	for(var c5 in Input_Room) i=i+1;
+   	//writeln("room="+i);
+   	i=0;
+   	for(var c6 in Input_ShipItinerary) i=i+1;
+   	//writeln("ShipIti="+i);   	
+   	i=0;
+   	*/
+   	for(var cm in Input_CruiseMaxScore){
+   	  //writeln("cm: ship="+cm.ShipID+" Iti="+cm.ItineraryID+" Score="+cm.Score);
+   	  for(var cms in Input_CruiseRoomScore){
+   	    //writeln("cms: ship="+cms.ShipID+" Iti="+cms.ItineraryID+" room="+cms.RoomType+" Score="+cms.Score);
+   	    if( cms.ShipID==cm.ShipID && cms.ItineraryID==cm.ItineraryID && cms.Destination==cm.Destination && cms.Score>=cm.Score-0.0001){
+   	      Input_CruiseBestRoom.add(cm.ShipID,cm.ItineraryID,cms.Destination,cms.RoomType);
+   	      //writeln("ship="+cm.ShipID+" Iti="+cm.ItineraryID+" room="+cms.RoomType+" cms.Score="+cms.Score+" cm.Score="+cm.Score);
+   	      //i=i+1;
+   	      break;
+        }   	      
+      }   	    
+    }   	  
+    //writeln("fondBestRoomType="+i);
+   	/*
+   	i=0;
+   	for(var c7 in Input_ShipItinerary2) i=i+1;
+   	//writeln("ShipIti2="+i);      
+    i=0;
+   	*/
+   	for(var cm2 in Input_CruiseMinPrice2){
+   	  for(var cms2 in  Input_CruiseRoomPrice2){
+   	    if( cms2.ShipID==cm2.ShipID && cms2.ItineraryID==cm2.ItineraryID && cms2.Destination==cm2.Destination && cms2.PricePerGuest<=cm2.PricePerGuest+0.0001){
+   	      Input_CruiseBestRoom2.add(cm2.ShipID,cm2.ItineraryID,cms2.Destination,cms2.RoomType,cms2.PricePerGuest);
+   	      //i=i+1;
+   	      break;
+        }   	      
+      }   	    
+    }   	  
+    //writeln("fondBestPriceRoomType="+i);
+   }    
+   
+   //Best room type for each itinerary within price range
+   {CruisePackagePrice0} Input_CruisePackagePrice3=
+    {<i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+	  |i in Input_CruisePackagePrice1, p in Input_CruiseBestRoom: i.ItineraryID==p.ItineraryID && i.ShipID==p.ShipID && i.Destination==p.Destination && i.RoomType==p.RoomType};
+   //Best room type for each itinerary out of price range
+   {CruisePackagePrice0} Input_CruisePackagePrice4=
+    {<i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+	  |i in Input_CruisePackagePrice2, p in Input_CruiseBestRoom2: i.ItineraryID==p.ItineraryID && i.ShipID==p.ShipID && i.Destination==p.Destination && i.RoomType==p.RoomType && i.PricePerGuest==p.PricePerGuest};	  
+   //Best room type for each itinerary within + out of price range	  
+   {CruisePackagePrice0} Input_CruisePackagePrice5=
+    {<i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+		|i in Input_CruisePackagePrice3}
+	union
+    {<i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,i.PricePerGuest>
+		|i in Input_CruisePackagePrice4};	    
+  	     
+  /*	     
+  execute INITIALIZE_MODEL1
+  { 
+   	var i=0;
+   	for(var c in Input_CruisePackagePrice3){
+   	   i=i+1;
+   	   //writeln("Iti3="+c.ItineraryID+" Room="+c.RoomType);
+    }
+     	//writeln("Iti3="+i);
+  }*/
+     	   
    tuple ItineraryRoom {
 	  string ShipID;
 	  string ItineraryID;
@@ -270,11 +526,22 @@
 	  string RoomType;
 	  string Meta;
    };
-   {ItineraryRoom} Input_ItineraryRoom= {<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta> | c in Input_CruisePackage};
-   
+
+   //within price range
+   {ItineraryRoom} Input_ItineraryRoom3= 
+   	{<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta> | c in Input_CruisePackagePrice3};//Input_CruisePackage};
+   //out of price range
+   {ItineraryRoom} Input_ItineraryRoom4= 
+   	{<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta> | c in Input_CruisePackagePrice4};//Input_CruisePackage};	
+   //complete set
+   {ItineraryRoom} Input_ItineraryRoom5= 
+   	{<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta> | c in Input_ItineraryRoom3}
+   	union
+   	{<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta> | c in Input_ItineraryRoom4};//Input_CruisePackage};
+   	   
    //3-11-2013 {Destination} Destinations = { <i.Destination> | i in Input_Itinerary };     
-   {Destination} Destinations = { <i.Destination> | i in Input_ItineraryRoom };
-   {MetaRange} Input_MetaRange0={<i.Meta>| i in Input_ItineraryRoom};
+   {Destination} Destinations = { <i.Destination> | i in Input_ItineraryRoom5 };
+   {MetaRange} Input_MetaRange0={<i.Meta>| i in Input_ItineraryRoom5};
       
    tuple DestinationScore
    {
@@ -331,10 +598,15 @@
 	  string Meta;
 	  int Date;
    };   
-   //find the earliest day for each (ship,itinerry,destination,port,room,meta)
-   {ItineraryDate} Input_ItineraryDate=  {<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta,
-   		min(c1 in Input_CruisePackage: c1.ShipID==c.ShipID && c.ItineraryID==c1.ItineraryID && c.Destination==c1.Destination && c.DepartingPort==c1.DepartingPort && c.RoomType==c1.RoomType && c.Meta==c1.Meta) c1.Date> | c in Input_ItineraryRoom};
-   
+   //find the earliest day for each (ship,itinerry,destination,port,room,meta) within price range
+   {ItineraryDate} Input_ItineraryDate3=  {<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta,
+   		min(c1 in Input_CruisePackagePrice3://Input_CruisePackage: 
+   			c1.ShipID==c.ShipID && c.ItineraryID==c1.ItineraryID && c.Destination==c1.Destination && c.DepartingPort==c1.DepartingPort && c.RoomType==c1.RoomType && c.Meta==c1.Meta) c1.Date> | c in Input_ItineraryRoom3};
+   //find the earliest day for each (ship,itinerry,destination,port,room,meta) out of price range
+   {ItineraryDate} Input_ItineraryDate4=  {<c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta,
+   		min(c1 in Input_CruisePackagePrice4://Input_CruisePackage: 
+   			c1.ShipID==c.ShipID && c.ItineraryID==c1.ItineraryID && c.Destination==c1.Destination && c.DepartingPort==c1.DepartingPort && c.RoomType==c1.RoomType && c.Meta==c1.Meta) c1.Date> | c in Input_ItineraryRoom4};   
+   //CruisePackage2 does not have pripamry key: for fake destination
    tuple CruisePackage2 {
 	  int CruisePackageID;
 	  string SailID;
@@ -349,18 +621,25 @@
 	  string Meta;
 	  float Duration;
 	  float DrupalWeight;
+	  float PricePerGuest;
    };
    //for the same (ship,itinerry,destination,port,room,meta), just recommend the earliest day (within the user sail date range)		
    {CruisePackage2} Input_CruisePackage2=
-   {<c.CruisePackageID,c.SailID,c.PackageID,c.DateID,c.Date,c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta,c.Duration,c.DrupalWeight> |
-   	c in Input_CruisePackage, i in Input_ItineraryDate: i.ShipID==c.ShipID && i.ItineraryID==c.ItineraryID && i.Destination==c.Destination &&
+   {<c.CruisePackageID,c.SailID,c.PackageID,c.DateID,c.Date,c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta,c.Duration,c.DrupalWeight,c.PricePerGuest> |
+   	c in Input_CruisePackagePrice3,//Input_CruisePackage,//within price range 
+   	i in Input_ItineraryDate3: i.ShipID==c.ShipID && i.ItineraryID==c.ItineraryID && i.Destination==c.Destination &&
    	i.DepartingPort==c.DepartingPort && i.RoomType==c.RoomType && i.Date==c.Date}
+   	union
+    {<c.CruisePackageID,c.SailID,c.PackageID,c.DateID,c.Date,c.ShipID,c.ItineraryID,c.Destination,c.DepartingPort,c.RoomType,c.Meta,c.Duration,c.DrupalWeight,c.PricePerGuest> |
+   	c in Input_CruisePackagePrice4,//Input_CruisePackage, //out of price range
+   	i in Input_ItineraryDate4: i.ShipID==c.ShipID && i.ItineraryID==c.ItineraryID && i.Destination==c.Destination &&
+   	i.DepartingPort==c.DepartingPort && i.RoomType==c.RoomType && i.Date==c.Date}  	
    	union//fake Destination packages
-   	{<0,"NONE","NONE","NONE",0,"NONE",d.Destination,d.Destination,"NONE","NONE","NONE",0,0> | d in Input_Destination2}
+   	{<0,"NONE","NONE","NONE",0,"NONE",d.Destination,d.Destination,"NONE","NONE","NONE",0,0,0> | d in Input_Destination2}
    	union//fake Meta packages
-   	{<0,"NONE","NONE","NONE",0,"NONE",d.Meta,"NONE","NONE","NONE",d.Meta,0,0> | d in Input_Meta2}   	
+   	{<0,"NONE","NONE","NONE",0,"NONE",d.Meta,"NONE","NONE","NONE",d.Meta,0,0,0> | d in Input_Meta2}   	
    	union//fake ThingsToDo packages
-   	{<0,"NONE","NONE","NONE",0,"NONE",d.ThingsToDoID,d.ThingsToDoID,"NONE","NONE","NONE",0,0> | d in Input_ThingsToDo2};  		
+   	{<0,"NONE","NONE","NONE",0,"NONE",d.ThingsToDoID,d.ThingsToDoID,"NONE","NONE","NONE",0,0,0> | d in Input_ThingsToDo2};  		
    
    {AccommodationPreferenceScore} Input_AccommodationPreferenceScore1 = { <s.ShipID,s.RoomType,s.PreferenceType,s.Preference,s.StartDate,s.EndDate,s.Score> 
  									  |s in Input_AccommodationPreferenceScore, a in Input_AccommodationPreference: 
@@ -375,14 +654,14 @@
    //dexpr float CruisePackageFP1[i in Input_CruisePackage2]= sum(s in Input_AccommodationPreferenceScore1: 
    //														i.Date>=s.StartDate && i.Date<=s.EndDate && i.ShipID==s.ShipID && i.RoomType==s.RoomType ) s.Score/3.0;
    
-   int CruisePackagePriceCount = sum(n in Input_CruisePackagePrice) 1;
-   range CruisePkgIdRange = 1..CruisePackagePriceCount;
-   CruisePackagePrice CruisePackagePrices[CruisePkgIdRange];
+   //int CruisePackagePriceCount = sum(n in Input_CruisePackagePrice) 1;
+   //range CruisePkgIdRange = 1..CruisePackagePriceCount;
+   //CruisePackagePrice CruisePackagePrices[CruisePkgIdRange];
    	
    //string DiscountType[Input_CruisePackage2];
-   float PricePerGuest[Input_CruisePackage2];
+   //float PricePerGuest[Input_CruisePackage2];
    float CruisePackageFP1[Input_CruisePackage2];											        
-   float InterestCount;// = sum(i in Input_InterestRange) 1;
+   float InterestCount=0;// = sum(i in Input_InterestRange) 1;
    //dexpr float CruisePackageFP211[i in Input_CruisePackage2]= sum(n in Input_InterestRange, m in Input_InterestMetaScore: n.Interest==m.Interest && 
    //																	i.ShipID==m.ShipID && i.Meta==m.Meta && i.Date>=m.StartDate && i.Date<=m.EndDate) m.Score/InterestCount;   																	
    float CruisePackageFP211[Input_CruisePackage2];
@@ -399,7 +678,7 @@
    // Create a set of StateRooms from the Cruise Package data 
    {Meta} Metas = { <i.Meta> | i in Input_CruisePackage2 };   
         
-   {Meta} MetaOutOfRange = {<m.Meta> | m in Metas} 
+   {Meta} MetaOutOfRange = {<m.Meta> | m in Metas, e in Input_MetaRange}//case when Meta range is empty 
    							diff
    						   {<e.Meta> | e in Input_MetaRange};
   									
@@ -409,7 +688,7 @@
    // Unique destinations are required for results in Use Case 3
        
    //Meta out of user's range
-   {Destination} DestinationOutOfRange = {<m.Destination> | m in Destinations} 
+   {Destination} DestinationOutOfRange = {<m.Destination> | m in Destinations,  e in Input_DestinationRange}//case when Destination range is empty 
    							diff
    						   {<e.Destination> | e in Input_DestinationRange};     									   
    //dexpr int CruisePackageFC5[i in Input_CruisePackage2]=sum(m in DestinationOutOfRange: m.Destination==i.Destination) 1;
@@ -417,7 +696,7 @@
    // Single Row Table
    
    {DepartingPort} DepartingPorts = {<m.DepartingPort> | m in Input_CruisePackage2};
-   {DepartingPort} DepartingPortOutOfRange={<m.DepartingPort> | m in DepartingPorts}
+   {DepartingPort} DepartingPortOutOfRange={<m.DepartingPort> | m in DepartingPorts, e in Input_PortRange}
    											diff
    											{<e.DepartingPort> | e in Input_PortRange};
    float CruisePackageFC6[Input_CruisePackage2];//Departing Port Violation
@@ -448,7 +727,7 @@
 
    execute INITIALIZE_MODEL
    {  
-   	   var index=0; 
+   	   var index=0;
 	   for(var si0 in Input_Itinerary){
 	     index=index+1;
 	     ItineraryIndex[si0]=index;
@@ -495,8 +774,8 @@
          CruisePackageItineraryIndex[cri]=0;
          index=index+1;
          //if(cri.DepartingPort=="BCN" || cri.DepartingPort=="MIA")
-         //	 writeln("<"+cri. CruisePackageID+",\""+cri.SailID+"\",\""+cri.PackageID+"\",\""+cri.DateID+"\","+cri.Date+",\""+cri.ShipID+"\",\""+cri.ItineraryID
-         //	 +"\",\""+cri.Destination+"\",\""+cri.DepartingPort+"\",\""+cri.RoomType+"\",\""+cri. Meta+"\","+cri.Duration+","+cri.DrupalWeight+">,");
+         	 //writeln("<"+cri. CruisePackageID+",\""+cri.SailID+"\",\""+cri.PackageID+"\",\""+cri.DateID+"\","+cri.Date+",\""+cri.ShipID+"\",\""+cri.ItineraryID
+         	 //+"\",\""+cri.Destination+"\",\""+cri.DepartingPort+"\",\""+cri.RoomType+"\",\""+cri. Meta+"\","+cri.Duration+","+cri.DrupalWeight+">,");
          for(var si6 in Input_Itinerary){
            if(cri.ItineraryID==si6.ItineraryID){
              CruisePackageItineraryIndex[cri]=ItineraryIndex[si6];
@@ -538,17 +817,20 @@
    	   var diff;
    	   for( var t0 in Input_InterestRange)      
 	    	InterestCount = InterestCount+ 1;
+	   if(InterestCount==0) InterestCount=1; 	
    	   for( var t in Input_ThingsToDoRange)      
 	    	ThingsToDoCount = ThingsToDoCount+ 1;	
        var cnt=0;
+       /*
        for(var cr in Input_CruisePackagePrice){
          cnt=cnt+1;
          CruisePackagePrices[cnt]=cr;
-       }                  
+       } */                 
        cnt=1;
        //writeln("CruisePackagePriceCount="+CruisePackagePriceCount);
        for( var i in Input_CruisePackage2){
       	    //DiscountType[i]="NONE";
+      	    /*
       	    PricePerGuest[i]=0;
       	    if(CruisePackagePriceCount==0){
           	   writeln("Error: Empty Cruise Package Price Data Set!!!");     	      
@@ -567,7 +849,8 @@
             else if(i.CruisePackageID!=0){
 				writeln("Error: Can't find Price for Cruise Package ID="+i.CruisePackageID);     	      
       	       	//break;              
-            }        
+            } 
+            */       
             //writeln("pkdID="+i.CruisePackageID);   
             //writeln("FP values...");                                
       	  	CruisePackageFP1[i]=0;
@@ -656,16 +939,19 @@
 	       	diff=9999999;
 	       	for(var d5 in Input_PricePerGuestRange){
 	       	  	//writeln("min="+d3.Min+" max="+d3.Max);
-   	  	  	  	if(PricePerGuest[i]>=d5.Min && PricePerGuest[i]<=d5.Max){
+   	  	  	  	//if(PricePerGuest[i]>=d5.Min && PricePerGuest[i]<=d5.Max){
+   	  	  	  	if(i.PricePerGuest>=d5.Min && i.PricePerGuest<=d5.Max){
    	  	  	  	  	//writeln("break");
    	  	  	  	  	diff=0;
    	  	  	    	break;
           		}
-          		else if(PricePerGuest[i]<d5.Min && diff>d5.Min-PricePerGuest[i]){
-   	  	  	      diff=d5.Min-PricePerGuest[i];
+          		//else if(PricePerGuest[i]<d5.Min && diff>d5.Min-PricePerGuest[i]){
+          		else if(i.PricePerGuest<d5.Min && diff>d5.Min-i.PricePerGuest){ 
+   	  	  	      diff=d5.Min-i.PricePerGuest;//PricePerGuest[i];
    	  	  		}	       	  	  	     
-           	  	else if(PricePerGuest[i]>d5.Max && diff>PricePerGuest[i]-d5.Max){
-           		  diff= PricePerGuest[i]-d5.Max;
+           	  	//else if(PricePerGuest[i]>d5.Max && diff>PricePerGuest[i]-d5.Max){
+           	  	else if(i.PricePerGuest>d5.Max && diff>i.PricePerGuest-d5.Max){ 
+           		  diff= i.PricePerGuest-d5.Max;//PricePerGuest[i]-d5.Max;
               	}                   		   	 
           	}
           	        		     		
@@ -1341,15 +1627,18 @@
    												union {<i.Meta>| i in Output_Meta2});  	
    												   												      
    /*
-   tuple CruisePackageRecommendation
+   tuple CruisePackageRecommendation0
    {     
      string SailID;
      string PackageID;
-     key string DateID;								// Date
-     key string ItineraryID;						// Itinerary ID
+     //key 
+     string DateID;								// Date
+     //key 
+     string ItineraryID;						// Itinerary ID
      //3-11-2013 key int OptimRequestID;
      string Destination;						// Destination     
-     key string RoomType;						// Room Type
+     //key 
+     string RoomType;						// Room Type
      string Meta;
      float AccPrefContribution;					// Accommodation Preference Objective Contribution
      float InterestPrefContribution;			// Interests Preference Objective Contribution
@@ -1366,8 +1655,8 @@
      //string DiscountType;
      float PricePerGuest;
      int IsRecommended;     					// Recommendation Flag     
-   }
-   */
+   }*/
+   
    {CruisePackageRecommendation}		
    output_CruisePackageRecommendation = 	
    											{<i.SailID,i.PackageID,i.DateID,i.ItineraryID,i.Destination,i.RoomType,i.Meta,
@@ -1381,7 +1670,7 @@
 												n.CustomerDestinationPriority * n.BusinessDestinationPriority * CruisePackageFC5[i],
    												n.BusinessDepartingPriority * CruisePackageFC6[i],			 
    												i.DrupalWeight, //DiscountType[i],
-   												PricePerGuest[i],1> 
+   												i.PricePerGuest,1>//PricePerGuest[i],1> 
    												| i in Input_CruisePackage2: X[i]>0, n in Input_Parameters }
 											union
 												{<i.SailID,i.PackageID,i.DateID,i.ItineraryID,i.Destination,i.RoomType,i.Meta,
@@ -1395,7 +1684,7 @@
 												n.CustomerDestinationPriority * n.BusinessDestinationPriority * CruisePackageFC5[i],
    												n.BusinessDepartingPriority * CruisePackageFC6[i],			 
    												i.DrupalWeight, //DiscountType[i],
-   												PricePerGuest[i],0> 
+   												i.PricePerGuest,0>//PricePerGuest[i],0> 
    												| i in Input_CruisePackage2: X[i]<1 && i.CruisePackageID>0 &&
    												CruisePackageFC1[i] + CruisePackageFC2[i] + CruisePackageFC3[i] +
         					 					CruisePackageFC41[i] + CruisePackageFC42[i] +CruisePackageFC5[i] +
@@ -1413,7 +1702,7 @@
 												n.CustomerDestinationPriority * n.BusinessDestinationPriority * CruisePackageFC5[i],
    												n.BusinessDepartingPriority * CruisePackageFC6[i],			 
    												i.DrupalWeight, //DiscountType[i],
-   												PricePerGuest[i],-1> 
+   												i.PricePerGuest,-1>//PricePerGuest[i],-1> 
    												| i in Input_CruisePackage2: X[i]<1 && i.CruisePackageID>0 &&
    												CruisePackageFC1[i] + CruisePackageFC2[i] + CruisePackageFC3[i] +
         					 					CruisePackageFC41[i] + CruisePackageFC42[i] +CruisePackageFC5[i] +

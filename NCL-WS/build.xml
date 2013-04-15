@@ -95,7 +95,8 @@
          schema="../NCL/NCL-AssistedSearch.xsd" 
          removeOldOutput="yes" 
          package="com.ncl.assisted_search.messages">
-      <arg value="-npa"/>
+         <arg value="-npa"/>
+         <arg value="-no-header" />
       <produces dir="${dir.xjc}/com/ncl/assisted_search/messages" includes="* impl/*" />
     </xjc>
 	
@@ -128,6 +129,7 @@
     <copy todir="${dir.checkout}/dist">
       <fileset dir="${dir.dist}" />
     </copy>
+
     <zip destfile="${ant.project.name}-${DSTAMP}-${TSTAMP}.zip" basedir="${dir.checkout}" 
 	 description="Zip ${ant.project.name} before cleanup" />
   </target>
