@@ -114,6 +114,10 @@
     <javac destdir="${dir.build}/classes" debug="false" srcdir="${dir.src}">
       <classpath refid="project.classpath"/>
     </javac>
+    <!-- copy 'src' prop files to 'WEB-INF' -->
+    <copy todir="${dir.webcontent}/WEB-INF/classes" >  
+    	<fileset dir="${dir.src}" excludes="${dir.src}/classes/com/**"/>  
+    </copy>
   </target>
 	
   <!-- ================================================================= -->
