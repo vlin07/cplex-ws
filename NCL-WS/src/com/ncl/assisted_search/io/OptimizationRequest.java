@@ -335,8 +335,17 @@ public class OptimizationRequest {
 		 System.out.println("Query Cruise_PKG Complete");		 
 		 if(DEBUG.equals("1")){
 			writer.write("Input_CruisePackage={");
-		 }		 
-		 while (resultSet.next()) {
+		 }
+		 
+		 System.out.println("Before reading Cruise_PKG");
+		 while (resultSet.next()) {	
+		 
+		 }
+		 System.out.println("After reading Cruise_PKG");
+		 
+		 resultSet.absolute(1);
+	 
+		 while (resultSet.next()) {		
 			pkgList.add(resultSet.getInt("cruisepkg_id"));
 			itnList.add(resultSet.getString("itnrary"));
 			if(!shipList.contains(resultSet.getString("SHIP_CODE"))){
@@ -350,7 +359,7 @@ public class OptimizationRequest {
 			}*/
 	        Date saildate=resultSet.getDate("DC_SAIL_START");
         	int days=(int) Math.ceil((saildate.getTime()-currentTime.getTime())/86400000.0);
-	        if(DEBUG.equals("1")) System.out.println("pkgid="+resultSet.getInt("cruisepkg_id")+ " Itnry="+resultSet.getString("itnrary")+
+	        if(DEBUG.equals("1")) System.out.println(" pkgid="+resultSet.getInt("cruisepkg_id")+ " Itnry="+resultSet.getString("itnrary")+
 	        		" Ship=" + resultSet.getString("SHIP_CODE")
 	                         + ", Stateroom- " + resultSet.getString("CABIN_CATEGORY")+" time="+ resultSet.getDate("DC_SAIL_START")+" days="+days);
 			buf = dataElements.getElement("Input_CruisePackage").asTupleSet().makeTupleBuffer(-1);
@@ -375,6 +384,7 @@ public class OptimizationRequest {
 						resultSet.getString("META_NAME")+"\","+resultSet.getInt("SAIL_DAYS")+","+resultSet.getDouble("drupalwght")+">,\n");
 			}
 		 }
+		 
 		 System.out.println("Write Cruise_PKG Complete");	
 		 
     	 //Price
