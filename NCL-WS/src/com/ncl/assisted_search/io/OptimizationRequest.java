@@ -15,6 +15,7 @@ import oracle.jdbc.OracleDriver;
 import com.ncl.assisted_search.io.AccommodationPreference;
 import com.ncl.assisted_search.io.UserInput;
 
+
 //Recover code of 4-9-2013 to run objDef=2 if needed
 public class OptimizationRequest {
 	private static String databaseURL="";//"jdbc:oracle:thin:@localhost:1521:xe";
@@ -59,32 +60,35 @@ public class OptimizationRequest {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
-		databaseURL=properties.getProperty("databaseURL");
-		databaseUserID=properties.getProperty("databaseUserID");
-		databasePassword=properties.getProperty("databasePassword");
-		databaseSchemaName=properties.getProperty("databaseSchemaName");
-		oplInputDataFile=properties.getProperty("oplInputDataFile");
-		DEBUG = properties.getProperty("debug");
-
-		if(DEBUG.equals("1")) System.out.println("Attempting createDataSource " + properties.getProperty("OplDataSource"));
-		
-		//dataSource = oplF.createOplDataSource(properties.getProperty("OplDataSource"));		
-
-		if(DEBUG.equals("1"))  System.out.println("Attempting createModelSource " + properties.getProperty("OplModelSource"));
-
-		//		modelSource = oplF.createOplModelSource(properties.getProperty("OplModelSource"));
-
-		if(DEBUG.equals("1")) System.out.println("Finish modelSource ");
-
-		//def = oplF.createOplModelDefinition(modelSource, settings);
-
-		if(DEBUG.equals("1")) System.out.println("Finish def ");
-		
-		dummy_opl_input = properties.getProperty("dummy_opl_input");
-		dummy_opl_input_name = properties.getProperty("dummy_opl_input_name");    
 	 }
-	 return DEBUG;
+
+	databaseURL=properties.getProperty("databaseURL");
+	databaseUserID=properties.getProperty("databaseUserID");
+	databasePassword=properties.getProperty("databasePassword");
+	databaseSchemaName=properties.getProperty("databaseSchemaName");
+	oplInputDataFile=properties.getProperty("oplInputDataFile");
+	DEBUG = properties.getProperty("debug");
+	System.out.println("Set DEBUG MODE:"+DEBUG);
+
+	if(DEBUG.equals("1")) System.out.println("Attempting createDataSource " + properties.getProperty("OplDataSource"));
+	
+	//dataSource = oplF.createOplDataSource(properties.getProperty("OplDataSource"));		
+
+	if(DEBUG.equals("1"))  System.out.println("Attempting createModelSource " + properties.getProperty("OplModelSource"));
+
+	//		modelSource = oplF.createOplModelSource(properties.getProperty("OplModelSource"));
+
+	if(DEBUG.equals("1")) System.out.println("Finish modelSource ");
+
+	//def = oplF.createOplModelDefinition(modelSource, settings);
+
+	if(DEBUG.equals("1")) System.out.println("Finish def ");
+	
+	dummy_opl_input = properties.getProperty("dummy_opl_input");
+	dummy_opl_input_name = properties.getProperty("dummy_opl_input_name");    
+	//System.out.println("Return DEBUG="+DEBUG);
+	 
+	return DEBUG;
  }
  
  
@@ -95,6 +99,7 @@ public class OptimizationRequest {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	if(DEBUG.equals("1")) System.out.println("Start Recommender: "+ Calendar.getInstance().getTime());
 	DEBUG=init(DEBUG);	 
+	System.out.println("DEBUG MODE After init:"+DEBUG);
 	IloOplFactory oplF = new IloOplFactory();
     IloOplErrorHandler errHandler = oplF.createOplErrorHandler();
     IloOplModelSource modelSource = oplF.createOplModelSource(properties.getProperty("OplModelSource"));//oplF.createOplModelSource("NCL Assisted Search.mod");
@@ -131,7 +136,7 @@ public class OptimizationRequest {
  }
  
  //test data from Oracle database
- public static void main_oracle(String[] args) throws Exception
+ public static void main(String[] args) throws Exception
  {	 
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -150,7 +155,7 @@ public class OptimizationRequest {
 
  //test data from dat file: dataSource: for example: = oplF.createOplDataSource("NCL Assisted Search Debug.dat");
  
- public static void main(String[] args) throws Exception
+ public static void main_opl(String[] args) throws Exception
  {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
