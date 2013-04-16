@@ -15,7 +15,6 @@ import oracle.jdbc.OracleDriver;
 import com.ncl.assisted_search.io.AccommodationPreference;
 import com.ncl.assisted_search.io.UserInput;
 
-
 //Recover code of 4-9-2013 to run objDef=2 if needed
 public class OptimizationRequest {
 	private static String databaseURL="";//"jdbc:oracle:thin:@localhost:1521:xe";
@@ -132,7 +131,7 @@ public class OptimizationRequest {
  }
  
  //test data from Oracle database
- public static void main(String[] args) throws Exception
+ public static void main_oracle(String[] args) throws Exception
  {	 
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -151,7 +150,7 @@ public class OptimizationRequest {
 
  //test data from dat file: dataSource: for example: = oplF.createOplDataSource("NCL Assisted Search Debug.dat");
  
- public static void main_opl(String[] args) throws Exception
+ public static void main(String[] args) throws Exception
  {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -278,7 +277,7 @@ public class OptimizationRequest {
      	 }
 		 dateAllowance=dateAllowance/2+1;
 		*/
-    	 int dateAllowance=0;
+    	 int dateAllowance=30;
 		 String query = "SELECT cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, ship_code, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght FROM "+ databaseSchemaName +".CRUISE_PKG ";
 		 String query1 = "WHERE CABIN_CAPACITY>="+userInput._numberOfGuests;
 		 String query3 =" AND (";
