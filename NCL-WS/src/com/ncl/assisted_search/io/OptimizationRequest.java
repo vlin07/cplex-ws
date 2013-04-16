@@ -329,8 +329,10 @@ public class OptimizationRequest {
 		 ArrayList<Integer> pkgList = new ArrayList();
 		 ArrayList<String> itnList = new ArrayList();		 
 		 ArrayList<String> shipList = new ArrayList();			
-		 //ArrayList<String> destList = new ArrayList();			 
+		 //ArrayList<String> destList = new ArrayList();
+		 System.out.println("Query Cruise_PKG");
 		 ResultSet resultSet = statement.executeQuery(query);
+		 System.out.println("Query Cruise_PKG Complete");		 
 		 if(DEBUG.equals("1")){
 			writer.write("Input_CruisePackage={");
 		 }		 
@@ -373,7 +375,8 @@ public class OptimizationRequest {
 						resultSet.getString("META_NAME")+"\","+resultSet.getInt("SAIL_DAYS")+","+resultSet.getDouble("drupalwght")+">,\n");
 			}
 		 }
-		 	
+		 System.out.println("Write Cruise_PKG Complete");	
+		 
     	 //Price
 		 int numberOfGuests=2;
 		 if(userInput._numberOfGuests<1) numberOfGuests=2;
@@ -395,8 +398,9 @@ public class OptimizationRequest {
 		 query2 = "GROUP BY cruisepkg_id ORDER BY cruisepkg_id";
 		 query=query+query1+query3+query2;
 		 if(DEBUG.equals("1")) System.out.println("Query="+query);
+		 System.out.println("Query CruisePackagePrice");			 
 		 resultSet = statement.executeQuery(query);
-
+		 System.out.println("Query CruisePackagePrice Complete");	
 		 while (resultSet.next()) {
 			if(pkgList.contains(resultSet.getInt("cruisepkg_id"))){
 	    		if(DEBUG.equals("1")) System.out.println(" # of guests="+numberOfGuests+" price - " +  resultSet.getDouble("price")
@@ -412,7 +416,7 @@ public class OptimizationRequest {
 				}
 			}
 		 }	 
-		 	
+		 System.out.println("Write CruisePackagePrice Complete");			 	
 		 //ThingsToDo
 		 if(DEBUG.equals("1")) writer.write("};\nInput_ThingsToDo={\n");
 		 query = "SELECT itnrary, thingstd FROM " + databaseSchemaName + ".ITNRTHNGTD";
