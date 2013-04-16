@@ -115,7 +115,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link UserWeightSet }
-     *
+     * 
      */
     public UserWeightSet createUserWeightSet() {
         return new UserWeightSet();
@@ -155,7 +155,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link ThingToDoSet }
-     *
+     * 
      */
     public ThingToDoSet createThingToDoSet() {
         return new ThingToDoSet();
