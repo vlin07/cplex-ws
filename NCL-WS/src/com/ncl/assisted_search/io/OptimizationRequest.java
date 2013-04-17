@@ -70,19 +70,19 @@ public class OptimizationRequest {
 	DEBUG = properties.getProperty("debug");
 	System.out.println("Set DEBUG MODE:"+DEBUG);
 
-	if(DEBUG.equals("1")) System.out.println("Attempting createDataSource " + properties.getProperty("OplDataSource"));
+	//if(DEBUG.equals("1")) System.out.println("Attempting createDataSource " + properties.getProperty("OplDataSource"));
 	
 	//dataSource = oplF.createOplDataSource(properties.getProperty("OplDataSource"));		
 
-	if(DEBUG.equals("1"))  System.out.println("Attempting createModelSource " + properties.getProperty("OplModelSource"));
+	//if(DEBUG.equals("1"))  System.out.println("Attempting createModelSource " + properties.getProperty("OplModelSource"));
 
 	//		modelSource = oplF.createOplModelSource(properties.getProperty("OplModelSource"));
 
-	if(DEBUG.equals("1")) System.out.println("Finish modelSource ");
+	//if(DEBUG.equals("1")) System.out.println("Finish modelSource ");
 
 	//def = oplF.createOplModelDefinition(modelSource, settings);
 
-	if(DEBUG.equals("1")) System.out.println("Finish def ");
+	//if(DEBUG.equals("1")) System.out.println("Finish def ");
 	
 	dummy_opl_input = properties.getProperty("dummy_opl_input");
 	dummy_opl_input_name = properties.getProperty("dummy_opl_input_name");    
@@ -105,7 +105,7 @@ public class OptimizationRequest {
     IloOplModelSource modelSource = oplF.createOplModelSource(properties.getProperty("OplModelSource"));//oplF.createOplModelSource("NCL Assisted Search.mod");
     IloOplSettings settings = oplF.createOplSettings(errHandler);
     IloOplModelDefinition def = oplF.createOplModelDefinition(modelSource, settings);//oplF.createOplModelDefinition(modelSource, settings);
-    
+    if(DEBUG.equals("1")) System.out.println("OPLModelDef Completed");
     if(DEBUG.equals("1")) IloOplFactory.setDebugMode(true);
     else IloOplFactory.setDebugMode(false);
 	//IloCplex cplex0 = oplF.createCplex();
@@ -119,6 +119,7 @@ public class OptimizationRequest {
 	OptimizationResponseData ord1 = new OptimizationResponseData();
 	// code for adding more input data to dataElements
 	//inputData(dataElements,ord0);
+	if(DEBUG.equals("1")) System.out.println("Running inputData()...");
 	inputData(dataElements,userInput, DEBUG);
 	try
  	{
@@ -174,11 +175,11 @@ public class OptimizationRequest {
 	//IloCplex cplex0 = oplF.createCplex();
     //IloOplModel opl0 = oplF.createOplModel(def, cplex0);
     //IloOplDataSource dummyDataSource = oplF.createOplDataSourceFromString(dummy_opl_input, dummy_opl_input_name);   
-    if(DEBUG.equals("1")) System.out.println("Adding dataSource: "+ Calendar.getInstance().getTime());
+    //if(DEBUG.equals("1")) System.out.println("Adding dataSource: "+ Calendar.getInstance().getTime());
 	//opl0.addDataSource(dummyDataSource);	        
 	if(DEBUG.equals("1")) System.out.println("Generating OPL: "+ Calendar.getInstance().getTime());
 	//opl0.generate();
-	if(DEBUG.equals("1")) System.out.println("Makeing DataElements: "+ Calendar.getInstance().getTime());
+	//if(DEBUG.equals("1")) System.out.println("Makeing DataElements: "+ Calendar.getInstance().getTime());
 	IloOplDataElements dataElements = null;//opl0.makeDataElements();
     OptimizationResponseData ord1 = new OptimizationResponseData();
 	// code for adding more input data to dataElements
@@ -212,12 +213,13 @@ public class OptimizationRequest {
 	 //sort cruisepackage by key: cruisepackageid
 	 //sort discounttypeprice by cruisepackageid
      try {
+    	if(DEBUG.equals("1")) System.out.println("Write OplInputDataFile..."); 
      	Writer writer = null;  	
     	//if(DEBUG.equals("1")){
     		File oplInputFile = new File(oplInputDataFile);
             writer = new BufferedWriter(new FileWriter(oplInputFile));
     	//}
-    	
+        if(DEBUG.equals("1")) System.out.println("Define JDBC Calss...");
     	Class.forName("oracle.jdbc.driver.OracleDriver");
         DriverManager.registerDriver(new OracleDriver());        	        
     	//String url = "jdbc:oracle:thin:@localhost:1521:orcl";
@@ -226,6 +228,7 @@ public class OptimizationRequest {
         		 databaseUserID,//"ncl_ws",//"SYSTEM",       // username
         		 databasePassword// "ncl_ws_password" //"28344nO5"        // password
         );
+        if(DEBUG.equals("1")) System.out.println("Database Connected");
          /*
           jdbc:oracle:thin:@[host][:port]:SID			
 			  username - The login user name defined in the Oracle server.
@@ -239,15 +242,23 @@ public class OptimizationRequest {
 			         Edition creates one database instance called XE.       
           */
         
-         IloTupleBuffer buf;
+         //IloTupleBuffer buf;
     	 Date currentTime = Calendar.getInstance().getTime();
          SimpleDateFormat ft = new SimpleDateFormat ("yyyyMMdd");
-             
+         //System.out.println("time="+ft.format(currentTime.getTime()));
+    	 
+         Date yearStart = Calendar.getInstance().getTime();
+         SimpleDateFormat ft0 = new SimpleDateFormat ("yyyy0101");
+         String yearStartSt=ft0.format(yearStart.getTime());
+         //System.out.println("yearStart="+yearStartSt);
+         Date yearStartDate= (Date)ft.parse(yearStartSt);
+         //int days0=(int) Math.ceil((currentTime.getTime()-yearStartDate.getTime())/86400000.0);
+         //System.out.println("days0="+days0);         
     	 Statement statement = //userInput._DatabaseConnection.createStatement(
     			 conn.createStatement(
                  ResultSet.TYPE_SCROLL_INSENSITIVE,
                  ResultSet.CONCUR_UPDATABLE);
-    	 
+    	 if(DEBUG.equals("1")) System.out.println("Statement Defined");
     	 boolean firstRange=true;
     	 //CruisePackage:
     	 /*
@@ -323,21 +334,21 @@ public class OptimizationRequest {
 			 firstRange=false;
     	 }*/		 
 		 if(firstRange==false) query4=query4+") ";
-		 String query2 = "";//ORDER BY cruisepkg_id";
-		 query = query + query1+ query3+ query4;// + query2;
+		 String query2 = " ORDER BY cruisepkg_id";
+		 query = query + query1+ query3+ query4;//+ query2;
 		 // executing a query string and storing it into the resultSet object
 		 if(DEBUG.equals("1")) System.out.println("Query="+query);
 		 //ArrayList<Integer> pkgList = new ArrayList();
 		 //ArrayList<String> itnList = new ArrayList();		 
 		 //ArrayList<String> shipList = new ArrayList();			
 		 //ArrayList<String> destList = new ArrayList();
-		 
 		 /*
-		 for(int i=1;i<=10000;i++){
-			String qry="insert into ncl_ws.cruise_pkg (cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, SHIP_CODE, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght) values(1000099, 'SPIRIT9BCNFNCSCTACEAGPBCN', to_date('20130330', 'yyyymmdd'), 'SAIL_ID', 'PACKAGE_ID', 'SPIRIT', 'INTERIOR', 'I1', 9, 'BCN', 'EUROPE', 4, .7)";		
+		 for(int i=10001;i<=40000;i++){
+			String qry="insert into ncl_ws.cruise_pkg (cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, SHIP_CODE, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght) values("
+				+i+", 'SPIRIT9BCNFNCSCTACEAGPBCN', to_date('20130330', 'yyyymmdd'), 'SAIL_ID', 'PACKAGE_ID', 'SPIRIT', 'INTERIOR', 'I1', 9, 'BCN', 'EUROPE', 4, .7)";		
 			statement.executeQuery(qry);
-		 }
-		 */
+		 }*/
+		 Date currentTime1 = Calendar.getInstance().getTime();
 		 if(DEBUG.equals("1")) System.out.println("Query Cruise_PKG");
 		 ResultSet resultSet = statement.executeQuery(query);
 		 if(DEBUG.equals("1")) System.out.println("Query Cruise_PKG Complete");		 
@@ -349,12 +360,12 @@ public class OptimizationRequest {
 		 System.out.println( Calendar.getInstance().getTime()+"Before reading Cruise_PKG");
 		 while (resultSet.next()) {	
 		 
-		 }
+		 }*/
 		 Date currentTime2 = Calendar.getInstance().getTime();
 		 System.out.println("After reading Cruise_PKG:"+(currentTime2.getTime()-currentTime1.getTime()));
 		 
-		 resultSet.absolute(1);
-	     */
+		 //resultSet.absolute(1);
+	     
 		 while (resultSet.next()) {		
 			
 			//pkgList.add(resultSet.getInt("cruisepkg_id"));
@@ -364,8 +375,11 @@ public class OptimizationRequest {
 				//System.out.println("ship="+resultSet.getString("SHIP_CODE"));
 			}*/
 	        Date saildate=resultSet.getDate("DC_SAIL_START");
-        	int days=(int) Math.ceil((saildate.getTime()-currentTime.getTime())/86400000.0);
-	        //if(DEBUG.equals("1")) System.out.println(" pkgid="+resultSet.getInt("cruisepkg_id")+ " Itnry="+resultSet.getString("itnrary")+
+        	
+	        //int days=(int) Math.ceil((saildate.getTime()-currentTime.getTime())/86400000.0);
+	        int days=(int) Math.ceil((saildate.getTime()-yearStartDate.getTime())/86400000.0);
+	        
+        	//if(DEBUG.equals("1")) System.out.println(" pkgid="+resultSet.getInt("cruisepkg_id")+ " Itnry="+resultSet.getString("itnrary")+
 	        //		" Ship=" + resultSet.getString("SHIP_CODE")
 	        //                 + ", Stateroom- " + resultSet.getString("CABIN_CATEGORY")+" time="+ resultSet.getDate("DC_SAIL_START")+" days="+days);
 	        /*
@@ -392,14 +406,15 @@ public class OptimizationRequest {
 						"\",\""+resultSet.getString("DC_SAIL_START")+"\","+days+",\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("itnrary")+"\",\""+
 						resultSet.getString("destination")+"\",\""+resultSet.getString("PORT_FROM")+"\",\""+resultSet.getString("CABIN_CATEGORY")+"\",\""+
 						resultSet.getString("META_NAME")+"\","+resultSet.getInt("SAIL_DAYS")+","+resultSet.getDouble("drupalwght")+">,\n");
-			//}
+			
+        	//}
 		 }
-		 //Date currentTime3 = Calendar.getInstance().getTime();
-		 if(DEBUG.equals("1")) System.out.println("Write Cruise_PKG Complete");
+		 Date currentTime3 = Calendar.getInstance().getTime();
+		 if(DEBUG.equals("1")) System.out.println("Write Cruise_PKG Complete:"+(currentTime3.getTime()-currentTime2.getTime()));
 		 
     	 //Price
 		 /*
-		 for(int i=1;i<=80000;i++){
+		 for(int i=10001;i<=80000;i++){
 				String qry="insert into ncl_ws.cruisepkg_price (cruisepkg_id, DC_SAIL_START, pricetype, price1, price2, price3, price4, price5, price6, price7, price8, price9) values ("
 					+i+", to_date('20130320', 'yyyymmdd'),'BEST-FAIR', 449.00, 459.00,469.00, 499.00, 499.00, 475.00, 475.00, 475.00, 450.00)"; 
 				statement.executeQuery(qry);
@@ -424,7 +439,7 @@ public class OptimizationRequest {
         	 firstRange=false;
      	 }		 
 		 if(userInput._discountTypeList.size()>0) query1=query1+") ";
-		 query2 = " GROUP BY cruisepkg_id";// ORDER BY cruisepkg_id";
+		 query2 = " GROUP BY cruisepkg_id";//  ORDER BY cruisepkg_id";
 		 query=query+query1+query3+query2;
 		 if(DEBUG.equals("1")) System.out.println("Query="+query);
 		 if(DEBUG.equals("1")) System.out.println("Query CruisePackagePrice");			 
@@ -435,11 +450,10 @@ public class OptimizationRequest {
 		 currentTime1 = Calendar.getInstance().getTime();
 		 System.out.println( Calendar.getInstance().getTime()+"Before reading CruisePrice");
 		 while (resultSet.next()) {	
-		 }
-		 currentTime2 = Calendar.getInstance().getTime();
-		 System.out.println("After reading CruisePrice:"+(currentTime2.getTime()-currentTime1.getTime())
-				 +" pkg size="+pkgList.size());
-		 
+		 }*/
+		 Date currentTime4 = Calendar.getInstance().getTime();
+		 System.out.println("After reading CruisePrice:"+(currentTime4.getTime()-currentTime3.getTime()));
+		 /*
 		 resultSet.absolute(1);
 		 System.out.println("set to row 1");*/
 		 while (resultSet.next()) {
@@ -459,8 +473,8 @@ public class OptimizationRequest {
 				//}
 			//}
 		 }	 
-		 //currentTime1 = Calendar.getInstance().getTime();
-		 System.out.println("Write CruisePackagePrice Complete: ");//+(currentTime1.getTime()-currentTime2.getTime()));			 	
+		 Date currentTime5 = Calendar.getInstance().getTime();
+		 System.out.println("Write CruisePackagePrice Complete: "+(currentTime5.getTime()-currentTime4.getTime()));			 	
 		 //ThingsToDo
 		 //if(DEBUG.equals("1")) 
 			 writer.write("};\nInput_ThingsToDo={\n");
@@ -547,9 +561,11 @@ public class OptimizationRequest {
 		 {
 			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){
 				Date sdate=resultSet.getDate("startdt");
-		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+		        //int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+				int sdays=(int) Math.ceil((sdate.getTime()-yearStartDate.getTime())/86400000.0);		
 				Date edate=resultSet.getDate("enddt");
-		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
+		        //int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);
+		        int edays=(int) Math.ceil((edate.getTime()-yearStartDate.getTime())/86400000.0);
 				/*buf = dataElements.getElement("Input_AccommodationPreferenceScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ShipID", resultSet.getString("SHIP_CODE"));
 				buf.setSymbolValue("RoomType", resultSet.getString("CABIN_CATEGORY"));
@@ -580,9 +596,12 @@ public class OptimizationRequest {
 		 {
 			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
 				Date sdate=resultSet.getDate("startdt");
-		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+		        //int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+				int sdays=(int) Math.ceil((sdate.getTime()-yearStartDate.getTime())/86400000.0);		
 				Date edate=resultSet.getDate("enddt");
-		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
+		        //int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);
+		        int edays=(int) Math.ceil((edate.getTime()-yearStartDate.getTime())/86400000.0);
+		        
 				/*buf = dataElements.getElement("Input_InterestMetaScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ShipID", resultSet.getString("SHIP_CODE"));
 				buf.setSymbolValue("Meta", resultSet.getString("META_NAME"));
@@ -610,10 +629,13 @@ public class OptimizationRequest {
 		 while (resultSet.next()) 
 		 {
 			//if(destList.contains(resultSet.getString("destination"))){			 
-				Date sdate=resultSet.getDate("startdt");
-		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+				Date sdate=resultSet.getDate("startdt");   
+		        //int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+				int sdays=(int) Math.ceil((sdate.getTime()-yearStartDate.getTime())/86400000.0);		
 				Date edate=resultSet.getDate("enddt");
-		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
+		        //int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);
+		        int edays=(int) Math.ceil((edate.getTime()-yearStartDate.getTime())/86400000.0);
+		        
 				/*buf = dataElements.getElement("Input_InterestDestinationScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("Destination", resultSet.getString("destination"));
 				buf.setSymbolValue("InterestID", resultSet.getString("interest"));			
@@ -640,10 +662,13 @@ public class OptimizationRequest {
 		 while (resultSet.next()) 
 		 {
 			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
-				Date sdate=resultSet.getDate("startdt");
-		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+				Date sdate=resultSet.getDate("startdt");		        
+		        //int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+				int sdays=(int) Math.ceil((sdate.getTime()-yearStartDate.getTime())/86400000.0);		
 				Date edate=resultSet.getDate("enddt");
-		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
+		        //int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);
+		        int edays=(int) Math.ceil((edate.getTime()-yearStartDate.getTime())/86400000.0);
+		        
 				/*buf = dataElements.getElement("Input_InterestShipScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ShipID", resultSet.getString("SHIP_CODE"));
 				buf.setSymbolValue("InterestID", resultSet.getString("interest"));			
@@ -833,12 +858,14 @@ public class OptimizationRequest {
 			//buf = dataElements.getElement("Input_SailDateRange").asTupleSet().makeTupleBuffer(-1);			
         	SailDateRange sdr=(SailDateRange) itr.next();
 			Date sdate=sdr._earliestDate;
-	        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+	        //int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
+			int sdays=(int) Math.ceil((sdate.getTime()-yearStartDate.getTime())/86400000.0);		
 			Date edate=sdr._latestDate;
-	        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	
-			//buf.setNumValue("Min",sdays);
+	        //int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);
+	        int edays=(int) Math.ceil((edate.getTime()-yearStartDate.getTime())/86400000.0);	        
+	        //buf.setNumValue("Min",sdays);
 			//buf.setNumValue("Max",edays);			
-			//if(DEBUG.equals("1")) System.out.println("Sail Date min="+sdays+" max="+edays);
+			if(DEBUG.equals("1")) System.out.println("Sail Date min="+sdays+" max="+edays+" sdate="+sdate+" edate="+edate);
 			//buf.commit();
 			//if(DEBUG.equals("1")){
 					writer.write("<"+sdays+","+edays+">,\n");
@@ -880,7 +907,7 @@ public class OptimizationRequest {
 			writer.write("};\nConstraintViolationUpperBound =[-1];\n");
 		
 		 // setting the row to we have to update
-		 if(DEBUG.equals("1")) System.out.println("Data Fetching Complete...");
+		 if(DEBUG.equals("1")) System.out.println("Data Fetching Complete..."+Calendar.getInstance().getTime());
 		 
 		 //sample update code:
 		 //resultSet.first();
@@ -1060,11 +1087,15 @@ public class OptimizationRequest {
         //System.out.println("CPLEX");
         IloCplex cplex = oplF.createCplex();
         //cplex.setOut(null);
-        if(DEBUG.equals("1")) System.out.println("define cplex");        
+        //if(DEBUG.equals("1")) System.out.println("Define cplex");        
         IloOplModel opl = oplF.createOplModel(def, cplex);
+        if(DEBUG.equals("1")) System.out.println("Define DataSource");  
         IloOplDataSource dataSource = oplF.createOplDataSource(properties.getProperty("oplInputDataFile"));
         opl.addDataSource(dataSource);
-        if(DEBUG.equals("1")) System.out.println("define opl");
+        //opl allows multiple sources
+        //IloOplDataSource dataSource2 = oplF.createOplDataSource("../NCLRecommender_opl/b.dat");
+        //opl.addDataSource(dataSource2);
+        if(DEBUG.equals("1")) System.out.println("Define OPL");
        	//IloNumMap constraintBound= dataElements.getElement("ConstraintViolationUpperBound").asNumMap();
         //System.out.println("CPLEX");      	
         //if(objDef==0){
@@ -1076,10 +1107,10 @@ public class OptimizationRequest {
         //else if (objDef==2){
         //	constraintBound.set(1, constraintViolationAmount[0]);
         //}
-        if(DEBUG.equals("1")) System.out.println("dataElements before: "+ Calendar.getInstance().getTime());	
+        //if(DEBUG.equals("1")) System.out.println("dataElements before: "+ Calendar.getInstance().getTime());	
         
         //opl.addDataSource(dataElements);
-        if(DEBUG.equals("1")) System.out.println("dataElements After: "+ Calendar.getInstance().getTime());	       
+        //if(DEBUG.equals("1")) System.out.println("dataElements After: "+ Calendar.getInstance().getTime());	       
         opl.generate();
         if(DEBUG.equals("1")) System.out.println("complete OPL: "+ Calendar.getInstance().getTime());
        	IloNumMap constraintBound2= opl.getElement("ConstraintViolationUpperBound").asNumMap();
