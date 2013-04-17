@@ -116,7 +116,14 @@
     </javac>
     <!-- copy 'src' prop files to 'WEB-INF' -->
     <copy todir="${dir.webcontent}/WEB-INF/classes" >  
-    	<fileset dir="${dir.src}" excludes="${dir.src}/classes/com/**"/>  
+
+      <fileset dir="${dir.src}" >
+        <include name="*.dat" />
+        <include name="*.mod" />
+        <include name="*.ops" />
+        <include name="*.properties" />
+        <exclude name="${dir.src}/com/**" />
+      </fileset>
     </copy>
   </target>
 	
