@@ -108,13 +108,13 @@ public class OptimizationRequest {
     
     if(DEBUG.equals("1")) IloOplFactory.setDebugMode(true);
     else IloOplFactory.setDebugMode(false);
-	IloCplex cplex0 = oplF.createCplex();
+	//IloCplex cplex0 = oplF.createCplex();
 	//cplex0.setOut(null);
-    IloOplModel opl0 = oplF.createOplModel(def, cplex0);
-    IloOplDataSource dummyDataSource = oplF.createOplDataSourceFromString(dummy_opl_input, dummy_opl_input_name);
-	opl0.addDataSource(dummyDataSource);
-	opl0.generate();
-	IloOplDataElements dataElements = opl0.makeDataElements();
+    //IloOplModel opl0 = oplF.createOplModel(def, cplex0);
+    //IloOplDataSource dummyDataSource = oplF.createOplDataSourceFromString(dummy_opl_input, dummy_opl_input_name);
+	//opl0.addDataSource(dummyDataSource);
+	//opl0.generate();
+	IloOplDataElements dataElements=null;// = opl0.makeDataElements();
     
 	OptimizationResponseData ord1 = new OptimizationResponseData();
 	// code for adding more input data to dataElements
@@ -129,8 +129,8 @@ public class OptimizationRequest {
  	{
  		System.out.println(" Exception: "+ e);
  	}
- 	opl0.end();
- 	cplex0.end();
+ 	//opl0.end();
+ 	//cplex0.end();
  	oplF.end();
  	return ord1;
  }
@@ -171,15 +171,15 @@ public class OptimizationRequest {
     	 
     if(DEBUG.equals("1")) IloOplFactory.setDebugMode(true);
     else IloOplFactory.setDebugMode(false);       
-	IloCplex cplex0 = oplF.createCplex();
-    IloOplModel opl0 = oplF.createOplModel(def, cplex0);
-    IloOplDataSource dummyDataSource = oplF.createOplDataSourceFromString(dummy_opl_input, dummy_opl_input_name);   
+	//IloCplex cplex0 = oplF.createCplex();
+    //IloOplModel opl0 = oplF.createOplModel(def, cplex0);
+    //IloOplDataSource dummyDataSource = oplF.createOplDataSourceFromString(dummy_opl_input, dummy_opl_input_name);   
     if(DEBUG.equals("1")) System.out.println("Adding dataSource: "+ Calendar.getInstance().getTime());
-	opl0.addDataSource(dataSource);	        
+	//opl0.addDataSource(dummyDataSource);	        
 	if(DEBUG.equals("1")) System.out.println("Generating OPL: "+ Calendar.getInstance().getTime());
-	opl0.generate();
+	//opl0.generate();
 	if(DEBUG.equals("1")) System.out.println("Makeing DataElements: "+ Calendar.getInstance().getTime());
-	IloOplDataElements dataElements = opl0.makeDataElements();;
+	IloOplDataElements dataElements = null;//opl0.makeDataElements();
     OptimizationResponseData ord1 = new OptimizationResponseData();
 	// code for adding more input data to dataElements
 	//inputData(dataElements,ord0);
@@ -194,8 +194,8 @@ public class OptimizationRequest {
  	{
  		if(DEBUG.equals("1")) System.out.println(" Exception: "+ e);
  	}
- 	opl0.end();
- 	cplex0.end();
+ 	//opl0.end();
+ 	//cplex0.end();
  	oplF.end();
 	 
  	//return ord1;
@@ -213,10 +213,10 @@ public class OptimizationRequest {
 	 //sort discounttypeprice by cruisepackageid
      try {
      	Writer writer = null;  	
-    	if(DEBUG.equals("1")){
+    	//if(DEBUG.equals("1")){
     		File oplInputFile = new File(oplInputDataFile);
             writer = new BufferedWriter(new FileWriter(oplInputFile));
-    	}
+    	//}
     	
     	Class.forName("oracle.jdbc.driver.OracleDriver");
         DriverManager.registerDriver(new OracleDriver());        	        
@@ -247,6 +247,7 @@ public class OptimizationRequest {
     			 conn.createStatement(
                  ResultSet.TYPE_SCROLL_INSENSITIVE,
                  ResultSet.CONCUR_UPDATABLE);
+    	 
     	 boolean firstRange=true;
     	 //CruisePackage:
     	 /*
@@ -281,7 +282,7 @@ public class OptimizationRequest {
         			 " dateAllowance="+dateAllowance);
      	 }
 		 dateAllowance=dateAllowance/2+1;
-		*/
+		 */
     	 int dateAllowance=30;
 		 String query = "SELECT cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, ship_code, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght FROM "+ databaseSchemaName +".CRUISE_PKG ";
 		 String query1 = "WHERE CABIN_CAPACITY>="+userInput._numberOfGuests;
@@ -322,47 +323,54 @@ public class OptimizationRequest {
 			 firstRange=false;
     	 }*/		 
 		 if(firstRange==false) query4=query4+") ";
-		 String query2 = "ORDER BY cruisepkg_id";
-		 query = query + query1+ query3+ query4 + query2;
+		 String query2 = "";//ORDER BY cruisepkg_id";
+		 query = query + query1+ query3+ query4;// + query2;
 		 // executing a query string and storing it into the resultSet object
 		 if(DEBUG.equals("1")) System.out.println("Query="+query);
-		 ArrayList<Integer> pkgList = new ArrayList();
-		 ArrayList<String> itnList = new ArrayList();		 
-		 ArrayList<String> shipList = new ArrayList();			
+		 //ArrayList<Integer> pkgList = new ArrayList();
+		 //ArrayList<String> itnList = new ArrayList();		 
+		 //ArrayList<String> shipList = new ArrayList();			
 		 //ArrayList<String> destList = new ArrayList();
-		 System.out.println("Query Cruise_PKG");
-		 ResultSet resultSet = statement.executeQuery(query);
-		 System.out.println("Query Cruise_PKG Complete");		 
-		 if(DEBUG.equals("1")){
-			writer.write("Input_CruisePackage={");
-		 }
 		 
-		 System.out.println("Before reading Cruise_PKG");
+		 /*
+		 for(int i=1;i<=10000;i++){
+			String qry="insert into ncl_ws.cruise_pkg (cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, SHIP_CODE, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght) values(1000099, 'SPIRIT9BCNFNCSCTACEAGPBCN', to_date('20130330', 'yyyymmdd'), 'SAIL_ID', 'PACKAGE_ID', 'SPIRIT', 'INTERIOR', 'I1', 9, 'BCN', 'EUROPE', 4, .7)";		
+			statement.executeQuery(qry);
+		 }
+		 */
+		 if(DEBUG.equals("1")) System.out.println("Query Cruise_PKG");
+		 ResultSet resultSet = statement.executeQuery(query);
+		 if(DEBUG.equals("1")) System.out.println("Query Cruise_PKG Complete");		 
+		 //if(DEBUG.equals("1")){
+			writer.write("Input_CruisePackage={");
+		 //}
+		 /*	
+		 Date currentTime1 = Calendar.getInstance().getTime();
+		 System.out.println( Calendar.getInstance().getTime()+"Before reading Cruise_PKG");
 		 while (resultSet.next()) {	
 		 
 		 }
-		 System.out.println("After reading Cruise_PKG");
+		 Date currentTime2 = Calendar.getInstance().getTime();
+		 System.out.println("After reading Cruise_PKG:"+(currentTime2.getTime()-currentTime1.getTime()));
 		 
 		 resultSet.absolute(1);
-	 
+	     */
 		 while (resultSet.next()) {		
-			pkgList.add(resultSet.getInt("cruisepkg_id"));
-			itnList.add(resultSet.getString("itnrary"));
-			if(!shipList.contains(resultSet.getString("SHIP_CODE"))){
+			
+			//pkgList.add(resultSet.getInt("cruisepkg_id"));
+			//itnList.add(resultSet.getString("itnrary"));
+			/*if(!shipList.contains(resultSet.getString("SHIP_CODE"))){
 				shipList.add(resultSet.getString("SHIP_CODE"));
 				//System.out.println("ship="+resultSet.getString("SHIP_CODE"));
-			}
-			/*
-			if(!destList.contains(resultSet.getString("destination"))){
-				destList.add(resultSet.getString("destination"));
-				//System.out.println("destination="+resultSet.getString("destination"));
 			}*/
 	        Date saildate=resultSet.getDate("DC_SAIL_START");
         	int days=(int) Math.ceil((saildate.getTime()-currentTime.getTime())/86400000.0);
-	        if(DEBUG.equals("1")) System.out.println(" pkgid="+resultSet.getInt("cruisepkg_id")+ " Itnry="+resultSet.getString("itnrary")+
-	        		" Ship=" + resultSet.getString("SHIP_CODE")
-	                         + ", Stateroom- " + resultSet.getString("CABIN_CATEGORY")+" time="+ resultSet.getDate("DC_SAIL_START")+" days="+days);
+	        //if(DEBUG.equals("1")) System.out.println(" pkgid="+resultSet.getInt("cruisepkg_id")+ " Itnry="+resultSet.getString("itnrary")+
+	        //		" Ship=" + resultSet.getString("SHIP_CODE")
+	        //                 + ", Stateroom- " + resultSet.getString("CABIN_CATEGORY")+" time="+ resultSet.getDate("DC_SAIL_START")+" days="+days);
+	        /*
 			buf = dataElements.getElement("Input_CruisePackage").asTupleSet().makeTupleBuffer(-1);
+			
 			buf.setIntValue("CruisePackageID",resultSet.getInt("cruisepkg_id"));
 			buf.setSymbolValue("SailID", resultSet.getString("SAIL_ID"));//3-11-2013
 			buf.setSymbolValue("PackageID", resultSet.getString("PACKAGE_ID"));//3-11-2013		
@@ -375,26 +383,37 @@ public class OptimizationRequest {
 			buf.setSymbolValue("RoomType", resultSet.getString("CABIN_CATEGORY"));
 			buf.setSymbolValue("Destination", resultSet.getString("destination"));//3-11-2013			
 			buf.setSymbolValue("Meta", resultSet.getString("META_NAME"));//3-11-2013			
-			buf.setNumValue("DrupalWeight", resultSet.getDouble("drupalwght"));	
+			buf.setNumValue("DrupalWeight", resultSet.getDouble("drupalwght"));			
 			buf.commit();
-			if(DEBUG.equals("1")){
+			*/
+	        
+	        //if(DEBUG.equals("1")){
 				writer.write("<"+resultSet.getInt("cruisepkg_id")+",\""+resultSet.getString("SAIL_ID")+"\",\""+resultSet.getString("PACKAGE_ID")+
 						"\",\""+resultSet.getString("DC_SAIL_START")+"\","+days+",\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("itnrary")+"\",\""+
 						resultSet.getString("destination")+"\",\""+resultSet.getString("PORT_FROM")+"\",\""+resultSet.getString("CABIN_CATEGORY")+"\",\""+
 						resultSet.getString("META_NAME")+"\","+resultSet.getInt("SAIL_DAYS")+","+resultSet.getDouble("drupalwght")+">,\n");
-			}
+			//}
 		 }
-		 
-		 System.out.println("Write Cruise_PKG Complete");	
+		 //Date currentTime3 = Calendar.getInstance().getTime();
+		 if(DEBUG.equals("1")) System.out.println("Write Cruise_PKG Complete");
 		 
     	 //Price
+		 /*
+		 for(int i=1;i<=80000;i++){
+				String qry="insert into ncl_ws.cruisepkg_price (cruisepkg_id, DC_SAIL_START, pricetype, price1, price2, price3, price4, price5, price6, price7, price8, price9) values ("
+					+i+", to_date('20130320', 'yyyymmdd'),'BEST-FAIR', 449.00, 459.00,469.00, 499.00, 499.00, 475.00, 475.00, 475.00, 450.00)"; 
+				statement.executeQuery(qry);
+		 }*/
+		 
 		 int numberOfGuests=2;
 		 if(userInput._numberOfGuests<1) numberOfGuests=2;
 		 else if(userInput._numberOfGuests>9) numberOfGuests=9;
 		 else numberOfGuests=userInput._numberOfGuests;
-		 if(DEBUG.equals("1")) writer.write("};\nInput_CruisePackagePrice={\n");		 
-		 query = "SELECT cruisepkg_id,MIN(price"+numberOfGuests+") price FROM "+ databaseSchemaName +".CRUISEPKG_PRICE ";
-		 if(userInput._discountTypeList.size()>0) query1="WHERE (";
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_CruisePackagePrice={\n");		 
+		 query = "SELECT cruisepkg_id,MIN(price"+numberOfGuests+") price FROM "+ databaseSchemaName +".CRUISEPKG_PRICE WHERE "+
+		 databaseSchemaName+".CruisePkg_Price.cruisepkg_id in (SELECT cruisepkg_id from "+databaseSchemaName+".cruise_pkg)";
+		 if(userInput._discountTypeList.size()>0) query1=" AND (";
 		 else query1="";
 		 firstRange=true;
 		 for (Iterator itr = userInput._discountTypeList.iterator(); itr.hasNext();)
@@ -405,88 +424,110 @@ public class OptimizationRequest {
         	 firstRange=false;
      	 }		 
 		 if(userInput._discountTypeList.size()>0) query1=query1+") ";
-		 query2 = "GROUP BY cruisepkg_id ORDER BY cruisepkg_id";
+		 query2 = " GROUP BY cruisepkg_id";// ORDER BY cruisepkg_id";
 		 query=query+query1+query3+query2;
 		 if(DEBUG.equals("1")) System.out.println("Query="+query);
-		 System.out.println("Query CruisePackagePrice");			 
+		 if(DEBUG.equals("1")) System.out.println("Query CruisePackagePrice");			 
 		 resultSet = statement.executeQuery(query);
-		 System.out.println("Query CruisePackagePrice Complete");	
+		 if(DEBUG.equals("1")) System.out.println("Query CruisePackagePrice Complete");	
+	
+		 /*
+		 currentTime1 = Calendar.getInstance().getTime();
+		 System.out.println( Calendar.getInstance().getTime()+"Before reading CruisePrice");
+		 while (resultSet.next()) {	
+		 }
+		 currentTime2 = Calendar.getInstance().getTime();
+		 System.out.println("After reading CruisePrice:"+(currentTime2.getTime()-currentTime1.getTime())
+				 +" pkg size="+pkgList.size());
+		 
+		 resultSet.absolute(1);
+		 System.out.println("set to row 1");*/
 		 while (resultSet.next()) {
-			if(pkgList.contains(resultSet.getInt("cruisepkg_id"))){
-	    		if(DEBUG.equals("1")) System.out.println(" # of guests="+numberOfGuests+" price - " +  resultSet.getDouble("price")
-	                         //+ " DiscountType- " + pPriceType
-	                         +" pkgid="+ resultSet.getInt("cruisepkg_id"));
+			//if(pkgList.contains(resultSet.getInt("cruisepkg_id"))){
+	    		//System.out.println(" # of guests="+numberOfGuests+" price - " +  resultSet.getDouble("price")
+	            //             //+ " DiscountType- " + pPriceType
+	            //             +" pkgid="+ resultSet.getInt("cruisepkg_id"));
+	    		/*
 				buf = dataElements.getElement("Input_CruisePackagePrice").asTupleSet().makeTupleBuffer(-1);
 				buf.setIntValue("CruisePackageID",resultSet.getInt("cruisepkg_id"));//pPkgId);
 				//buf.setSymbolValue("DiscountType", "NONE");//pPriceType);			
 				buf.setNumValue("PricePerGuest", resultSet.getDouble("price"));// pPrice);					
 				buf.commit();
-				if(DEBUG.equals("1")){
+				*/
+	    		//if(DEBUG.equals("1")){
 					writer.write("<"+resultSet.getInt("cruisepkg_id")+","+resultSet.getDouble("price")+">,\n");
-				}
-			}
+				//}
+			//}
 		 }	 
-		 System.out.println("Write CruisePackagePrice Complete");			 	
+		 //currentTime1 = Calendar.getInstance().getTime();
+		 System.out.println("Write CruisePackagePrice Complete: ");//+(currentTime1.getTime()-currentTime2.getTime()));			 	
 		 //ThingsToDo
-		 if(DEBUG.equals("1")) writer.write("};\nInput_ThingsToDo={\n");
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_ThingsToDo={\n");
 		 query = "SELECT itnrary, thingstd FROM " + databaseSchemaName + ".ITNRTHNGTD";
 			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
-			 if(itnList.contains(resultSet.getString("itnrary"))){
+			 //if(itnList.contains(resultSet.getString("itnrary"))){
+			    /*
 				buf = dataElements.getElement("Input_ThingsToDo").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ItineraryID",resultSet.getString("itnrary"));
 				buf.setSymbolValue("ThingsToDoID",resultSet.getString("thingstd"));
 				if(DEBUG.equals("1")) System.out.println("ItineraryID="+resultSet.getString("itnrary")+" ThingsToDoID="+resultSet.getString("thingstd"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("itnrary")+"\",\""+resultSet.getString("thingstd")+"\">,\n");
-				}
-			 }
+				//}
+			 //}
 		 }
 		 
 		 //ItinerarySimilarity
-		 if(DEBUG.equals("1")) writer.write("};\nInput_ItinerarySimilarity={\n");
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_ItinerarySimilarity={\n");
 		 query = "SELECT itnrary, itnrarysim FROM " + databaseSchemaName + ".ITNRSIM";
 			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
-			 if(itnList.contains(resultSet.getString("itnrary")) && itnList.contains(resultSet.getString("itnrarysim")) ){
-				buf = dataElements.getElement("Input_ItinerarySimilarity").asTupleSet().makeTupleBuffer(-1);
+			 //if(itnList.contains(resultSet.getString("itnrary")) && itnList.contains(resultSet.getString("itnrarysim")) ){
+				/*
+			 	buf = dataElements.getElement("Input_ItinerarySimilarity").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("Itinerary1",resultSet.getString("itnrary"));
 				buf.setSymbolValue("Itinerary2",resultSet.getString("itnrarysim"));
 				if(DEBUG.equals("1")) System.out.println("ItineraryID="+resultSet.getString("itnrary")+" ItinararySim="+resultSet.getString("itnrarysim"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("itnrary")+"\",\""+resultSet.getString("itnrarysim")+"\">,\n");
-				}				
-			 }
+				//}				
+			 //}
 		 }
 		 
 		 //InterestThingsToDo
-		 if(DEBUG.equals("1")) writer.write("};\nInput_InterestThingsToDo={\n");		 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_InterestThingsToDo={\n");		 
 		 query = "SELECT interest, thingstd, drupalwght FROM " + databaseSchemaName + ".INTRTHNGTD";
 			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
+			    /*
 				buf = dataElements.getElement("Input_InterestThingsToDo").asTupleSet().makeTupleBuffer(-1);
 				//buf.setIntValue("OptimRequestID",ittd1.return_optimRequestID());
 				buf.setSymbolValue("ThingsToDoID", resultSet.getString("thingstd"));
 				buf.setSymbolValue("InterestID", resultSet.getString("interest"));
 				buf.setNumValue("DrupalWeight", resultSet.getDouble("drupalwght"));
 				if(DEBUG.equals("1")) System.out.println("Interest="+resultSet.getString("interest")+" TTD="+resultSet.getString("thingstd")+" wght="+resultSet.getDouble("drupalwght"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("thingstd")+
 							"\","+ resultSet.getDouble("drupalwght")+">,\n");
-				}				
+				//}				
 		 }
 		
 		 //AccommodationPreferenceScore
-		 if(DEBUG.equals("1")) writer.write("};\nInput_AccommodationPreferenceScore={\n");			 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_AccommodationPreferenceScore={\n");			 
 		 query = "SELECT SHIP_CODE, CABIN_CATEGORY, preftype, userpref, startdt, enddt, calcscore FROM " + databaseSchemaName + ".ACCSTATERM ";	 
 		 if(userInput._accommodationPreference.size()>0) query1="WHERE";
 		 else query1="";
@@ -504,12 +545,12 @@ public class OptimizationRequest {
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
-			if(shipList.contains(resultSet.getString("SHIP_CODE"))){
+			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){
 				Date sdate=resultSet.getDate("startdt");
 		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
 				Date edate=resultSet.getDate("enddt");
 		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
-				buf = dataElements.getElement("Input_AccommodationPreferenceScore").asTupleSet().makeTupleBuffer(-1);
+				/*buf = dataElements.getElement("Input_AccommodationPreferenceScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ShipID", resultSet.getString("SHIP_CODE"));
 				buf.setSymbolValue("RoomType", resultSet.getString("CABIN_CATEGORY"));
 				buf.setSymbolValue("PreferenceType", resultSet.getString("preftype"));
@@ -520,28 +561,29 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("Ship="+resultSet.getString("SHIP_CODE")+" RoomType="+resultSet.getString("CABIN_CATEGORY")+
 						" PrefType="+resultSet.getString("preftype")+" Pref="+resultSet.getString("userpref")+
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("calcscore"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("CABIN_CATEGORY")+"\",\""+
 							resultSet.getString("preftype")+"\",\""+resultSet.getString("userpref")+"\","+sdays+","+edays+
 							","+ resultSet.getDouble("calcscore")+">,\n");
-				}	
-			}
+				//}	
+			//}
 		 }
 
 		 //InterestMetaScore
-		 if(DEBUG.equals("1")) writer.write("};\nInput_InterestMetaScore={\n");			 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_InterestMetaScore={\n");			 
 		 query = "SELECT SHIP_CODE, META_NAME, interest, startdt, enddt, busscore FROM "+ databaseSchemaName +".intrmeta";
 			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
-			if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
+			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
 				Date sdate=resultSet.getDate("startdt");
 		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
 				Date edate=resultSet.getDate("enddt");
 		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
-				buf = dataElements.getElement("Input_InterestMetaScore").asTupleSet().makeTupleBuffer(-1);
+				/*buf = dataElements.getElement("Input_InterestMetaScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ShipID", resultSet.getString("SHIP_CODE"));
 				buf.setSymbolValue("Meta", resultSet.getString("META_NAME"));
 				buf.setSymbolValue("InterestID", resultSet.getString("interest"));			
@@ -551,16 +593,17 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("Ship="+resultSet.getString("SHIP_CODE")+" meta="+resultSet.getString("META_NAME")+
 						" Interest="+resultSet.getString("interest")+
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("busscore"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("META_NAME")+
 							"\","+sdays+","+edays+","+ resultSet.getDouble("busscore")+">,\n");
-				}
-			}
+				//}
+			//}
 		 }
 		 
 		 //InterestDestinationScore
-		 if(DEBUG.equals("1")) writer.write("};\nInput_InterestDestinationScore={\n");				 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_InterestDestinationScore={\n");				 
 		 query = "SELECT destination, interest, startdt, enddt, busscore FROM "+ databaseSchemaName +".intrdest";
 			
 		 resultSet = statement.executeQuery(query);
@@ -571,7 +614,7 @@ public class OptimizationRequest {
 		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
 				Date edate=resultSet.getDate("enddt");
 		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
-				buf = dataElements.getElement("Input_InterestDestinationScore").asTupleSet().makeTupleBuffer(-1);
+				/*buf = dataElements.getElement("Input_InterestDestinationScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("Destination", resultSet.getString("destination"));
 				buf.setSymbolValue("InterestID", resultSet.getString("interest"));			
 				buf.setIntValue("StartDate", sdays);
@@ -580,27 +623,28 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("Destination="+resultSet.getString("destination")+
 						" Interest="+resultSet.getString("interest")+
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("busscore"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("destination")+"\","+
 							sdays+","+edays+","+ resultSet.getDouble("busscore")+">,\n");
-				}				
+				//}				
 			 //}
 		 }
 		 
 		 //InterestShipScore
-		 if(DEBUG.equals("1")) writer.write("};\nInput_InterestShipScore={\n");					 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_InterestShipScore={\n");					 
 		 query = "SELECT SHIP_CODE, interest, startdt, enddt, busscore FROM "+ databaseSchemaName +".intrship";
 			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
-			if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
+			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
 				Date sdate=resultSet.getDate("startdt");
 		        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
 				Date edate=resultSet.getDate("enddt");
 		        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	        
-				buf = dataElements.getElement("Input_InterestShipScore").asTupleSet().makeTupleBuffer(-1);
+				/*buf = dataElements.getElement("Input_InterestShipScore").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("ShipID", resultSet.getString("SHIP_CODE"));
 				buf.setSymbolValue("InterestID", resultSet.getString("interest"));			
 				buf.setIntValue("StartDate", sdays);
@@ -609,57 +653,60 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("Ship="+resultSet.getString("SHIP_CODE")+
 						" Interest="+resultSet.getString("interest")+
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("busscore"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("SHIP_CODE")+"\","+
 							sdays+","+edays+","+ resultSet.getDouble("busscore")+">,\n");
-				}
-			}
+				//}
+			//}
 		 }
 	 
 		 //BusPenalty
-		 if(DEBUG.equals("1")) writer.write("};\nInput_BusPenalty={\n");			 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_BusPenalty={\n");			 
 		 query = "SELECT pentype, diffmin, diffmax, penwght FROM "+ databaseSchemaName +".buspenalty";
 			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {	 	        
-				buf = dataElements.getElement("Input_BusPenalty").asTupleSet().makeTupleBuffer(-1);
+				/*buf = dataElements.getElement("Input_BusPenalty").asTupleSet().makeTupleBuffer(-1);
 				buf.setSymbolValue("PenType", resultSet.getString("pentype"));			
 				buf.setNumValue("PenWght", resultSet.getDouble("penwght"));
 				buf.setNumValue("DiffMin", resultSet.getDouble("diffmin"));
 				buf.setNumValue("DiffMax", resultSet.getDouble("diffmax"));				
 				if(DEBUG.equals("1")) System.out.println("PenType="+resultSet.getString("pentype")+
 						" diffmin="+resultSet.getDouble("diffmin")+" diffmax="+resultSet.getDouble("diffmax")+" weight="+resultSet.getDouble("penwght"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 					writer.write("<\""+resultSet.getString("pentype")+"\","+resultSet.getDouble("diffmin")+","+resultSet.getDouble("diffmax")+","
 							+ resultSet.getDouble("penwght")+">,\n");
-				}				
+				//}				
 		 }		 
 		 
 		 //AccommodationPreference
-		 if(DEBUG.equals("1")) writer.write("};\nInput_AccommodationPreference={\n");		 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_AccommodationPreference={\n");		 
 		 for (Iterator itr = userInput._accommodationPreference.iterator(); itr.hasNext();)
          {
-			 buf = dataElements.getElement("Input_AccommodationPreference").asTupleSet().makeTupleBuffer(-1);
+			 //buf = dataElements.getElement("Input_AccommodationPreference").asTupleSet().makeTupleBuffer(-1);
         	 AccommodationPreference pref=(AccommodationPreference) itr.next();
- 			 buf.setSymbolValue("PreferenceType", pref._preferenceType);
-			 buf.setSymbolValue("Preference", pref._preference);	
-			 if(DEBUG.equals("1")) System.out.println("PrefType="+pref._preferenceType+" Pref="+pref._preference);
-			 buf.commit();
-			 if(DEBUG.equals("1")){
+ 			 //buf.setSymbolValue("PreferenceType", pref._preferenceType);
+			 //buf.setSymbolValue("Preference", pref._preference);	
+			 //if(DEBUG.equals("1")) System.out.println("PrefType="+pref._preferenceType+" Pref="+pref._preference);
+			 //buf.commit();
+			 //if(DEBUG.equals("1")){
 					writer.write("<\""+pref._preferenceType+"\",\""+pref._preference+"\">,\n");
-			 }					 
+			 //}					 
      	 }		 
 		 
 		 //BUSINFLWGHT
-		 if(DEBUG.equals("1")) writer.write("};\nInput_Parameters={\n");		 
+		 //if(DEBUG.equals("1")) 
+			 writer.write("};\nInput_Parameters={\n");		 
 		 query = "SELECT wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8 FROM "+ databaseSchemaName + ".BUSINFLWGHT";			
 		 resultSet = statement.executeQuery(query);
 		 while (resultSet.next()) 
 		 {
-				buf = dataElements.getElement("Input_Parameters").asTupleSet().makeTupleBuffer(-1);
+				/*buf = dataElements.getElement("Input_Parameters").asTupleSet().makeTupleBuffer(-1);
 				buf.setNumValue("CustomerAccommodationPriority", userInput._userWeight._WC1);
 				buf.setNumValue("CustomerThingsToDoPriority", userInput._userWeight._WC2);
 				buf.setNumValue("CustomerPricePriority", userInput._userWeight._WC3);
@@ -678,149 +725,159 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("WB="+" "+resultSet.getDouble("wb1")+" "+resultSet.getDouble("wb2")+" "+
 						resultSet.getDouble("wb3")+" "+resultSet.getDouble("wb4")+" "+resultSet.getDouble("wb5")+" "+
 						resultSet.getDouble("wb6")+" "+resultSet.getDouble("wb7")+" "+resultSet.getDouble("wb8"));
-				buf.commit();
-				if(DEBUG.equals("1")){
+				buf.commit();*/
+				//if(DEBUG.equals("1")){
 						writer.write("<"+userInput._userWeight._WC1+","+userInput._userWeight._WC2+","+userInput._userWeight._WC3+","+
 								userInput._userWeight._WC4+","+userInput._userWeight._WC5+","+resultSet.getDouble("wb1")+","+resultSet.getDouble("wb2")
 								+","+resultSet.getDouble("wb3")+","+resultSet.getDouble("wb4")+","+resultSet.getDouble("wb5")+","+resultSet.getDouble("wb6")
 								+","+resultSet.getDouble("wb7")+","+resultSet.getDouble("wb8")+">,\n");
-				}				
+				//}				
 		 }
 		 
 		//Request Parameters:
-		if(DEBUG.equals("1")) writer.write("};\nInput_RecommendationRequestLimit={\n");			 
-		buf = dataElements.getElement("Input_RecommendationRequestLimit").asTupleSet().makeTupleBuffer(-1);
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_RecommendationRequestLimit={\n");			 
+		/*buf = dataElements.getElement("Input_RecommendationRequestLimit").asTupleSet().makeTupleBuffer(-1);
 		buf.setIntValue("NumPackageRecommendations",userInput._recommendationRequestLimit._numPackageRecommendations);
 		buf.setNumValue("NumThingsToDo", userInput._recommendationRequestLimit._numThingsToDo);
 		buf.setNumValue("NumDestinations", userInput._recommendationRequestLimit._numDestinations);
 		buf.setNumValue("NumStateRoomTypes", userInput._recommendationRequestLimit._numStateRoomTypes);
-		buf.commit();
-		if(DEBUG.equals("1")) System.out.println("Request Limits="+userInput._recommendationRequestLimit._numPackageRecommendations+" "+userInput._recommendationRequestLimit._numThingsToDo
-			+" "+userInput._recommendationRequestLimit._numDestinations+" "+userInput._recommendationRequestLimit._numStateRoomTypes);
-		if(DEBUG.equals("1")){
+		buf.commit();*/
+		//if(DEBUG.equals("1")) System.out.println("Request Limits="+userInput._recommendationRequestLimit._numPackageRecommendations+" "+userInput._recommendationRequestLimit._numThingsToDo
+		//	+" "+userInput._recommendationRequestLimit._numDestinations+" "+userInput._recommendationRequestLimit._numStateRoomTypes);
+		//if(DEBUG.equals("1")){
 			writer.write("<"+userInput._recommendationRequestLimit._numPackageRecommendations+","+userInput._recommendationRequestLimit._numThingsToDo
 					+","+userInput._recommendationRequestLimit._numDestinations+","+userInput._recommendationRequestLimit._numStateRoomTypes+">,\n");
-		}
+		//}
 		
 		//InterestRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_InterestRange={\n");			
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_InterestRange={\n");			
 		for (Iterator itr = userInput._interestList.iterator(); itr.hasNext();)
         {
-			 buf = dataElements.getElement("Input_InterestRange").asTupleSet().makeTupleBuffer(-1);
+			 //buf = dataElements.getElement("Input_InterestRange").asTupleSet().makeTupleBuffer(-1);
 			 String pref=(String) itr.next();
-			 buf.setSymbolValue("InterestID", pref);
-			 if(DEBUG.equals("1")) System.out.println("Interest="+pref);
-			 buf.commit();	
-			 if(DEBUG.equals("1")){
+			 //buf.setSymbolValue("InterestID", pref);
+			 //if(DEBUG.equals("1")) System.out.println("Interest="+pref);
+			 //buf.commit();	
+			 //if(DEBUG.equals("1")){
 				writer.write("<\""+pref+"\">,\n");
-			 }			 
+			 //}			 
     	}
 		
 		//ThingsToDoRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_ThingsToDoRange={\n");		
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_ThingsToDoRange={\n");		
 		for (Iterator itr = userInput._thingsToDoList.iterator(); itr.hasNext();)
         {
-			 buf = dataElements.getElement("Input_ThingsToDoRange").asTupleSet().makeTupleBuffer(-1);
+			 //buf = dataElements.getElement("Input_ThingsToDoRange").asTupleSet().makeTupleBuffer(-1);
 			 String pref=(String) itr.next();
-			 buf.setSymbolValue("ThingsToDoID", pref);
-			 if(DEBUG.equals("1")) System.out.println("TTD="+pref);
-			 buf.commit();			
-			 if(DEBUG.equals("1")){
+			 //buf.setSymbolValue("ThingsToDoID", pref);
+			 //if(DEBUG.equals("1")) System.out.println("TTD="+pref);
+			 //buf.commit();			
+			 //if(DEBUG.equals("1")){
 					writer.write("<\""+pref+"\">,\n");
-			 }			 
+			 //}			 
     	}		 
 
 		//MetaRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_MetaRange={\n");		
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_MetaRange={\n");		
 		for (Iterator itr = userInput._metaList.iterator(); itr.hasNext();)
         {
-			 buf = dataElements.getElement("Input_MetaRange").asTupleSet().makeTupleBuffer(-1);
+			 //buf = dataElements.getElement("Input_MetaRange").asTupleSet().makeTupleBuffer(-1);
 			 String pref=(String) itr.next();
-			 buf.setSymbolValue("Meta", pref);
-			 if(DEBUG.equals("1")) System.out.println("Meta="+pref);
-			 buf.commit();	
-			 if(DEBUG.equals("1")){
+			 //buf.setSymbolValue("Meta", pref);
+			 //if(DEBUG.equals("1")) System.out.println("Meta="+pref);
+			 //buf.commit();	
+			 //if(DEBUG.equals("1")){
 					writer.write("<\""+pref+"\">,\n");
-			 }				 
+			 //}				 
     	}		 
 		
 		//DestinationRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_DestinationRange={\n");			
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_DestinationRange={\n");			
 		for (Iterator itr = userInput._destinationList.iterator(); itr.hasNext();)
         {
-			 buf = dataElements.getElement("Input_DestinationRange").asTupleSet().makeTupleBuffer(-1);
+			 //buf = dataElements.getElement("Input_DestinationRange").asTupleSet().makeTupleBuffer(-1);
 			 String pref=(String) itr.next();
-			 buf.setSymbolValue("Destination", pref);
-			 if(DEBUG.equals("1")) System.out.println("Destination="+pref);
-			 buf.commit();	
-			 if(DEBUG.equals("1")){
+			 //buf.setSymbolValue("Destination", pref);
+			 //if(DEBUG.equals("1")) System.out.println("Destination="+pref);
+			 //buf.commit();	
+			 //if(DEBUG.equals("1")){
 					writer.write("<\""+pref+"\">,\n");
-			 }				 
+			 //}				 
     	}
 		
 		//DepartingPortRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_PortRange={\n");	
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_PortRange={\n");	
 		for (Iterator itr = userInput._departingPortList.iterator(); itr.hasNext();)
         {
-			 buf = dataElements.getElement("Input_PortRange").asTupleSet().makeTupleBuffer(-1);
+			 //buf = dataElements.getElement("Input_PortRange").asTupleSet().makeTupleBuffer(-1);
 			 String pref=(String) itr.next();
-			 buf.setSymbolValue("DepartingPort", pref);
-			 if(DEBUG.equals("1")) System.out.println("Port="+pref);
-			 buf.commit();		
-			 if(DEBUG.equals("1")){
+			 //buf.setSymbolValue("DepartingPort", pref);
+			 //if(DEBUG.equals("1")) System.out.println("Port="+pref);
+			 //buf.commit();		
+			 //if(DEBUG.equals("1")){
 					writer.write("<\""+pref+"\">,\n");
-			 }				 
+			 //}				 
     	}
 		
 		//SailDateRange
-		if(DEBUG.equals("1")) writer.write("};Input_SailDateRange={\n");			
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_SailDateRange={\n");			
 		for (Iterator itr = userInput._sailDateRangeList.iterator(); itr.hasNext();)
         {
-			buf = dataElements.getElement("Input_SailDateRange").asTupleSet().makeTupleBuffer(-1);			
+			//buf = dataElements.getElement("Input_SailDateRange").asTupleSet().makeTupleBuffer(-1);			
         	SailDateRange sdr=(SailDateRange) itr.next();
 			Date sdate=sdr._earliestDate;
 	        int sdays=(int) Math.ceil((sdate.getTime()-currentTime.getTime())/86400000.0);
 			Date edate=sdr._latestDate;
 	        int edays=(int) Math.ceil((edate.getTime()-currentTime.getTime())/86400000.0);	 	
-			buf.setNumValue("Min",sdays);
-			buf.setNumValue("Max",edays);			
-			if(DEBUG.equals("1")) System.out.println("Sail Date min="+sdays+" max="+edays);
-			buf.commit();
-			if(DEBUG.equals("1")){
+			//buf.setNumValue("Min",sdays);
+			//buf.setNumValue("Max",edays);			
+			//if(DEBUG.equals("1")) System.out.println("Sail Date min="+sdays+" max="+edays);
+			//buf.commit();
+			//if(DEBUG.equals("1")){
 					writer.write("<"+sdays+","+edays+">,\n");
-			}			
+			//}			
      	}
 
 		//DurationRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_DurationRange={\n");		
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_DurationRange={\n");		
 		for (Iterator itr = userInput._durationRangeList.iterator(); itr.hasNext();)
         {
-			buf = dataElements.getElement("Input_DurationRange").asTupleSet().makeTupleBuffer(-1);			
+			//buf = dataElements.getElement("Input_DurationRange").asTupleSet().makeTupleBuffer(-1);			
         	DurationRange sdr=(DurationRange) itr.next();
-			buf.setNumValue("Min",sdr._minDays);
-			buf.setNumValue("Max",sdr._maxDays);			
-			if(DEBUG.equals("1")) System.out.println("Duration min="+sdr._minDays+" max="+sdr._maxDays);
-			buf.commit();
-			if(DEBUG.equals("1")){
+			//buf.setNumValue("Min",sdr._minDays);
+			//buf.setNumValue("Max",sdr._maxDays);			
+			//if(DEBUG.equals("1")) System.out.println("Duration min="+sdr._minDays+" max="+sdr._maxDays);
+			//buf.commit();
+			//if(DEBUG.equals("1")){
 				writer.write("<"+sdr._minDays+","+sdr._maxDays+">,\n");
-			}				
+			//}				
      	}
 		
 		//PriceRange
-		if(DEBUG.equals("1")) writer.write("};\nInput_PricePerGuestRange={\n");		
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nInput_PricePerGuestRange={\n");		
 		for (Iterator itr = userInput._priceRangeList.iterator(); itr.hasNext();)
         {
-			buf = dataElements.getElement("Input_PricePerGuestRange").asTupleSet().makeTupleBuffer(-1);			
+			//buf = dataElements.getElement("Input_PricePerGuestRange").asTupleSet().makeTupleBuffer(-1);			
         	PriceRange sdr=(PriceRange) itr.next();
-			buf.setNumValue("Min",sdr._minPrice);
-			buf.setNumValue("Max",sdr._maxPrice);			
-			if(DEBUG.equals("1")) System.out.println("Price min="+sdr._minPrice+" max="+sdr._maxPrice);
-			buf.commit();
-			if(DEBUG.equals("1")){
+			//buf.setNumValue("Min",sdr._minPrice);
+			//buf.setNumValue("Max",sdr._maxPrice);			
+			//if(DEBUG.equals("1")) System.out.println("Price min="+sdr._minPrice+" max="+sdr._maxPrice);
+			//buf.commit();
+			//if(DEBUG.equals("1")){
 				writer.write("<"+sdr._minPrice+","+sdr._maxPrice+">,\n");
-			}			
+			//}			
      	}		
-		if(DEBUG.equals("1")) writer.write("};\nConstraintViolationUpperBound =[0];\n");
+		//if(DEBUG.equals("1")) 
+			writer.write("};\nConstraintViolationUpperBound =[-1];\n");
 		
 		 // setting the row to we have to update
 		 if(DEBUG.equals("1")) System.out.println("Data Fetching Complete...");
@@ -833,9 +890,9 @@ public class OptimizationRequest {
 		 
 		 //userInput._DatabaseConnection.close();
          conn.close();
-         if (DEBUG.equals("1") && writer != null) {
+         //if (DEBUG.equals("1") && writer != null) {
              writer.close();
-         }
+         //}
          return dataElements;
      } catch (Exception e) {
          System.err.println(e.getMessage());
@@ -999,28 +1056,29 @@ public class OptimizationRequest {
 		    ArrayList<ConstraintViolation> constraintViolationData,
 		    ArrayList<ThingsToDoRecommendation> ttdrData, double [] constraintViolationAmount, String DEBUG) throws Exception
 	{	
-		
 		//init();
         //System.out.println("CPLEX");
         IloCplex cplex = oplF.createCplex();
         //cplex.setOut(null);
         if(DEBUG.equals("1")) System.out.println("define cplex");        
         IloOplModel opl = oplF.createOplModel(def, cplex);
+        IloOplDataSource dataSource = oplF.createOplDataSource(properties.getProperty("oplInputDataFile"));
+        opl.addDataSource(dataSource);
         if(DEBUG.equals("1")) System.out.println("define opl");
-       	IloNumMap constraintBound= dataElements.getElement("ConstraintViolationUpperBound").asNumMap();
+       	//IloNumMap constraintBound= dataElements.getElement("ConstraintViolationUpperBound").asNumMap();
         //System.out.println("CPLEX");      	
-        if(objDef==0){
-        	constraintBound.set(1, 0);
-        }
-        else if (objDef==1){
-        	constraintBound.set(1, -1);        	
-        }
-        else if (objDef==2){
-        	constraintBound.set(1, constraintViolationAmount[0]);
-        }
+        //if(objDef==0){
+        //	constraintBound.set(1, 0);
+        //}
+        //else if (objDef==1){
+        //	constraintBound.set(1, -1);        	
+        //}
+        //else if (objDef==2){
+        //	constraintBound.set(1, constraintViolationAmount[0]);
+        //}
         if(DEBUG.equals("1")) System.out.println("dataElements before: "+ Calendar.getInstance().getTime());	
         
-        opl.addDataSource(dataElements);
+        //opl.addDataSource(dataElements);
         if(DEBUG.equals("1")) System.out.println("dataElements After: "+ Calendar.getInstance().getTime());	       
         opl.generate();
         if(DEBUG.equals("1")) System.out.println("complete OPL: "+ Calendar.getInstance().getTime());
@@ -1077,10 +1135,11 @@ public class OptimizationRequest {
 					cruisePackageData.add(cruiseRecommendationRecord);	
 					//if(DEBUG.equals("1")) System.out.println("Itinerary="+_itineraryID);
 				}
+				if(DEBUG.equals("1"))
 				for (Iterator itr = cruisePackageData.iterator(); itr.hasNext();)
 				{
 					CruisePackageRecommendation cpr = (CruisePackageRecommendation) itr.next();
-					if(DEBUG.equals("1")) System.out.println("Itinerary="+cpr._itineraryID+" date="+cpr._DateID+" room="+cpr._roomType
+					System.out.println("Itinerary="+cpr._itineraryID+" date="+cpr._DateID+" room="+cpr._roomType
 							+" meta="+cpr._Meta+" destination="+cpr._Destination+" price="+cpr._pricePerGuest+
 							" recommended="+cpr._isRecommended+" AccommodationScore="+cpr._accomodationPrefContribution
 							+" InterestScore="+cpr._interestPrefContribution+" Meta Violation="+cpr._roomViolationValue+
@@ -1104,11 +1163,11 @@ public class OptimizationRequest {
 							_thingsToDoID,_interestID, _interestPrefContribution, _drupalWeightContribution, _isRecommended);
 					ttdrData.add(ttdrRecord);	
 				}
-				
+				if(DEBUG.equals("1"))
 				for (Iterator itr = ttdrData.iterator(); itr.hasNext();)
 				{
 					ThingsToDoRecommendation ttd = (ThingsToDoRecommendation) itr.next();
-					if(DEBUG.equals("1")) System.out.println("ThingsToDo="+ttd._thingsToDoID+" Interest="+ttd._interestID+" InterestContri="+ttd._interestPrefContribution
+				    System.out.println("ThingsToDo="+ttd._thingsToDoID+" Interest="+ttd._interestID+" InterestContri="+ttd._interestPrefContribution
 							+" drupal="+ttd._drupalWeightContribution+
 							" recommended="+ttd._isRecommended);
 				}
