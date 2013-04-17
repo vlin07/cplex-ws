@@ -1,17 +1,18 @@
 /*********************************************
  * OPL 12.4 Model
- * Author: Chuck Teeter
+ * Author: Chuck Teeter    
  * Optimal Solutions, Inc
  * Creation Date: Dec 18, 2012 at 1:13:20 PM
  *********************************************/
-   include "NCLRecommender_odm.mod";
+  include "NCLRecommender_odm.mod";
    // The default is to use CPLEX, but it's good modeling practice state explicitly.  The
    // other option is to specify CP.   
-   using CPLEX;
+  using CPLEX;
    
-   float ViolationWeight=1000; 
+  float ViolationWeight=1000; 
+
    execute INITIALIZE_RANGE
-   {
+   {  
    	   var index=0;
    	   for(var pr in Input_PricePerGuestRange)
    	   {
@@ -29,8 +30,8 @@
    	     break;
        } 
        if(index==0){
-          Input_SailDateRange.add(-1000,100000);  	     	     
-          writeln("Sail Date Range: -1000, 100000");
+          Input_SailDateRange.add(-100000,100000);  	     	     
+          writeln("Sail Date Range: -100000, 100000");
        }                
        index=0;
    	   for(var pr2 in Input_DurationRange)
@@ -82,7 +83,7 @@
   execute WRITE_FP{
   	writeln("FP..."); 
   } 
-   
+	      
   tuple CruisePackagePrice0 {
 	  int CruisePackageID;
 	  string SailID;
@@ -102,7 +103,13 @@
   {CruisePackagePrice0} Input_CruisePackagePrice1={
     <i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,p.PricePerGuest>
 	  |i in Input_CruisePackage, p in Input_CruisePackagePrice: i.CruisePackageID==p.CruisePackageID};
-      
+  /*
+  int PkgCount = 0;//sum(i in Input_CruisePackagePrice1) 1;  
+  execute INIT_PKG{
+    //for(var r in Input_SailDateRange) writeln("Min="+r.Min+ " Max="+r.Max);
+  	writeln("Pkg="+PkgCount);
+  }
+  */    
   {DestinationRange} Input_Destination0={<i.Destination>|i in Input_CruisePackagePrice1};
    
   //Destinations not in package
@@ -767,10 +774,12 @@
     
     Itinerary_Slack_c:
     if(SelectedUseCase == 4)
-	    ItinerarySlack == sum( i in Input_CruisePackage2) 
-	    				  sum(j in Input_CruisePackage2:i.CruisePackageID<j.CruisePackageID)
-	    				  sum(k in Input_ItinerarySimilarity0: i==k.CruisePackage1 && j==k.CruisePackage2) 
-							maxl( 0, X[i]+X[j]-1);
+	    ItinerarySlack == sum(k in Input_ItinerarySimilarity0: k.CruisePackage1.CruisePackageID<k.CruisePackage2.CruisePackageID) 
+							maxl( 0, X[k.CruisePackage1]+X[k.CruisePackage2]-1);
+	   					   //sum( i in Input_CruisePackage2) 
+	    				  //sum(j in Input_CruisePackage2:i.CruisePackageID<j.CruisePackageID)
+	    				  //sum(k in Input_ItinerarySimilarity0: i==k.CruisePackage1 && j==k.CruisePackage2) 
+							//maxl( 0, X[i]+X[j]-1);
      							
     // Additional constraints, based on the specified use case
     if ( SelectedUseCase == 1 )

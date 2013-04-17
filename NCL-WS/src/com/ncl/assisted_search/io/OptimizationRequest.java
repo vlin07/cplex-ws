@@ -15,7 +15,6 @@ import oracle.jdbc.OracleDriver;
 import com.ncl.assisted_search.io.AccommodationPreference;
 import com.ncl.assisted_search.io.UserInput;
 
-
 //Recover code of 4-9-2013 to run objDef=2 if needed
 public class OptimizationRequest {
 	private static String databaseURL="";//"jdbc:oracle:thin:@localhost:1521:xe";
