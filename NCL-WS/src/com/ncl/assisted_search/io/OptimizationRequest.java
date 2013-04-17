@@ -411,9 +411,9 @@ public class OptimizationRequest {
 		 else numberOfGuests=userInput._numberOfGuests;
 		 //if(DEBUG.equals("1")) 
 			 writer.write("};\nInput_CruisePackagePrice={\n");		 
-		 query = "SELECT cruisepkg_id,MIN(price"+numberOfGuests+") price FROM "+ databaseSchemaName +".CRUISEPKG_PRICE WHERE "+
-		 databaseSchemaName+".CruisePkg_Price.cruisepkg_id in (SELECT cruisepkg_id from "+databaseSchemaName+".cruise_pkg)";
-		 if(userInput._discountTypeList.size()>0) query1=" AND (";
+		 query = "SELECT cruisepkg_id,MIN(price"+numberOfGuests+") price FROM "+ databaseSchemaName +".CRUISEPKG_PRICE WHERE ";
+		 //databaseSchemaName+".CruisePkg_Price.cruisepkg_id in (SELECT cruisepkg_id from "+databaseSchemaName+".cruise_pkg) AND";
+		 if(userInput._discountTypeList.size()>0) query1=" (";
 		 else query1="";
 		 firstRange=true;
 		 for (Iterator itr = userInput._discountTypeList.iterator(); itr.hasNext();)
