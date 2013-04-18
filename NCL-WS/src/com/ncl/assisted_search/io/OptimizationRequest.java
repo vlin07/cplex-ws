@@ -15,13 +15,16 @@ import oracle.jdbc.OracleDriver;
 import com.ncl.assisted_search.io.AccommodationPreference;
 import com.ncl.assisted_search.io.UserInput;
 
+
 //Recover code of 4-9-2013 to run objDef=2 if needed
 public class OptimizationRequest {
 	private static String databaseURL="";//"jdbc:oracle:thin:@localhost:1521:xe";
 	private static String databaseUserID="";//"ncl_ws";
 	private static String databaseSchemaName="";//"ncl_ws";
 	private static String databasePassword="";//"ncl_ws_password";
-	private static String oplInputDataFile ="";//"NCL Assisted Search Debug.dat";When DEBUG mode is on, the input data will be save in this file
+	private static String oplInputDataFile ="";//Cruise & User Data
+	private static String oplDataSource="";//data in Table Cruise_Pkg
+	private static String oplTempDirectory="";//Temp folder to store user's input
 	//private static IloOplFactory oplF = new IloOplFactory();
 	//private static IloOplDataSource dataSource = null;//oplF.createOplDataSource("NCL Assisted Search.dat");//input text data file for opl model testing		
     //private static IloOplErrorHandler errHandler = oplF.createOplErrorHandler();
@@ -66,6 +69,8 @@ public class OptimizationRequest {
 	databasePassword=properties.getProperty("databasePassword");
 	databaseSchemaName=properties.getProperty("databaseSchemaName");
 	oplInputDataFile=properties.getProperty("oplInputDataFile");
+	oplDataSource=properties.getProperty("OplDataSource");	
+	oplTempDirectory=properties.getProperty("oplTempDirectory");
 	DEBUG = properties.getProperty("debug");
 	System.out.println("Set DEBUG MODE:"+DEBUG);
 
@@ -91,11 +96,12 @@ public class OptimizationRequest {
  }
  
  
- 
+ //dataFresh="1": re-fetch data from Table Cruise_Pkg; otherwise use cache data
  //public static OptimizationResponseData Recommender(OptimizationRequestData ord0) throws Exception
  public OptimizationResponseData Recommender(UserInput userInput) throws Exception
  {
-	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
+	String DEBUG="1";//turn it on to save input data in File oplInputDataFile;
+	//String dataRefresh=properties.getProperty("dataFresh");//=1: re-fetch data from Table Cruise_Pkg =0: use cache data
 	if(DEBUG.equals("1")) System.out.println("Start Recommender: "+ Calendar.getInstance().getTime());
 	DEBUG=init(DEBUG);	 
 	System.out.println("DEBUG MODE After init:"+DEBUG);
@@ -115,15 +121,62 @@ public class OptimizationRequest {
 	//opl0.generate();
 	IloOplDataElements dataElements=null;// = opl0.makeDataElements();
     
+	//writer2: store Cruise Data
+    Writer writer2 = null;
+    String dataRefresh="0";
+	File cruisePkgFile = new File(oplDataSource);
+	if(!cruisePkgFile.exists()){
+        writer2 = new BufferedWriter(new FileWriter(cruisePkgFile));        	
+        dataRefresh="1";
+        if(DEBUG.equals("1")) System.out.println("Set dataRefresh=1: Re-Fetch Cruise Data From Staging Database");
+        String[] tempFiles;
+        File  tempDirectory= new File(properties.getProperty("oplTempDirectory")); 
+        if(tempDirectory.isDirectory()){  
+            tempFiles = tempDirectory.list();  
+            for (int i=0; i<tempFiles.length; i++) {  
+                File tempFile = new File(tempDirectory, tempFiles[i]);   
+                tempFile.delete();  
+                if(DEBUG.equals("1")) System.out.println("Delete Temp File: "+tempFile.getName());
+            }  
+         }  
+	}
+	
+	//writer: store User Input Data
+ 	Writer writer = null;  
+    File userInputFile = null;
+	int session=0;
+	boolean getNewSession=false;
+	String tempOplFile=null;
+	while(!getNewSession){
+		session=session+1;
+		tempOplFile=oplTempDirectory+"/NCLRecommender"+session+".dat";
+    	userInputFile = new File(tempOplFile);
+    	if(!userInputFile.exists()){
+           writer = new BufferedWriter(new FileWriter(userInputFile));   
+           if(DEBUG.equals("1")) System.out.println("Create User Input Data File: "+userInputFile.getName());
+           getNewSession=true;
+    	}
+	}
+
 	OptimizationResponseData ord1 = new OptimizationResponseData();
 	// code for adding more input data to dataElements
 	//inputData(dataElements,ord0);
 	if(DEBUG.equals("1")) System.out.println("Running inputData()...");
-	inputData(dataElements,userInput, DEBUG);
+	if(DEBUG.equals("1")) System.out.println("Write OplInputDataFile..."); 
+	
+	inputData(dataElements,userInput, DEBUG, writer, writer2, dataRefresh);
 	try
  	{
  		 // generate plan:
- 		ord1=generateCruiseRecommendation(dataElements, oplF, def, DEBUG);
+ 		ord1=generateCruiseRecommendation(dataElements, oplF, def, DEBUG, tempOplFile);
+ 		if(DEBUG.equals("1")){
+ 			File userInputFile2 = new File(properties.getProperty("oplInputDataFile"));
+ 			if(userInputFile2.exists()) userInputFile2.delete();
+ 			userInputFile.renameTo(userInputFile2);
+ 		}
+ 		else{
+ 			userInputFile.delete();
+ 		}
  	}
  	catch (Exception e)
  	{
@@ -136,7 +189,7 @@ public class OptimizationRequest {
  }
  
  //test data from Oracle database
- public static void main(String[] args) throws Exception
+ public static void main_oracle(String[] args) throws Exception
  {	 
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -155,14 +208,14 @@ public class OptimizationRequest {
 
  //test data from dat file: dataSource: for example: = oplF.createOplDataSource("NCL Assisted Search Debug.dat");
  
- public static void main_opl(String[] args) throws Exception
+ public static void main(String[] args) throws Exception
  {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
 	System.out.println("DEBUG="+DEBUG);
 	if(DEBUG.equals("1")) System.out.println("Start Recommender: "+ Calendar.getInstance().getTime());
 	IloOplFactory oplF = new IloOplFactory();
-	IloOplDataSource dataSource = oplF.createOplDataSource(properties.getProperty("OplDataSource"));//oplF.createOplDataSource("NCL Assisted Search.dat");//input text data file for opl model testing		
+	//IloOplDataSource dataSource = oplF.createOplDataSource(properties.getProperty("OplDataSource"));//oplF.createOplDataSource("NCL Assisted Search.dat");//input text data file for opl model testing		
     IloOplErrorHandler errHandler = oplF.createOplErrorHandler();
     IloOplModelSource modelSource = oplF.createOplModelSource(properties.getProperty("OplModelSource"));//oplF.createOplModelSource("NCL Assisted Search.mod");
     //System.out.println("oplmodelsource="+properties.getProperty("OplModelSource"));
@@ -188,7 +241,8 @@ public class OptimizationRequest {
  	{
  		 // generate plan:
 		OptimizationRequest OReguest = new OptimizationRequest();
- 		ord1=OReguest.generateCruiseRecommendation(dataElements, oplF, def, DEBUG);
+		String tempOplFile=properties.getProperty("oplInputDataFile");
+ 		ord1=OReguest.generateCruiseRecommendation(dataElements, oplF, def, DEBUG,tempOplFile);
  	}
  	catch (Exception e)
  	{
@@ -202,8 +256,7 @@ public class OptimizationRequest {
 	 
  }
  
- 
- public IloOplDataElements inputData(IloOplDataElements dataElements, UserInput userInput, String DEBUG) throws Exception 
+ public IloOplDataElements inputData(IloOplDataElements dataElements, UserInput userInput, String DEBUG, Writer writer, Writer writer2, String dataRefresh) throws Exception 
  {
 	 //step 1:
 	 //filter cruisepackge by date, maxoccupancy 
@@ -212,12 +265,6 @@ public class OptimizationRequest {
 	 //sort cruisepackage by key: cruisepackageid
 	 //sort discounttypeprice by cruisepackageid
      try {
-    	if(DEBUG.equals("1")) System.out.println("Write OplInputDataFile..."); 
-     	Writer writer = null;  	
-    	//if(DEBUG.equals("1")){
-    		File oplInputFile = new File(oplInputDataFile);
-            writer = new BufferedWriter(new FileWriter(oplInputFile));
-    	//}
         if(DEBUG.equals("1")) System.out.println("Define JDBC Calss...");
     	Class.forName("oracle.jdbc.driver.OracleDriver");
         DriverManager.registerDriver(new OracleDriver());        	        
@@ -295,7 +342,10 @@ public class OptimizationRequest {
 		 */
     	 int dateAllowance=30;
 		 String query = "SELECT cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, ship_code, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght FROM "+ databaseSchemaName +".CRUISE_PKG ";
-		 String query1 = "WHERE CABIN_CAPACITY>="+userInput._numberOfGuests;
+		 String query1 = "";//"WHERE CABIN_CAPACITY>="+userInput._numberOfGuests;
+		 
+		 String query3="";
+		 /* write complete 2-year cruise data to oplDataSource
 		 String query3 =" AND (";
 		 firstRange=true;
 		 for (Iterator itr = userInput._sailDateRangeList.iterator(); itr.hasNext();)
@@ -304,7 +354,6 @@ public class OptimizationRequest {
         	 SailDateRange sdr=(SailDateRange) itr.next();
         	 query3 = query3+" (DC_SAIL_START-TO_DATE("+ft.format(sdr._earliestDate)+", 'YYYYMMDD')>"+"-"+dateAllowance;
         	 query3 = query3+" AND DC_SAIL_START-TO_DATE("+ft.format(sdr._latestDate)+", 'YYYYMMDD')<"+dateAllowance+")";
-        	 //if(DEBUG.equals("1")) System.out.println(" ed="+sdr._earliestDate+" ld="+sdr._latestDate+" query1="+query1);
         	 firstRange=false;
      	 }		 
 		 if(userInput._sailDateRangeList.size()==0){
@@ -312,8 +361,11 @@ public class OptimizationRequest {
         	 query3 = query3+" AND DC_SAIL_START-TO_DATE("+ft.format(currentTime.getTime())+", 'YYYYMMDD')<=180)";
 		 }
 		 query3=query3+") ";
+		 */
+		 
 		 firstRange=true;
 		 String query4 ="";
+		 
 		 /*
 		 for (Iterator itr = userInput._departingPortList.iterator(); itr.hasNext();)
          {		
@@ -349,10 +401,14 @@ public class OptimizationRequest {
 		 }*/
 		 Date currentTime1 = Calendar.getInstance().getTime();
 		 if(DEBUG.equals("1")) System.out.println("Query Cruise_PKG");
-		 ResultSet resultSet = statement.executeQuery(query);
+		 ResultSet resultSet=null;
+		 if(dataRefresh.equals("1"))
+			 resultSet=statement.executeQuery(query);
+
 		 if(DEBUG.equals("1")) System.out.println("Query Cruise_PKG Complete");		 
 		 //if(DEBUG.equals("1")){
-			writer.write("Input_CruisePackage={");
+		 if(dataRefresh.equals("1"))
+			writer2.write("Input_CruisePackage={");
 		 //}
 		 /*	
 		 Date currentTime1 = Calendar.getInstance().getTime();
@@ -364,7 +420,7 @@ public class OptimizationRequest {
 		 System.out.println("After reading Cruise_PKG:"+(currentTime2.getTime()-currentTime1.getTime()));
 		 
 		 //resultSet.absolute(1);
-	     
+	     if(dataRefresh.equals("1"))
 		 while (resultSet.next()) {		
 			
 			//pkgList.add(resultSet.getInt("cruisepkg_id"));
@@ -401,16 +457,16 @@ public class OptimizationRequest {
 			*/
 	        
 	        //if(DEBUG.equals("1")){
-				writer.write("<"+resultSet.getInt("cruisepkg_id")+",\""+resultSet.getString("SAIL_ID")+"\",\""+resultSet.getString("PACKAGE_ID")+
+				writer2.write("<"+resultSet.getInt("cruisepkg_id")+",\""+resultSet.getString("SAIL_ID")+"\",\""+resultSet.getString("PACKAGE_ID")+
 						"\",\""+resultSet.getString("DC_SAIL_START")+"\","+days+",\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("itnrary")+"\",\""+
 						resultSet.getString("destination")+"\",\""+resultSet.getString("PORT_FROM")+"\",\""+resultSet.getString("CABIN_CATEGORY")+"\",\""+
-						resultSet.getString("META_NAME")+"\","+resultSet.getInt("SAIL_DAYS")+","+resultSet.getDouble("drupalwght")+">,\n");
+						resultSet.getString("META_NAME")+"\","+resultSet.getInt("SAIL_DAYS")+","+resultSet.getDouble("drupalwght")+","+resultSet.getDouble("CABIN_CAPACITY")+">,\n");
 			
         	//}
 		 }
 		 Date currentTime3 = Calendar.getInstance().getTime();
 		 if(DEBUG.equals("1")) System.out.println("Write Cruise_PKG Complete:"+(currentTime3.getTime()-currentTime2.getTime()));
-		 
+		 //if(dataRefresh.equals("1")) writer2.write("};\n");
     	 //Price
 		 /*
 		 for(int i=10001;i<=80000;i++){
@@ -424,7 +480,7 @@ public class OptimizationRequest {
 		 else if(userInput._numberOfGuests>9) numberOfGuests=9;
 		 else numberOfGuests=userInput._numberOfGuests;
 		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_CruisePackagePrice={\n");		 
+			 writer.write("Input_CruisePackagePrice={\n");		 
 		 query = "SELECT cruisepkg_id,MIN(price"+numberOfGuests+") price FROM "+ databaseSchemaName +".CRUISEPKG_PRICE WHERE ";
 		 //databaseSchemaName+".CruisePkg_Price.cruisepkg_id in (SELECT cruisepkg_id from "+databaseSchemaName+".cruise_pkg) AND";
 		 if(userInput._discountTypeList.size()>0) query1=" (";
@@ -476,10 +532,11 @@ public class OptimizationRequest {
 		 System.out.println("Write CruisePackagePrice Complete: "+(currentTime5.getTime()-currentTime4.getTime()));			 	
 		 //ThingsToDo
 		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_ThingsToDo={\n");
+		 if(dataRefresh.equals("1")) writer2.write("};\nInput_ThingsToDo={\n");
 		 query = "SELECT itnrary, thingstd FROM " + databaseSchemaName + ".ITNRTHNGTD";
 			
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			 //if(itnList.contains(resultSet.getString("itnrary"))){
@@ -489,18 +546,19 @@ public class OptimizationRequest {
 				buf.setSymbolValue("ThingsToDoID",resultSet.getString("thingstd"));
 				if(DEBUG.equals("1")) System.out.println("ItineraryID="+resultSet.getString("itnrary")+" ThingsToDoID="+resultSet.getString("thingstd"));
 				buf.commit();*/
-				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("itnrary")+"\",\""+resultSet.getString("thingstd")+"\">,\n");
+			 	//if(dataRefresh.equals("1")) {
+					writer2.write("<\""+resultSet.getString("itnrary")+"\",\""+resultSet.getString("thingstd")+"\">,\n");
 				//}
 			 //}
 		 }
 		 
 		 //ItinerarySimilarity
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_ItinerarySimilarity={\n");
+		 if(dataRefresh.equals("1")) 
+			 writer2.write("};\nInput_ItinerarySimilarity={\n");
 		 query = "SELECT itnrary, itnrarysim FROM " + databaseSchemaName + ".ITNRSIM";
 			
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			 //if(itnList.contains(resultSet.getString("itnrary")) && itnList.contains(resultSet.getString("itnrarysim")) ){
@@ -511,17 +569,18 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("ItineraryID="+resultSet.getString("itnrary")+" ItinararySim="+resultSet.getString("itnrarysim"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("itnrary")+"\",\""+resultSet.getString("itnrarysim")+"\">,\n");
+					writer2.write("<\""+resultSet.getString("itnrary")+"\",\""+resultSet.getString("itnrarysim")+"\">,\n");
 				//}				
 			 //}
 		 }
 		 
 		 //InterestThingsToDo
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_InterestThingsToDo={\n");		 
+		 if(dataRefresh.equals("1")) 
+			 writer2.write("};\nInput_InterestThingsToDo={\n");		 
 		 query = "SELECT interest, thingstd, drupalwght FROM " + databaseSchemaName + ".INTRTHNGTD";
 			
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			    /*
@@ -533,15 +592,16 @@ public class OptimizationRequest {
 				if(DEBUG.equals("1")) System.out.println("Interest="+resultSet.getString("interest")+" TTD="+resultSet.getString("thingstd")+" wght="+resultSet.getDouble("drupalwght"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("thingstd")+
+					writer2.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("thingstd")+
 							"\","+ resultSet.getDouble("drupalwght")+">,\n");
 				//}				
 		 }
 		
 		 //AccommodationPreferenceScore
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_AccommodationPreferenceScore={\n");			 
-		 query = "SELECT SHIP_CODE, CABIN_CATEGORY, preftype, userpref, startdt, enddt, calcscore FROM " + databaseSchemaName + ".ACCSTATERM ";	 
+		 if(dataRefresh.equals("1"))  
+			 writer2.write("};\nInput_AccommodationPreferenceScore={\n");			 
+		 query = "SELECT SHIP_CODE, CABIN_CATEGORY, preftype, userpref, startdt, enddt, calcscore FROM " + databaseSchemaName + ".ACCSTATERM ";
+		 /*
 		 if(userInput._accommodationPreference.size()>0) query1="WHERE";
 		 else query1="";
 		 firstRange=true;
@@ -552,10 +612,12 @@ public class OptimizationRequest {
         	 query1=query1+" (preftype="+"\'"+pref._preferenceType+"\'";
         	 query1=query1+" AND userpref="+"\'"+pref._preference+"\')";        	 
         	 firstRange=false;
-     	 }		 
-		 query=query+query1;
+     	 }
+     	 */		 
+		 //query=query+query1;
 		 if(DEBUG.equals("1")) System.out.println("query="+query);
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){
@@ -578,7 +640,7 @@ public class OptimizationRequest {
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("calcscore"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("CABIN_CATEGORY")+"\",\""+
+					writer2.write("<\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("CABIN_CATEGORY")+"\",\""+
 							resultSet.getString("preftype")+"\",\""+resultSet.getString("userpref")+"\","+sdays+","+edays+
 							","+ resultSet.getDouble("calcscore")+">,\n");
 				//}	
@@ -586,11 +648,12 @@ public class OptimizationRequest {
 		 }
 
 		 //InterestMetaScore
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_InterestMetaScore={\n");			 
+		 if(dataRefresh.equals("1")) 
+			 writer2.write("};\nInput_InterestMetaScore={\n");			 
 		 query = "SELECT SHIP_CODE, META_NAME, interest, startdt, enddt, busscore FROM "+ databaseSchemaName +".intrmeta";
-			
-		 resultSet = statement.executeQuery(query);
+
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
@@ -613,18 +676,19 @@ public class OptimizationRequest {
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("busscore"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("META_NAME")+
+					writer2.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("SHIP_CODE")+"\",\""+resultSet.getString("META_NAME")+
 							"\","+sdays+","+edays+","+ resultSet.getDouble("busscore")+">,\n");
 				//}
 			//}
 		 }
 		 
 		 //InterestDestinationScore
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_InterestDestinationScore={\n");				 
+		 if(dataRefresh.equals("1"))  
+			 writer2.write("};\nInput_InterestDestinationScore={\n");				 
 		 query = "SELECT destination, interest, startdt, enddt, busscore FROM "+ databaseSchemaName +".intrdest";
-			
-		 resultSet = statement.executeQuery(query);
+
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			//if(destList.contains(resultSet.getString("destination"))){			 
@@ -646,18 +710,18 @@ public class OptimizationRequest {
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("busscore"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("destination")+"\","+
+					writer2.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("destination")+"\","+
 							sdays+","+edays+","+ resultSet.getDouble("busscore")+">,\n");
 				//}				
 			 //}
 		 }
 		 
 		 //InterestShipScore
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_InterestShipScore={\n");					 
+		 if(dataRefresh.equals("1")) 
+			 writer2.write("};\nInput_InterestShipScore={\n");					 
 		 query = "SELECT SHIP_CODE, interest, startdt, enddt, busscore FROM "+ databaseSchemaName +".intrship";
-			
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 			//if(shipList.contains(resultSet.getString("SHIP_CODE"))){			 
@@ -679,18 +743,19 @@ public class OptimizationRequest {
 						" sdays="+sdays+" edays="+edays+" score="+resultSet.getDouble("busscore"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("SHIP_CODE")+"\","+
+					writer2.write("<\""+resultSet.getString("interest")+"\",\""+resultSet.getString("SHIP_CODE")+"\","+
 							sdays+","+edays+","+ resultSet.getDouble("busscore")+">,\n");
 				//}
 			//}
 		 }
 	 
 		 //BusPenalty
-		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_BusPenalty={\n");			 
+		 if(dataRefresh.equals("1"))  
+			 writer2.write("};\nInput_BusPenalty={\n");			 
 		 query = "SELECT pentype, diffmin, diffmax, penwght FROM "+ databaseSchemaName +".buspenalty";
 			
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {	 	        
 				/*buf = dataElements.getElement("Input_BusPenalty").asTupleSet().makeTupleBuffer(-1);
@@ -702,7 +767,7 @@ public class OptimizationRequest {
 						" diffmin="+resultSet.getDouble("diffmin")+" diffmax="+resultSet.getDouble("diffmax")+" weight="+resultSet.getDouble("penwght"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-					writer.write("<\""+resultSet.getString("pentype")+"\","+resultSet.getDouble("diffmin")+","+resultSet.getDouble("diffmax")+","
+					writer2.write("<\""+resultSet.getString("pentype")+"\","+resultSet.getDouble("diffmin")+","+resultSet.getDouble("diffmax")+","
 							+ resultSet.getDouble("penwght")+">,\n");
 				//}				
 		 }		 
@@ -725,9 +790,11 @@ public class OptimizationRequest {
 		 
 		 //BUSINFLWGHT
 		 //if(DEBUG.equals("1")) 
-			 writer.write("};\nInput_Parameters={\n");		 
+		 if(dataRefresh.equals("1")) 	 
+			 writer2.write("};\nInput_Parameters={\n");		 
 		 query = "SELECT wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8 FROM "+ databaseSchemaName + ".BUSINFLWGHT";			
-		 resultSet = statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) resultSet=statement.executeQuery(query);
+		 if(dataRefresh.equals("1")) 
 		 while (resultSet.next()) 
 		 {
 				/*buf = dataElements.getElement("Input_Parameters").asTupleSet().makeTupleBuffer(-1);
@@ -751,7 +818,7 @@ public class OptimizationRequest {
 						resultSet.getDouble("wb6")+" "+resultSet.getDouble("wb7")+" "+resultSet.getDouble("wb8"));
 				buf.commit();*/
 				//if(DEBUG.equals("1")){
-						writer.write("<"+userInput._userWeight._WC1+","+userInput._userWeight._WC2+","+userInput._userWeight._WC3+","+
+						writer2.write("<"+userInput._userWeight._WC1+","+userInput._userWeight._WC2+","+userInput._userWeight._WC3+","+
 								userInput._userWeight._WC4+","+userInput._userWeight._WC5+","+resultSet.getDouble("wb1")+","+resultSet.getDouble("wb2")
 								+","+resultSet.getDouble("wb3")+","+resultSet.getDouble("wb4")+","+resultSet.getDouble("wb5")+","+resultSet.getDouble("wb6")
 								+","+resultSet.getDouble("wb7")+","+resultSet.getDouble("wb8")+">,\n");
@@ -902,9 +969,11 @@ public class OptimizationRequest {
 				writer.write("<"+sdr._minPrice+","+sdr._maxPrice+">,\n");
 			//}			
      	}		
+		
+		writer.write("};\nInput_NumberOfGuests={<"+userInput._numberOfGuests+">");
 		//if(DEBUG.equals("1")) 
 			writer.write("};\nConstraintViolationUpperBound =[-1];\n");
-		
+		if(dataRefresh.equals("1")) writer2.write("};\n"); 
 		 // setting the row to we have to update
 		 if(DEBUG.equals("1")) System.out.println("Data Fetching Complete..."+Calendar.getInstance().getTime());
 		 
@@ -919,6 +988,9 @@ public class OptimizationRequest {
          //if (DEBUG.equals("1") && writer != null) {
              writer.close();
          //}
+         if(dataRefresh.equals("1") && writer2 != null){
+        	 writer2.close();    
+         }
          return dataElements;
      } catch (Exception e) {
          System.err.println(e.getMessage());
@@ -1037,7 +1109,7 @@ public class OptimizationRequest {
     }
 */
 
-	public OptimizationResponseData generateCruiseRecommendation(IloOplDataElements dataElements, IloOplFactory oplF, IloOplModelDefinition def, String DEBUG) throws Exception {
+	public OptimizationResponseData generateCruiseRecommendation(IloOplDataElements dataElements, IloOplFactory oplF, IloOplModelDefinition def, String DEBUG, String tempOplFile) throws Exception {
 	
 	    ArrayList<CruisePackageRecommendation> cruisePackageData = new ArrayList();
 	    ArrayList<ConstraintViolation> constraintViolationData = new ArrayList();
@@ -1046,7 +1118,7 @@ public class OptimizationRequest {
 		OptimizationResponseData ord1 = new OptimizationResponseData();
 		boolean unBounded=false;//allow contract violation
 		int objDef=0;//=1: cost, =2: contract violation
-		int status=solve(unBounded,objDef,dataElements, oplF, def, cruisePackageData, constraintViolationData, ttdrData,constraintViolationAmount, DEBUG);
+		int status=solve(unBounded,objDef,dataElements, oplF, def, cruisePackageData, constraintViolationData, ttdrData,constraintViolationAmount, DEBUG, tempOplFile);
 		int status2=0;
 		if(DEBUG.equals("1")) System.out.println("Solved Original Model: Status="+status);
 		
@@ -1058,7 +1130,7 @@ public class OptimizationRequest {
 			objDef=1;
 			if(DEBUG.equals("1")) System.out.println("Original Model Infeasible. Set unBounded="+unBounded+" objDef="+objDef);
 			if(DEBUG.equals("1")) System.out.println("Searching for infeasible recommendations min/max constraints...");
-			if(solve(unBounded,objDef,dataElements, oplF, def, cruisePackageData, constraintViolationData, ttdrData, constraintViolationAmount, DEBUG)==1){//solve the model with obj = contract violation amount
+			if(solve(unBounded,objDef,dataElements, oplF, def, cruisePackageData, constraintViolationData, ttdrData, constraintViolationAmount, DEBUG, tempOplFile)==1){//solve the model with obj = contract violation amount
 				/* 4-9-2013
 				objDef=2;
 				unBounded=false;
@@ -1080,7 +1152,7 @@ public class OptimizationRequest {
 	private int solve(boolean unBounded,int objDef,IloOplDataElements dataElements, IloOplFactory oplF, IloOplModelDefinition def,
 		    ArrayList<CruisePackageRecommendation> cruisePackageData,
 		    ArrayList<ConstraintViolation> constraintViolationData,
-		    ArrayList<ThingsToDoRecommendation> ttdrData, double [] constraintViolationAmount, String DEBUG) throws Exception
+		    ArrayList<ThingsToDoRecommendation> ttdrData, double [] constraintViolationAmount, String DEBUG, String tempOplFile) throws Exception
 	{	
 		//init();
         //System.out.println("CPLEX");
@@ -1089,8 +1161,12 @@ public class OptimizationRequest {
         //if(DEBUG.equals("1")) System.out.println("Define cplex");        
         IloOplModel opl = oplF.createOplModel(def, cplex);
         if(DEBUG.equals("1")) System.out.println("Define DataSource");  
-        IloOplDataSource dataSource = oplF.createOplDataSource(properties.getProperty("oplInputDataFile"));
+        IloOplDataSource dataSource = oplF.createOplDataSource(tempOplFile);//properties.getProperty("oplInputDataFile"));
+        IloOplDataSource dataSource2 = oplF.createOplDataSource(properties.getProperty("OplDataSource"));        
         opl.addDataSource(dataSource);
+        opl.addDataSource(dataSource2);
+        if(DEBUG.equals("1")) System.out.println("Add Data Source: "+tempOplFile);
+        if(DEBUG.equals("1")) System.out.println("Add Data Source: "+properties.getProperty("OplDataSource"));
         //opl allows multiple sources
         //IloOplDataSource dataSource2 = oplF.createOplDataSource("../NCLRecommender_opl/b.dat");
         //opl.addDataSource(dataSource2);

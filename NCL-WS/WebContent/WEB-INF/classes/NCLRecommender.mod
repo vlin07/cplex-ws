@@ -9,7 +9,7 @@
    // other option is to specify CP.   
   using CPLEX;
    
-  float ViolationWeight=1000; 
+  float ViolationWeight=1000;
 
    execute INITIALIZE_RANGE
    {  
@@ -102,7 +102,7 @@
   };
   {CruisePackagePrice0} Input_CruisePackagePrice1={
     <i.CruisePackageID,i.SailID,i.PackageID,i.DateID,i.Date,i.ShipID,i.ItineraryID,i.Destination,i.DepartingPort,i.RoomType,i.Meta,i.Duration,i.DrupalWeight,p.PricePerGuest>
-	  |i in Input_CruisePackage, p in Input_CruisePackagePrice: i.CruisePackageID==p.CruisePackageID};
+	  |i in Input_CruisePackage, n in Input_NumberOfGuests: i.CabinCapacity>=n.NumberOfGuests, p in Input_CruisePackagePrice: i.CruisePackageID==p.CruisePackageID};
   /*
   int PkgCount = 0;//sum(i in Input_CruisePackagePrice1) 1;  
   execute INIT_PKG{
