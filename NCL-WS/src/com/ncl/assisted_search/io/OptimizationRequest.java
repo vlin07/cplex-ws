@@ -189,7 +189,7 @@ public class OptimizationRequest {
  }
  
  //test data from Oracle database
- public static void main_oracle(String[] args) throws Exception
+ public static void main(String[] args) throws Exception
  {	 
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -208,7 +208,7 @@ public class OptimizationRequest {
 
  //test data from dat file: dataSource: for example: = oplF.createOplDataSource("NCL Assisted Search Debug.dat");
  
- public static void main(String[] args) throws Exception
+ public static void main_opl(String[] args) throws Exception
  {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -972,7 +972,7 @@ public class OptimizationRequest {
 		
 		writer.write("};\nInput_NumberOfGuests={<"+userInput._numberOfGuests+">");
 		//if(DEBUG.equals("1")) 
-			writer.write("};\nConstraintViolationUpperBound =[-1];\n");
+			writer.write("};\nConstraintViolationUpperBound =[-1];\nOutput_Parameters={};\n");
 		if(dataRefresh.equals("1")) writer2.write("};\n"); 
 		 // setting the row to we have to update
 		 if(DEBUG.equals("1")) System.out.println("Data Fetching Complete..."+Calendar.getInstance().getTime());
@@ -1162,9 +1162,12 @@ public class OptimizationRequest {
         IloOplModel opl = oplF.createOplModel(def, cplex);
         if(DEBUG.equals("1")) System.out.println("Define DataSource");  
         IloOplDataSource dataSource = oplF.createOplDataSource(tempOplFile);//properties.getProperty("oplInputDataFile"));
-        IloOplDataSource dataSource2 = oplF.createOplDataSource(properties.getProperty("OplDataSource"));        
+        IloOplDataSource dataSource2 = oplF.createOplDataSource(properties.getProperty("OplDataSource"));      
+        
         opl.addDataSource(dataSource);
         opl.addDataSource(dataSource2);
+        //IloOplDataSource dataSource3 = oplF.createOplDataSource("../NCLRecommender_opl/NCLRecommender_export.dat");
+        //opl.addDataSource(dataSource3);
         if(DEBUG.equals("1")) System.out.println("Add Data Source: "+tempOplFile);
         if(DEBUG.equals("1")) System.out.println("Add Data Source: "+properties.getProperty("OplDataSource"));
         //opl allows multiple sources

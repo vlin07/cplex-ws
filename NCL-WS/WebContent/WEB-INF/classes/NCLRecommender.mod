@@ -947,8 +947,8 @@
    											({<i.Meta>| i in Output_Meta0} union {<i.Meta>| i in Output_Meta1}
    												union {<i.Meta>| i in Output_Meta2});  	
    */												   												      
-   
-   {CruisePackageRecommendation}		
+  
+  {CruisePackageRecommendation}		
    output_CruisePackageRecommendation = 	
    											{<i.SailID,i.PackageID,i.DateID,i.ItineraryID,i.Destination,i.RoomType,i.Meta,
    												n.CustomerAccommodationPriority * n.BusinessAccommodationPriority * i.FP1,//CruisePackageFP1[i],
@@ -1100,6 +1100,7 @@
    
    execute BUILD_OUTPUT_TUPLES
    {  
+       //for(var par in Output_Parameters) writeln(par);
    	   //writeln("ttd="+ThingsToDoConstraintViolation);
 	   for(var oc in output_ConstraintViolation){
 	     //Output_ConstraintViolation.add(oc.PackageLimitViolation,oc.ThingsToDoLimViolation,oc.DestinationLimViolation,oc.RoomTypeLimViolation,oc.ItineraryUniquenessViolation);
