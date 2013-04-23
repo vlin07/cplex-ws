@@ -40,6 +40,7 @@ tuple CruisePackage {
   string Meta;
   float Duration;
   float DrupalWeight;
+  float CabinCapacity;
 };
 
 tuple CruisePackagePrice {
@@ -100,6 +101,10 @@ tuple MetaRange {
   key string Meta;
 };
 
+tuple NumberOfGuests {
+  int NumberOfGuests;
+};
+
 tuple Parameters {
   key float CustomerAccommodationPriority;
   key float CustomerThingsToDoPriority;
@@ -137,6 +142,17 @@ tuple SailDateRange {
   key float Max;
 };
 
+tuple OutputParameters {
+  float BusinessAccommodationPriority;
+  float BusinessThingsToDoPriority;
+  float BusinessPricePriority;
+  float BusinessTimePriority;
+  float BusinessDestinationPriority;
+  float BusinessDepartingPriority;
+  float RemommendationLimitPriority;
+  float ItineraryUniquenessPriority;
+};
+
 tuple ThingsToDo {
   key string ItineraryID;
   key string ThingsToDoID;
@@ -160,6 +176,7 @@ float ConstraintViolationUpperBound [1..1] = ...;
 {InterestThingsToDo} Input_InterestThingsToDo = ...;
 {ItinerarySimilarity} Input_ItinerarySimilarity = ...;
 {MetaRange} Input_MetaRange = ...;
+{NumberOfGuests} Input_NumberOfGuests = ...;
 {Parameters} Input_Parameters = ...;
 {PortRange} Input_PortRange = ...;
 {PricePerGuestRange} Input_PricePerGuestRange = ...;
@@ -167,6 +184,7 @@ float ConstraintViolationUpperBound [1..1] = ...;
 {SailDateRange} Input_SailDateRange = ...;
 {ThingsToDo} Input_ThingsToDo = ...;
 {ThingsToDoRange} Input_ThingsToDoRange = ...;
+{OutputParameters} Output_Parameters = ...;
 
 // Output
 
