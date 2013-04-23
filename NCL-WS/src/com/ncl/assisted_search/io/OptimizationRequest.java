@@ -189,7 +189,7 @@ public class OptimizationRequest {
  }
  
  //test data from Oracle database
- public static void main(String[] args) throws Exception
+ public static void main_oracle(String[] args) throws Exception
  {	 
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -208,7 +208,7 @@ public class OptimizationRequest {
 
  //test data from dat file: dataSource: for example: = oplF.createOplDataSource("NCL Assisted Search Debug.dat");
  
- public static void main_opl(String[] args) throws Exception
+ public static void main(String[] args) throws Exception
  {
 	String DEBUG="1";//turn it on to save input data in File oplInputDataFile; 
 	DEBUG=init(DEBUG);	 	 
@@ -344,8 +344,9 @@ public class OptimizationRequest {
 		 String query = "SELECT cruisepkg_id, itnrary, DC_SAIL_START, SAIL_ID, PACKAGE_ID, ship_code, META_NAME, CABIN_CATEGORY, SAIL_DAYS, PORT_FROM, destination, CABIN_CAPACITY, drupalwght FROM "+ databaseSchemaName +".CRUISE_PKG ";
 		 String query1 = "";//"WHERE CABIN_CAPACITY>="+userInput._numberOfGuests;
 		 
-		 String query3="";
-		 /* write complete 2-year cruise data to oplDataSource
+		 //String query3="";
+		 //write complete 2-year cruise data to oplDataSource
+		 //filter price data
 		 String query3 =" AND (";
 		 firstRange=true;
 		 for (Iterator itr = userInput._sailDateRangeList.iterator(); itr.hasNext();)
@@ -361,7 +362,7 @@ public class OptimizationRequest {
         	 query3 = query3+" AND DC_SAIL_START-TO_DATE("+ft.format(currentTime.getTime())+", 'YYYYMMDD')<=180)";
 		 }
 		 query3=query3+") ";
-		 */
+		 
 		 
 		 firstRange=true;
 		 String query4 ="";
@@ -386,7 +387,8 @@ public class OptimizationRequest {
     	 }*/		 
 		 if(firstRange==false) query4=query4+") ";
 		 String query2 = " ORDER BY cruisepkg_id";
-		 query = query + query1+ query3+ query4;//+ query2;
+		 //query = query + query1+ query3+ query4;//+ query2;
+		 query = query + query1+ query4;
 		 // executing a query string and storing it into the resultSet object
 		 if(DEBUG.equals("1")) System.out.println("Query="+query);
 		 //ArrayList<Integer> pkgList = new ArrayList();
